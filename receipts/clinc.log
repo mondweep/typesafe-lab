@@ -1,0 +1,19 @@
+
+## clinc150 — embedder=onnx regime=few-shot limit=1500
+| arm | acc | macroF1 | ECE | meanConf | p50/p95 ms |
+|---|---|---|---|---|---|
+| local | 55.5% | 0.199 | 0.2743 | 0.281 | 12.7/15.7 |
+
+### Gates (report-only)
+| Gate | Status | Detail |
+|---|---|---|
+| accuracy_vs_jev | SKIP | reference jev_choice_accuracy_test not measured |
+| calibration_ece | FAIL | 0.2743 <= 0.05 |
+| oos_auroc | FAIL | 0.5 >= 0.85 |
+| latency_native_p95 | PASS | 15.7041 <= 50 |
+| latency_wasm_p95 | SKIP | embedder target is native, not wasm |
+| transfer_regression | SKIP | no --baseline-receipt for transfer comparison |
+
+FAIL — 3 skipped
+
+receipt → /home/claude/receipts/clinc150-onnx-8shot.json

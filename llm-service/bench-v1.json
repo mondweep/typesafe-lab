@@ -1,0 +1,1569 @@
+{
+ "name": "bench-v1",
+ "version": 1,
+ "created": "2026-09-26",
+ "author": "Written by the evaluator (Claude) for this lab; not produced by, or shared with, either system's authors before testing.",
+ "questions": {
+  "council": {
+   "type": "choice",
+   "instructions": "Which council service should handle this enquiry?",
+   "criteria": {
+    "waste": "Bin collections, recycling, fly-tipping, litter and bulky waste",
+    "council_tax": "Council tax bills, payments, discounts, exemptions, bands and arrears",
+    "housing": "Repairs, damp, heating and tenancy matters in council-owned homes and blocks",
+    "highways": "Roads, potholes, street lights, traffic signals, parking permits and parking fines",
+    "planning": "Planning applications, permissions, building control, extensions and objections to developments",
+    "environmental_health": "Noise nuisance, pests, food hygiene, smoke, smells and pollution from neighbours or businesses"
+   }
+  },
+  "severity": {
+   "type": "score",
+   "instructions": "How severe is the safety risk described in this site observation?",
+   "criteria": [
+    "Low: minor housekeeping or good-practice note, no real hazard",
+    "Medium: a hazard that needs correcting soon, but no immediate danger",
+    "High: immediate danger of serious injury, stop work now"
+   ]
+  },
+  "deadline": {
+   "type": "noul",
+   "instructions": "The message asks the recipient to do something by a specific deadline or time."
+  }
+ },
+ "train": {
+  "council": [
+   {
+    "id": "cou-tr01",
+    "text": "My green bin wasn't emptied on Tuesday again, the whole street got done except us.",
+    "label": "waste"
+   },
+   {
+    "id": "cou-tr02",
+    "text": "How do I book a collection for an old sofa and a broken fridge?",
+    "label": "waste"
+   },
+   {
+    "id": "cou-tr03",
+    "text": "Someone has dumped a pile of mattresses at the end of Elm Lane.",
+    "label": "waste"
+   },
+   {
+    "id": "cou-tr04",
+    "text": "Can I put pizza boxes in the blue recycling bin or not?",
+    "label": "waste"
+   },
+   {
+    "id": "cou-tr05",
+    "text": "need a new food caddy, the lid snapped",
+    "label": "waste"
+   },
+   {
+    "id": "cou-tr06",
+    "text": "The bin men left rubbish all over the pavement when they emptied the bins this morning.",
+    "label": "waste"
+   },
+   {
+    "id": "cou-tr07",
+    "text": "Is the garden waste subscription still £45 this year and how do I renew?",
+    "label": "waste"
+   },
+   {
+    "id": "cou-tr08",
+    "text": "When will collections go back to normal after the bank holiday?",
+    "label": "waste"
+   },
+   {
+    "id": "cou-tr09",
+    "text": "I've moved out of the flat on 3 March, please close my council tax account.",
+    "label": "council_tax"
+   },
+   {
+    "id": "cou-tr10",
+    "text": "I live alone now, can I get the single person discount?",
+    "label": "council_tax"
+   },
+   {
+    "id": "cou-tr11",
+    "text": "Why has my bill gone up by £120 compared with last year?",
+    "label": "council_tax"
+   },
+   {
+    "id": "cou-tr12",
+    "text": "I've fallen behind on payments and got a reminder letter, can I set up a payment plan?",
+    "label": "council_tax"
+   },
+   {
+    "id": "cou-tr13",
+    "text": "My son is a full-time student, does that make our house exempt?",
+    "label": "council_tax"
+   },
+   {
+    "id": "cou-tr14",
+    "text": "can i change my direct debit date to the 28th",
+    "label": "council_tax"
+   },
+   {
+    "id": "cou-tr15",
+    "text": "The property was empty and unfurnished for four months while we renovated, do we still pay?",
+    "label": "council_tax"
+   },
+   {
+    "id": "cou-tr16",
+    "text": "I think I've been put in the wrong band, how do I challenge it?",
+    "label": "council_tax"
+   },
+   {
+    "id": "cou-tr17",
+    "text": "The boiler in my council flat has been broken for five days and we have no hot water.",
+    "label": "housing"
+   },
+   {
+    "id": "cou-tr18",
+    "text": "Black mould is spreading across the bedroom ceiling of our council house.",
+    "label": "housing"
+   },
+   {
+    "id": "cou-tr19",
+    "text": "The front door lock on our block's communal entrance is broken.",
+    "label": "housing"
+   },
+   {
+    "id": "cou-tr20",
+    "text": "I want to swap my council house for a smaller one now the children have moved out.",
+    "label": "housing"
+   },
+   {
+    "id": "cou-tr21",
+    "text": "Water is coming through the ceiling from the flat above ours in the council block.",
+    "label": "housing"
+   },
+   {
+    "id": "cou-tr22",
+    "text": "my windows dont shut properly and the draught is terrible, im a council tenant",
+    "label": "housing"
+   },
+   {
+    "id": "cou-tr23",
+    "text": "Can someone come and fix the handrail on the stairs in Tower B? It's hanging off.",
+    "label": "housing"
+   },
+   {
+    "id": "cou-tr24",
+    "text": "I'd like to add my partner to my tenancy agreement.",
+    "label": "housing"
+   },
+   {
+    "id": "cou-tr25",
+    "text": "There's a massive pothole on Station Road outside the Co-op.",
+    "label": "highways"
+   },
+   {
+    "id": "cou-tr26",
+    "text": "The street light outside number 14 has been flickering for weeks.",
+    "label": "highways"
+   },
+   {
+    "id": "cou-tr27",
+    "text": "How do I apply for a residents' parking permit for Zone C?",
+    "label": "highways"
+   },
+   {
+    "id": "cou-tr28",
+    "text": "I got a parking ticket but the signs were covered by a hedge, I want to appeal.",
+    "label": "highways"
+   },
+   {
+    "id": "cou-tr29",
+    "text": "The pedestrian crossing lights on the high street aren't working.",
+    "label": "highways"
+   },
+   {
+    "id": "cou-tr30",
+    "text": "Can you grit Hill Road? It's like an ice rink every morning.",
+    "label": "highways"
+   },
+   {
+    "id": "cou-tr31",
+    "text": "Cars keep parking across my dropped kerb and I can't get out.",
+    "label": "highways"
+   },
+   {
+    "id": "cou-tr32",
+    "text": "A tree branch has fallen and is blocking half the road near the school.",
+    "label": "highways"
+   },
+   {
+    "id": "cou-tr33",
+    "text": "My neighbour is building a two-storey extension, how do I object?",
+    "label": "planning"
+   },
+   {
+    "id": "cou-tr34",
+    "text": "Do I need planning permission for a garden office?",
+    "label": "planning"
+   },
+   {
+    "id": "cou-tr35",
+    "text": "What's the status of application 24/01873/FUL?",
+    "label": "planning"
+   },
+   {
+    "id": "cou-tr36",
+    "text": "I want to convert my loft, does building control need to inspect it?",
+    "label": "planning"
+   },
+   {
+    "id": "cou-tr37",
+    "text": "Is my house in a conservation area? I want to replace the windows.",
+    "label": "planning"
+   },
+   {
+    "id": "cou-tr38",
+    "text": "The developer is building much closer to our fence than the approved plans show.",
+    "label": "planning"
+   },
+   {
+    "id": "cou-tr39",
+    "text": "how long does a householder application usually take",
+    "label": "planning"
+   },
+   {
+    "id": "cou-tr40",
+    "text": "I'd like to comment in support of the new community centre proposal.",
+    "label": "planning"
+   },
+   {
+    "id": "cou-tr41",
+    "text": "The pub next door plays loud music until 3am every weekend.",
+    "label": "environmental_health"
+   },
+   {
+    "id": "cou-tr42",
+    "text": "We've got rats in the garden and I think they're coming from the takeaway's bins.",
+    "label": "environmental_health"
+   },
+   {
+    "id": "cou-tr43",
+    "text": "I got food poisoning after eating at a restaurant on King Street.",
+    "label": "environmental_health"
+   },
+   {
+    "id": "cou-tr44",
+    "text": "My neighbour's dog barks all day while they're at work.",
+    "label": "environmental_health"
+   },
+   {
+    "id": "cou-tr45",
+    "text": "There's thick smoke from a bonfire next door almost every evening.",
+    "label": "environmental_health"
+   },
+   {
+    "id": "cou-tr46",
+    "text": "A factory on the industrial estate is making a horrible chemical smell.",
+    "label": "environmental_health"
+   },
+   {
+    "id": "cou-tr47",
+    "text": "how do i report a cafe that looks filthy in the kitchen",
+    "label": "environmental_health"
+   },
+   {
+    "id": "cou-tr48",
+    "text": "Pigeons are nesting in the empty building opposite and it's a health hazard.",
+    "label": "environmental_health"
+   }
+  ],
+  "severity": [
+   {
+    "id": "sev-tr01",
+    "text": "Cable ties left on the floor of the site office after the delivery.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr02",
+    "text": "Tea-room fridge is overdue for cleaning.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr03",
+    "text": "A couple of hi-vis vests in the drying room are a bit faded.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr04",
+    "text": "Signage near the gate is slightly faded but still readable.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr05",
+    "text": "Good practice: team held a toolbox talk on manual handling before the lift.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr06",
+    "text": "First-aid kit plasters running low; still plenty of other supplies.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr07",
+    "text": "Some paperwork in the permit folder is filed out of date order.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr08",
+    "text": "Visitor sign-in book was left open on the desk.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr09",
+    "text": "Empty boxes stacked neatly by the store room door, not blocking it.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr10",
+    "text": "Operative's glove had a small tear at the cuff; replaced from stock straight away.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr11",
+    "text": "Welfare cabin floor a bit muddy after lunch.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr12",
+    "text": "Dust sheets folded but left on a bench rather than in the cupboard.",
+    "label": 0
+   },
+   {
+    "id": "sev-tr13",
+    "text": "Extension lead running across the walkway in the workshop, taped down at one end only.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr14",
+    "text": "Scaffold tag inspection is two days overdue.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr15",
+    "text": "Spill kit missing from the fuel bowser area.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr16",
+    "text": "Two operatives seen without eye protection while using the grinder briefly.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr17",
+    "text": "Fire extinguisher by the stairwell is past its service date.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr18",
+    "text": "Barrier around the excavation has a gap where a panel blew over.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr19",
+    "text": "Guard on the bench saw is loose and wobbles during use.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr20",
+    "text": "Offcuts and pallets partly obstructing the fire exit route in the stairwell.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr21",
+    "text": "Forklift reversing alarm is intermittent.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr22",
+    "text": "No COSHH assessment available for the new adhesive being used.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr23",
+    "text": "Ladder used for access has a cracked foot.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr24",
+    "text": "Several workers not signing the permit-to-work for hot works.",
+    "label": 1
+   },
+   {
+    "id": "sev-tr25",
+    "text": "Worker on the roof edge with no harness and no edge protection.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr26",
+    "text": "Live cables exposed where the cover plate has been removed; area not isolated.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr27",
+    "text": "Excavation over 2m deep with no shoring and people working inside.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr28",
+    "text": "Crane lifting over an occupied walkway with no exclusion zone.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr29",
+    "text": "Strong smell of gas in the plant room and someone about to start welding.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr30",
+    "text": "Scaffold missing ties on the top lift and swaying in the wind while people are on it.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr31",
+    "text": "Operative inside an unventilated tank with no gas monitor or standby person.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr32",
+    "text": "Dump truck driving with a worker riding on the side step.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr33",
+    "text": "Asbestos-containing board being cut with a power saw without controls.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr34",
+    "text": "Fire door to the only escape stairway chained shut during occupied hours.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr35",
+    "text": "Mobile elevated platform used in high wind with the operator leaning out over the rail.",
+    "label": 2
+   },
+   {
+    "id": "sev-tr36",
+    "text": "Child spotted wandering inside the site perimeter near moving plant.",
+    "label": 2
+   }
+  ],
+  "deadline": [
+   {
+    "id": "dea-tr01",
+    "text": "Please send me the signed contract by 5pm Friday.",
+    "label": true
+   },
+   {
+    "id": "dea-tr02",
+    "text": "Can you review the slides before tomorrow's 9am meeting?",
+    "label": true
+   },
+   {
+    "id": "dea-tr03",
+    "text": "Reminder: timesheets are due end of day today.",
+    "label": true
+   },
+   {
+    "id": "dea-tr04",
+    "text": "RSVP by 12 October so we can confirm numbers.",
+    "label": true
+   },
+   {
+    "id": "dea-tr05",
+    "text": "Need your sign-off on the budget before the board meets on Thursday.",
+    "label": true
+   },
+   {
+    "id": "dea-tr06",
+    "text": "Pls pick up milk on your way home tonight",
+    "label": true
+   },
+   {
+    "id": "dea-tr07",
+    "text": "Invoice #2231 must be paid within 14 days of this notice.",
+    "label": true
+   },
+   {
+    "id": "dea-tr08",
+    "text": "Could you book the meeting room for Monday morning at the latest?",
+    "label": true
+   },
+   {
+    "id": "dea-tr09",
+    "text": "Renew your passport before your trip on 3 March or you won't be able to travel.",
+    "label": true
+   },
+   {
+    "id": "dea-tr10",
+    "text": "Get me the figures by lunchtime if you can.",
+    "label": true
+   },
+   {
+    "id": "dea-tr11",
+    "text": "The consultation closes at midnight on 30 November, submit comments before then.",
+    "label": true
+   },
+   {
+    "id": "dea-tr12",
+    "text": "Can you call the plumber back before 4? He leaves at 4:30.",
+    "label": true
+   },
+   {
+    "id": "dea-tr13",
+    "text": "Complete the mandatory training module by the end of the month.",
+    "label": true
+   },
+   {
+    "id": "dea-tr14",
+    "text": "Send the draft to legal by COB Wednesday.",
+    "label": true
+   },
+   {
+    "id": "dea-tr15",
+    "text": "Please return the library books by Saturday to avoid a fine.",
+    "label": true
+   },
+   {
+    "id": "dea-tr16",
+    "text": "Upload your photos to the shared drive before the album goes to print next Tuesday.",
+    "label": true
+   },
+   {
+    "id": "dea-tr17",
+    "text": "Confirm your delivery slot within 24 hours or it will be released.",
+    "label": true
+   },
+   {
+    "id": "dea-tr18",
+    "text": "Could you water the plants tomorrow morning before it gets hot?",
+    "label": true
+   },
+   {
+    "id": "dea-tr19",
+    "text": "Deadline for abstracts is 15 January, please submit yours.",
+    "label": true
+   },
+   {
+    "id": "dea-tr20",
+    "text": "Text me back before the train leaves at 6 so I know whether to wait.",
+    "label": true
+   },
+   {
+    "id": "dea-tr21",
+    "text": "Thanks for the lovely dinner last night!",
+    "label": false
+   },
+   {
+    "id": "dea-tr22",
+    "text": "The quarterly report is attached for your information.",
+    "label": false
+   },
+   {
+    "id": "dea-tr23",
+    "text": "Whenever you get a chance, have a look at the new logo ideas.",
+    "label": false
+   },
+   {
+    "id": "dea-tr24",
+    "text": "Our office will be closed on Monday for the bank holiday.",
+    "label": false
+   },
+   {
+    "id": "dea-tr25",
+    "text": "Great work on the launch, everyone.",
+    "label": false
+   },
+   {
+    "id": "dea-tr26",
+    "text": "I've finished the analysis; results are in the folder.",
+    "label": false
+   },
+   {
+    "id": "dea-tr27",
+    "text": "No need to reply, just keeping you in the loop.",
+    "label": false
+   },
+   {
+    "id": "dea-tr28",
+    "text": "Did you watch the match on Saturday?",
+    "label": false
+   },
+   {
+    "id": "dea-tr29",
+    "text": "Here's the recipe I promised you.",
+    "label": false
+   },
+   {
+    "id": "dea-tr30",
+    "text": "The meeting went well and the client seemed happy.",
+    "label": false
+   },
+   {
+    "id": "dea-tr31",
+    "text": "FYI the printer on floor 2 is fixed.",
+    "label": false
+   },
+   {
+    "id": "dea-tr32",
+    "text": "Happy birthday! Hope you have a great day.",
+    "label": false
+   },
+   {
+    "id": "dea-tr33",
+    "text": "Feel free to take a look at the proposal at some point, no rush.",
+    "label": false
+   },
+   {
+    "id": "dea-tr34",
+    "text": "We moved into the new house last week.",
+    "label": false
+   },
+   {
+    "id": "dea-tr35",
+    "text": "The deadline for the grant was last month, and we submitted in time.",
+    "label": false
+   },
+   {
+    "id": "dea-tr36",
+    "text": "I'll send the minutes when I've typed them up.",
+    "label": false
+   },
+   {
+    "id": "dea-tr37",
+    "text": "Just letting you know the parcel arrived safely.",
+    "label": false
+   },
+   {
+    "id": "dea-tr38",
+    "text": "The team lunch was fun, we should do it again sometime.",
+    "label": false
+   },
+   {
+    "id": "dea-tr39",
+    "text": "Attached is last year's policy for reference.",
+    "label": false
+   },
+   {
+    "id": "dea-tr40",
+    "text": "It would be nice to catch up one of these days.",
+    "label": false
+   }
+  ]
+ },
+ "test": {
+  "council": [
+   {
+    "id": "cou-te01",
+    "text": "Third week running the recycling's been missed. Genuinely wondering what my council tax pays for.",
+    "label": "waste",
+    "tag": "misleading"
+   },
+   {
+    "id": "cou-te02",
+    "text": "hi there bins not done on our road (Oak Close) cheers",
+    "label": "waste",
+    "tag": "slang"
+   },
+   {
+    "id": "cou-te03",
+    "text": "Could you tell me what day my brown bin goes out now the rounds have changed?",
+    "label": "waste",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te04",
+    "text": "A load of builders' rubble and old tyres has been dumped in the lay-by on the A21.",
+    "label": "waste",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te05",
+    "text": "I'm not complaining about the roads this time, it's the overflowing litter bins in the park that nobody empties.",
+    "label": "waste",
+    "tag": "negation"
+   },
+   {
+    "id": "cou-te06",
+    "text": "My elderly mum can't drag her bin to the kerb any more, is there an assisted collection?",
+    "label": "waste",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te07",
+    "text": "Where can I get rid of old paint tins and a car battery safely?",
+    "label": "waste",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te08",
+    "text": "The crew smashed our bin lid when they tipped it and now foxes get in.",
+    "label": "waste",
+    "tag": "misleading"
+   },
+   {
+    "id": "cou-te09",
+    "text": "Moving into 12 Birch Rd next week and the previous owners took the wheelie bins, how do I get new ones?",
+    "label": "waste",
+    "tag": "misleading"
+   },
+   {
+    "id": "cou-te10",
+    "text": "Is there a limit on how many extra black bags I can leave out after Christmas?",
+    "label": "waste",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te11",
+    "text": "The bill says Band D but every other house on our street is Band C, something's off.",
+    "label": "council_tax",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te12",
+    "text": "Paid twice this month by mistake (standing order AND card). Refund please.",
+    "label": "council_tax",
+    "tag": "slang"
+   },
+   {
+    "id": "cou-te13",
+    "text": "My husband passed away in June and I'm now the only adult in the house.",
+    "label": "council_tax",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te14",
+    "text": "We're not council tenants and have no repair issue, this is purely about the annual charge for our house going up.",
+    "label": "council_tax",
+    "tag": "negation"
+   },
+   {
+    "id": "cou-te15",
+    "text": "Hi, I'm a care leaver aged 21 and I heard there's some kind of reduction on the bill for people like me?",
+    "label": "council_tax",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te16",
+    "text": "Got a summons for £430 arrears, didn't even know I owed anything!!",
+    "label": "council_tax",
+    "tag": "slang"
+   },
+   {
+    "id": "cou-te17",
+    "text": "The annex at the back is used by my disabled father, should it be charged separately?",
+    "label": "council_tax",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te18",
+    "text": "Please send me a copy of this year's bill, I've lost the paper one.",
+    "label": "council_tax",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te19",
+    "text": "Is the second-home premium applied from April or from when I bought the cottage?",
+    "label": "council_tax",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te20",
+    "text": "Why am I paying full whack when the house has been a building site with no kitchen since January? Marvellous.",
+    "label": "council_tax",
+    "tag": "sarcasm"
+   },
+   {
+    "id": "cou-te21",
+    "text": "Council flat, 4th floor, lift's been out for a week and I use a wheelchair.",
+    "label": "housing",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te22",
+    "text": "Damp patches keep coming back on the kitchen wall of our council house no matter how much I bleach them.",
+    "label": "housing",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te23",
+    "text": "Radiators stone cold, tenancy ref HC-44721.",
+    "label": "housing",
+    "tag": "slang"
+   },
+   {
+    "id": "cou-te24",
+    "text": "The bathroom extractor fan in my council bungalow has stopped working and the room is always steamy.",
+    "label": "housing",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te25",
+    "text": "I'm not asking about planning, I just need permission from you as my landlord to put up a shed in my council house garden.",
+    "label": "housing",
+    "tag": "negation"
+   },
+   {
+    "id": "cou-te26",
+    "text": "Can I transfer my tenancy to my daughter? I'm moving into a care home.",
+    "label": "housing",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te27",
+    "text": "Rainwater is pouring through the light fitting in our council flat's hallway!!",
+    "label": "housing",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te28",
+    "text": "The stairwell lights in our council block have been out for ages, it's pitch black and dangerous.",
+    "label": "housing",
+    "tag": "misleading"
+   },
+   {
+    "id": "cou-te29",
+    "text": "Your contractor came to fix the kitchen tap, left it worse, and never came back.",
+    "label": "housing",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te30",
+    "text": "Is there a waiting list for adapted council homes for people with mobility needs?",
+    "label": "housing",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te31",
+    "text": "Hit a crater on Mill Lane and wrecked my tyre, can I claim?",
+    "label": "highways",
+    "tag": "slang"
+   },
+   {
+    "id": "cou-te32",
+    "text": "The traffic lights at the Broadway junction are stuck on red.",
+    "label": "highways",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te33",
+    "text": "White lines outside the primary school have worn away completely and drivers ignore the zig-zags.",
+    "label": "highways",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te34",
+    "text": "I've got a parking fine. No council tax question here, I just want to know how to pay the PCN online.",
+    "label": "highways",
+    "tag": "negation"
+   },
+   {
+    "id": "cou-te35",
+    "text": "Overgrown hedges are forcing pushchairs into the road on Church Walk.",
+    "label": "highways",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te36",
+    "text": "Street light out",
+    "label": "highways",
+    "tag": "slang"
+   },
+   {
+    "id": "cou-te37",
+    "text": "Can I get the parking bays outside my house suspended for a removal van on Saturday?",
+    "label": "highways",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te38",
+    "text": "Manhole cover on Queen St is rocking and clanging every time a bus goes over it.",
+    "label": "highways",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te39",
+    "text": "Where's the nearest disabled parking bay to the library, and do I need a blue badge?",
+    "label": "highways",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te40",
+    "text": "The road's been dug up for 'essential works' for three months with no one ever working on it. Brilliant.",
+    "label": "highways",
+    "tag": "sarcasm"
+   },
+   {
+    "id": "cou-te41",
+    "text": "Next door have started building a huge wall right on the boundary, did they get permission?",
+    "label": "planning",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te42",
+    "text": "Want to knock through between kitchen and dining room, it's a load-bearing wall. Do I need you involved?",
+    "label": "planning",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te43",
+    "text": "I'd like to object to the 40-flat development proposed on the old bus depot site.",
+    "label": "planning",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te44",
+    "text": "Not a noise complaint: I want to know whether the new nightclub on Bridge St actually had planning approval for late opening.",
+    "label": "planning",
+    "tag": "negation"
+   },
+   {
+    "id": "cou-te45",
+    "text": "Pre-application advice, how much does it cost?",
+    "label": "planning",
+    "tag": "slang"
+   },
+   {
+    "id": "cou-te46",
+    "text": "Is listed building consent needed to repaint the front door of a Grade II house?",
+    "label": "planning",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te47",
+    "text": "The hotel extension approved last year doesn't match the drawings at all, it's a storey taller.",
+    "label": "planning",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te48",
+    "text": "My permission expires next month and we haven't started. Can I extend it?",
+    "label": "planning",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te49",
+    "text": "The mobile phone mast they want to put next to the playground, where can I see the plans?",
+    "label": "planning",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te50",
+    "text": "can u check if 7 Elm Rd needs permission 4 a dormer",
+    "label": "planning",
+    "tag": "slang"
+   },
+   {
+    "id": "cou-te51",
+    "text": "Every night at 2am there's a delivery lorry reversing and beeping at the supermarket behind us.",
+    "label": "environmental_health",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te52",
+    "text": "Saw a cockroach run across the counter at the chicken shop on the parade.",
+    "label": "environmental_health",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te53",
+    "text": "The flat above (privately rented, not council) has music and shouting till dawn.",
+    "label": "environmental_health",
+    "tag": "negation"
+   },
+   {
+    "id": "cou-te54",
+    "text": "Stench from the sewage works is unbearable today, can't open the windows.",
+    "label": "environmental_health",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te55",
+    "text": "Mice everywhere in our privately owned house, do you offer a treatment service?",
+    "label": "environmental_health",
+    "tag": "plain"
+   },
+   {
+    "id": "cou-te56",
+    "text": "The dry cleaner's fumes are making my shop next door smell of chemicals all day.",
+    "label": "environmental_health",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te57",
+    "text": "My neighbour's cockerel starts at 4:30am. Lovely.",
+    "label": "environmental_health",
+    "tag": "sarcasm"
+   },
+   {
+    "id": "cou-te58",
+    "text": "Can you inspect the kitchen of the school canteen? Several kids have been ill after lunch.",
+    "label": "environmental_health",
+    "tag": "implicit"
+   },
+   {
+    "id": "cou-te59",
+    "text": "wasps nest in the wall of my house, pls send someone",
+    "label": "environmental_health",
+    "tag": "slang"
+   },
+   {
+    "id": "cou-te60",
+    "text": "A builder is burning plastic waste on site and black smoke is drifting over the gardens.",
+    "label": "environmental_health",
+    "tag": "misleading"
+   }
+  ],
+  "severity": [
+   {
+    "id": "sev-te01",
+    "text": "The site notice board has an old calendar pinned up from last month.",
+    "label": 0,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te02",
+    "text": "Nothing dangerous, just noting the canteen microwave is filthy.",
+    "label": 0,
+    "tag": "negation"
+   },
+   {
+    "id": "sev-te03",
+    "text": "Toolbox talk attendance sheet had one missing signature from someone on leave.",
+    "label": 0,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te04",
+    "text": "Great to see everyone in full PPE today; only observation is the boot-wash brush is worn.",
+    "label": 0,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te05",
+    "text": "Hi-vis stock getting low in the stores, maybe order more next week.",
+    "label": 0,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te06",
+    "text": "Coffee spilt on the site plan table, wiped up.",
+    "label": 0,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te07",
+    "text": "Not an emergency: labels on the drinking water tap have peeled off.",
+    "label": 0,
+    "tag": "negation"
+   },
+   {
+    "id": "sev-te08",
+    "text": "The kettle lead is a bit short so people have to stand awkwardly.",
+    "label": 0,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te09",
+    "text": "Traffic management plan is posted but in quite a small font.",
+    "label": 0,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te10",
+    "text": "one of the portaloos is out of toilet roll lol",
+    "label": 0,
+    "tag": "slang"
+   },
+   {
+    "id": "sev-te11",
+    "text": "Minor: a few screws on the floor of the finished show-home kitchen.",
+    "label": 0,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te12",
+    "text": "The word DANGER on the gate sign has faded; there is no actual hazard near it.",
+    "label": 0,
+    "tag": "misleading"
+   },
+   {
+    "id": "sev-te13",
+    "text": "Visitors' PPE rack is a bit disorganised.",
+    "label": 0,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te14",
+    "text": "Drying room heater is noisy but working fine.",
+    "label": 0,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te15",
+    "text": "Someone left their lunchbox on the materials rack in the ground-floor store.",
+    "label": 0,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te16",
+    "text": "Temporary lighting in the basement corridor keeps cutting out, it's dim down there.",
+    "label": 1,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te17",
+    "text": "Guard rail on the first-floor landing has one clip missing but is still attached.",
+    "label": 1,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te18",
+    "text": "Oil drip from the generator is spreading towards the drain.",
+    "label": 1,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te19",
+    "text": "Couple of lads doing short bursts on the breaker without ear defenders.",
+    "label": 1,
+    "tag": "slang"
+   },
+   {
+    "id": "sev-te20",
+    "text": "Material stacked on the scaffold platform beyond what the loading sign allows, though the scaffold looks OK.",
+    "label": 1,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te21",
+    "text": "Not immediately dangerous, but the emergency exit sign in block C isn't lit.",
+    "label": 1,
+    "tag": "negation"
+   },
+   {
+    "id": "sev-te22",
+    "text": "Hose from the pressure washer crossing the site road where dumpers pass.",
+    "label": 1,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te23",
+    "text": "Nobody has checked the harness inspection records this month.",
+    "label": 1,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te24",
+    "text": "Floor hole covers on level 2 are in place but not labelled 'hole below'.",
+    "label": 1,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te25",
+    "text": "A painter felt dizzy after using solvent paint in the corridor; the windows have since been opened.",
+    "label": 1,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te26",
+    "text": "Wheel stop missing at the edge of the tipping area, drivers are relying on a banksman.",
+    "label": 1,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te27",
+    "text": "Rebar ends sticking up without caps along the path to the welfare cabins.",
+    "label": 1,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te28",
+    "text": "Fire extinguisher has been moved and is propping a door open.",
+    "label": 1,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te29",
+    "text": "Site speed limit sign knocked over and vans are driving a bit fast near the gate.",
+    "label": 1,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te30",
+    "text": "Scaffold boards slightly warped on the second lift; still usable but a trip risk.",
+    "label": 1,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te31",
+    "text": "Someone is working under a suspended load right now.",
+    "label": 2,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te32",
+    "text": "STOP WORK: trench wall has just partially collapsed and a labourer is still in the next bay.",
+    "label": 2,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te33",
+    "text": "Roofers on the pitch with no harnesses, it's wet and blowing a gale.",
+    "label": 2,
+    "tag": "slang"
+   },
+   {
+    "id": "sev-te34",
+    "text": "Energised 11kV cable struck by the digger, bucket still in contact.",
+    "label": 2,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te35",
+    "text": "This is not a minor issue: the only fire escape is completely blocked by stacked plasterboard while 40 people are on floor 5.",
+    "label": 2,
+    "tag": "negation"
+   },
+   {
+    "id": "sev-te36",
+    "text": "Formwork for the slab is visibly bowing as the pour continues.",
+    "label": 2,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te37",
+    "text": "Dust from cutting the old ceiling tiles the survey flagged as asbestos, and no masks or extraction.",
+    "label": 2,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te38",
+    "text": "Guy standing on a stepladder on top of a scaffold tower to reach the ceiling.",
+    "label": 2,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te39",
+    "text": "Gas bottle hissing in the welfare cabin and the heater is still lit.",
+    "label": 2,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te40",
+    "text": "the excavator is swinging while blokes walk past right behind it, no banksman",
+    "label": 2,
+    "tag": "slang"
+   },
+   {
+    "id": "sev-te41",
+    "text": "Tidy site and good signage, but the tower crane anemometer shows 60 mph gusts and they're still lifting.",
+    "label": 2,
+    "tag": "misleading"
+   },
+   {
+    "id": "sev-te42",
+    "text": "Lone worker found unconscious in the plant room, cause unknown.",
+    "label": 2,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te43",
+    "text": "Kids from the estate have got through the fence and are climbing the scaffold.",
+    "label": 2,
+    "tag": "plain"
+   },
+   {
+    "id": "sev-te44",
+    "text": "Cherry picker basket gate tied open with rope, operator at 15m.",
+    "label": 2,
+    "tag": "implicit"
+   },
+   {
+    "id": "sev-te45",
+    "text": "Machinery being refuelled with the engine running and someone smoking next to it.",
+    "label": 2,
+    "tag": "plain"
+   }
+  ],
+  "deadline": [
+   {
+    "id": "dea-te01",
+    "text": "Can you get the risk register updated before Tuesday's steering group?",
+    "label": true,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te02",
+    "text": "Reply by noon tomorrow if you want a seat on the coach.",
+    "label": true,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te03",
+    "text": "Your MOT expires on the 14th, book a test before then.",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te04",
+    "text": "pls send deck b4 10 thx",
+    "label": true,
+    "tag": "slang"
+   },
+   {
+    "id": "dea-te05",
+    "text": "We need the planning drawings resubmitted within 21 days of this letter.",
+    "label": true,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te06",
+    "text": "Before the auditors arrive on Monday, could you make sure the fixed asset list reconciles?",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te07",
+    "text": "Mum's flight lands at 7:15, can you be at arrivals?",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te08",
+    "text": "It's not urgent in general, but I do need your expenses by the 25th for payroll.",
+    "label": true,
+    "tag": "negation"
+   },
+   {
+    "id": "dea-te09",
+    "text": "Sign and return the tenancy renewal by 1 December, otherwise it lapses.",
+    "label": true,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te10",
+    "text": "Could you chase the supplier today? They close for Christmas tomorrow.",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te11",
+    "text": "Please nominate a fire marshal for your floor before the drill on Thursday.",
+    "label": true,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te12",
+    "text": "Don't forget, parents' evening slots need booking by Friday.",
+    "label": true,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te13",
+    "text": "The kids need picking up at 3:15, can you do it?",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te14",
+    "text": "Last orders for the team hoodie are at midnight, add your size to the sheet!",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te15",
+    "text": "Approve the purchase order in the portal today or the discount expires.",
+    "label": true,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te16",
+    "text": "Can you proofread this before it goes to the printer at 8am?",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te17",
+    "text": "Grant application: final version to me no later than 17:00 on 9 May, please.",
+    "label": true,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te18",
+    "text": "The surgery rang, you need to call them back before 6 to confirm tomorrow's appointment.",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te19",
+    "text": "Before you leave tonight, lock the server room.",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te20",
+    "text": "Vote closes Sunday 23:59, get yours in!",
+    "label": true,
+    "tag": "slang"
+   },
+   {
+    "id": "dea-te21",
+    "text": "Your subscription renews on the 1st; cancel before then if you don't want to be charged.",
+    "label": true,
+    "tag": "implicit"
+   },
+   {
+    "id": "dea-te22",
+    "text": "Quick one: can you swap shifts with me on Saturday morning? Need to know by tonight.",
+    "label": true,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te23",
+    "text": "The deadline passed yesterday and we made it, well done all!",
+    "label": false,
+    "tag": "misleading"
+   },
+   {
+    "id": "dea-te24",
+    "text": "No deadline on this one, have a look whenever suits you.",
+    "label": false,
+    "tag": "negation"
+   },
+   {
+    "id": "dea-te25",
+    "text": "Attached are the photos from the away day.",
+    "label": false,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te26",
+    "text": "Reminder that the office kitchen gets deep-cleaned on Fridays.",
+    "label": false,
+    "tag": "misleading"
+   },
+   {
+    "id": "dea-te27",
+    "text": "I submitted the report on Monday as requested.",
+    "label": false,
+    "tag": "misleading"
+   },
+   {
+    "id": "dea-te28",
+    "text": "We should grab coffee sometime soon!",
+    "label": false,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te29",
+    "text": "The new policy takes effect on 1 April.",
+    "label": false,
+    "tag": "misleading"
+   },
+   {
+    "id": "dea-te30",
+    "text": "Just sharing this article, thought you'd find it interesting.",
+    "label": false,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te31",
+    "text": "Sorry I missed your call earlier.",
+    "label": false,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te32",
+    "text": "The builders say they'll be finished by the end of June.",
+    "label": false,
+    "tag": "misleading"
+   },
+   {
+    "id": "dea-te33",
+    "text": "lol that meeting was painful",
+    "label": false,
+    "tag": "slang"
+   },
+   {
+    "id": "dea-te34",
+    "text": "Our flight got delayed by three hours, we're stuck at Gatwick.",
+    "label": false,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te35",
+    "text": "Thanks for sending the invoice so quickly.",
+    "label": false,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te36",
+    "text": "Don't worry about the forms, I've already filled them in.",
+    "label": false,
+    "tag": "negation"
+   },
+   {
+    "id": "dea-te37",
+    "text": "The shop opens at 9 tomorrow.",
+    "label": false,
+    "tag": "misleading"
+   },
+   {
+    "id": "dea-te38",
+    "text": "Here are my notes from Tuesday's workshop.",
+    "label": false,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te39",
+    "text": "Congratulations on passing your driving test!",
+    "label": false,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te40",
+    "text": "I'll be on leave from the 3rd to the 10th.",
+    "label": false,
+    "tag": "misleading"
+   },
+   {
+    "id": "dea-te41",
+    "text": "The train was cancelled so I worked from home.",
+    "label": false,
+    "tag": "plain"
+   },
+   {
+    "id": "dea-te42",
+    "text": "Looking back, the project finished two weeks early.",
+    "label": false,
+    "tag": "misleading"
+   },
+   {
+    "id": "dea-te43",
+    "text": "Tomorrow's weather looks sunny.",
+    "label": false,
+    "tag": "misleading"
+   },
+   {
+    "id": "dea-te44",
+    "text": "The report you asked for is attached, no further action needed.",
+    "label": false,
+    "tag": "negation"
+   },
+   {
+    "id": "dea-te45",
+    "text": "Interesting that the council extended the consultation to March.",
+    "label": false,
+    "tag": "misleading"
+   }
+  ]
+ }
+}

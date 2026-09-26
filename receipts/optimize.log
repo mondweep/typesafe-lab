@@ -1,0 +1,18 @@
+
+## optimize campaign — tickets/department — 1 model arms
+| model | base val | champ val | base test | champ test | champ ECE | promo | maxWealth | budget |
+|---|---|---|---|---|---|---|---|---|
+| bge-small-en-v1.5-int8 | 80.7% | 84.7% | 79.3% | 84.0% | 0.0705 | 2 (calibration) | 3.14/20 | 8 |
+
+### champion arm: bge-small-en-v1.5-int8
+| arm | test acc | test ECE |
+|---|---|---|
+| jev (frozen replay) | 85.3% | 0.0731 |
+| local champion | 84.0% | 0.0705 |
+
+champion options: {"probeL2":0.001,"probeIterations":400,"probeLearningRate":0.8,"probeClassBalanced":true,"notForLambda":0.5,"abstainTau":0.35,"abstainScale":0.5,"logitScale":1,"calibrationFraction":0.2,"minCalibration":20,"head":"auto"}
+sequential test (best proposal): wealth max 3.14 / threshold 20, discordant champion/baseline 11/5, rejected=false
+validation N=150; budget consumed 8
+
+receipts → /home/claude/RuVector/npm/packages/typesafe/bench/results/optimize-receipts-2026-09-25.jsonl
+campaign receipt → /home/claude/receipts/optimize-int8.json

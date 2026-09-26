@@ -1,0 +1,3147 @@
+{
+ "model": "q15.gguf",
+ "template": "chatml",
+ "res": {
+  "council": {
+   "accuracy": 0.7666666666666667,
+   "prefix_ms": 10712,
+   "median_ms": 606,
+   "rows": [
+    {
+     "id": "cou-te01",
+     "label": "waste",
+     "tag": "misleading",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0303919946525186,
+      0.9555034216562481,
+      0.0051209956406722944,
+      0.008472357237204754,
+      0.00021044430512817718,
+      0.0003007865082280118
+     ],
+     "pred": "council_tax",
+     "conf": 0.9555034216562481,
+     "ms": 10712.367372,
+     "first": true
+    },
+    {
+     "id": "cou-te02",
+     "label": "waste",
+     "tag": "slang",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.9904275820880988,
+      0.007692381588010121,
+      0.0009759473000994605,
+      0.0008007202103145781,
+      0.00006401221328971714,
+      0.00003935660018737517
+     ],
+     "pred": "waste",
+     "conf": 0.9904275820880988,
+     "ms": 571.4092779999992,
+     "first": false
+    },
+    {
+     "id": "cou-te03",
+     "label": "waste",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.974621406085852,
+      0.010390305639264163,
+      0.005101687706775149,
+      0.009297179692659125,
+      0.0004019525287958477,
+      0.00018746834665366895
+     ],
+     "pred": "waste",
+     "conf": 0.974621406085852,
+     "ms": 595.2624479999995,
+     "first": false
+    },
+    {
+     "id": "cou-te04",
+     "label": "waste",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.4426119629510727,
+      0.05213430831570815,
+      0.005512235905499343,
+      0.010886877091190112,
+      0.01039380035338761,
+      0.4784608153831421
+     ],
+     "pred": "environmental_health",
+     "conf": 0.4784608153831421,
+     "ms": 837.6197929999998,
+     "first": false
+    },
+    {
+     "id": "cou-te05",
+     "label": "waste",
+     "tag": "negation",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.4758232456174278,
+      0.25610152475637,
+      0.04022682511857706,
+      0.11061507176244832,
+      0.0031522270716777614,
+      0.11408110567349908
+     ],
+     "pred": "waste",
+     "conf": 0.4758232456174278,
+     "ms": 930.8107070000005,
+     "first": false
+    },
+    {
+     "id": "cou-te06",
+     "label": "waste",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.6389482631565484,
+      0.0696020424318711,
+      0.15602767527979458,
+      0.07686659561722455,
+      0.02624643806924806,
+      0.032308985445313326
+     ],
+     "pred": "waste",
+     "conf": 0.6389482631565484,
+     "ms": 861.0302959999972,
+     "first": false
+    },
+    {
+     "id": "cou-te07",
+     "label": "waste",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.5947951218430066,
+      0.06783098297614054,
+      0.03239918263675454,
+      0.2014080863825243,
+      0.02027079136754039,
+      0.0832958347940336
+     ],
+     "pred": "waste",
+     "conf": 0.5947951218430066,
+     "ms": 589.6694300000017,
+     "first": false
+    },
+    {
+     "id": "cou-te08",
+     "label": "waste",
+     "tag": "misleading",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.085573144425625,
+      0.03972589344373045,
+      0.8434409396714948,
+      0.01859682660056011,
+      0.0021035209500746568,
+      0.010559674908515015
+     ],
+     "pred": "housing",
+     "conf": 0.8434409396714948,
+     "ms": 632.9870080000001,
+     "first": false
+    },
+    {
+     "id": "cou-te09",
+     "label": "waste",
+     "tag": "misleading",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.5468458975774961,
+      0.05992273381441888,
+      0.34251105319062697,
+      0.041581197189540196,
+      0.0041996678396906285,
+      0.004939450388227196
+     ],
+     "pred": "waste",
+     "conf": 0.5468458975774961,
+     "ms": 876.8464590000003,
+     "first": false
+    },
+    {
+     "id": "cou-te10",
+     "label": "waste",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.5894676258798389,
+      0.2133054326857417,
+      0.0583245825676175,
+      0.0858123117677488,
+      0.0032395761420029113,
+      0.04985047095705014
+     ],
+     "pred": "waste",
+     "conf": 0.5894676258798389,
+     "ms": 577.6532110000007,
+     "first": false
+    },
+    {
+     "id": "cou-te11",
+     "label": "council_tax",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0005458204908708949,
+      0.9983681000182067,
+      0.0003632794353561169,
+      0.0005387273894192381,
+      0.00004483633227209967,
+      0.0001392363338749231
+     ],
+     "pred": "council_tax",
+     "conf": 0.9983681000182067,
+     "ms": 785.908073999999,
+     "first": false
+    },
+    {
+     "id": "cou-te12",
+     "label": "council_tax",
+     "tag": "slang",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.068462295765196,
+      0.9140466551270905,
+      0.00915045280347174,
+      0.005128623246013001,
+      0.0015509780338475768,
+      0.001660995024381246
+     ],
+     "pred": "council_tax",
+     "conf": 0.9140466551270905,
+     "ms": 605.2837980000004,
+     "first": false
+    },
+    {
+     "id": "cou-te13",
+     "label": "council_tax",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0015321667473559763,
+      0.8950898301586256,
+      0.05162506723301771,
+      0.008061907258850575,
+      0.0016875483277510237,
+      0.04200348027439905
+     ],
+     "pred": "council_tax",
+     "conf": 0.8950898301586256,
+     "ms": 597.9097440000005,
+     "first": false
+    },
+    {
+     "id": "cou-te14",
+     "label": "council_tax",
+     "tag": "negation",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.00023912975948053918,
+      0.9991102482565902,
+      0.00019619056990521116,
+      0.0003007287187043934,
+      0.00006989814891733769,
+      0.00008380454640224581
+     ],
+     "pred": "council_tax",
+     "conf": 0.9991102482565902,
+     "ms": 899.4197449999992,
+     "first": false
+    },
+    {
+     "id": "cou-te15",
+     "label": "council_tax",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0003521670941595482,
+      0.9992523345442302,
+      0.00015400629229518409,
+      0.0001727409346938712,
+      0.00001639368949564754,
+      0.00005235744512546965
+     ],
+     "pred": "council_tax",
+     "conf": 0.9992523345442302,
+     "ms": 834.8318230000004,
+     "first": false
+    },
+    {
+     "id": "cou-te16",
+     "label": "council_tax",
+     "tag": "slang",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0017734149343643644,
+      0.9943911598705936,
+      0.001403609348999663,
+      0.0016062285133496511,
+      0.0003672662001405723,
+      0.00045832113255221007
+     ],
+     "pred": "council_tax",
+     "conf": 0.9943911598705936,
+     "ms": 883.8729999999996,
+     "first": false
+    },
+    {
+     "id": "cou-te17",
+     "label": "council_tax",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.07400423716295279,
+      0.20902150997744032,
+      0.4181843759904563,
+      0.08815349972481279,
+      0.03586141130725903,
+      0.17477496583707874
+     ],
+     "pred": "housing",
+     "conf": 0.4181843759904563,
+     "ms": 616.5384720000002,
+     "first": false
+    },
+    {
+     "id": "cou-te18",
+     "label": "council_tax",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0016223071425269517,
+      0.9975847727524475,
+      0.00029184003582085737,
+      0.0003966122165076364,
+      0.0000342575858737998,
+      0.00007021026682321129
+     ],
+     "pred": "council_tax",
+     "conf": 0.9975847727524475,
+     "ms": 577.9412309999971,
+     "first": false
+    },
+    {
+     "id": "cou-te19",
+     "label": "council_tax",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.021683425213570213,
+      0.9322216990165478,
+      0.018138373849938424,
+      0.009575330723873432,
+      0.00936153289140349,
+      0.009019638304666632
+     ],
+     "pred": "council_tax",
+     "conf": 0.9322216990165478,
+     "ms": 565.4388639999997,
+     "first": false
+    },
+    {
+     "id": "cou-te20",
+     "label": "council_tax",
+     "tag": "sarcasm",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0016388651375440855,
+      0.9841043846321171,
+      0.00435747246564783,
+      0.004444144571688973,
+      0.003629564961797287,
+      0.0018255682312046774
+     ],
+     "pred": "council_tax",
+     "conf": 0.9841043846321171,
+     "ms": 926.9924069999979,
+     "first": false
+    },
+    {
+     "id": "cou-te21",
+     "label": "housing",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0005617861961056666,
+      0.003870691533838706,
+      0.9940754168844591,
+      0.0012027033004943075,
+      0.00022622578495015117,
+      0.00006317630015208651
+     ],
+     "pred": "housing",
+     "conf": 0.9940754168844591,
+     "ms": 900.5486019999989,
+     "first": false
+    },
+    {
+     "id": "cou-te22",
+     "label": "housing",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.013297309874505128,
+      0.03049875140820487,
+      0.949249871537963,
+      0.006102216692102725,
+      0.0004468027152934727,
+      0.000405047771930726
+     ],
+     "pred": "housing",
+     "conf": 0.949249871537963,
+     "ms": 877.8669770000015,
+     "first": false
+    },
+    {
+     "id": "cou-te23",
+     "label": "housing",
+     "tag": "slang",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0037719636784147095,
+      0.021793850272137875,
+      0.9703121694520641,
+      0.003099680549755739,
+      0.0006557779135524397,
+      0.0003665581340751687
+     ],
+     "pred": "housing",
+     "conf": 0.9703121694520641,
+     "ms": 545.8690069999975,
+     "first": false
+    },
+    {
+     "id": "cou-te24",
+     "label": "housing",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.10326572254331962,
+      0.056951900106300204,
+      0.6271359353622068,
+      0.06395669665823582,
+      0.007154300738659009,
+      0.14153544459127862
+     ],
+     "pred": "housing",
+     "conf": 0.6271359353622068,
+     "ms": 802.4576589999997,
+     "first": false
+    },
+    {
+     "id": "cou-te25",
+     "label": "housing",
+     "tag": "negation",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.005460425048933164,
+      0.009348124642586242,
+      0.9806538258085603,
+      0.003276578368377831,
+      0.0009176180000997506,
+      0.00034342813144275843
+     ],
+     "pred": "housing",
+     "conf": 0.9806538258085603,
+     "ms": 907.535308999999,
+     "first": false
+    },
+    {
+     "id": "cou-te26",
+     "label": "housing",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0007034760800890909,
+      0.0036875400889210836,
+      0.9913958911094607,
+      0.001547231936052609,
+      0.0009047243529155365,
+      0.0017611364325609983
+     ],
+     "pred": "housing",
+     "conf": 0.9913958911094607,
+     "ms": 604.1264479999991,
+     "first": false
+    },
+    {
+     "id": "cou-te27",
+     "label": "housing",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0341105211206054,
+      0.07219890264395702,
+      0.5668807602862337,
+      0.1150427976951213,
+      0.03054301777938212,
+      0.1812240004747005
+     ],
+     "pred": "housing",
+     "conf": 0.5668807602862337,
+     "ms": 641.5331609999994,
+     "first": false
+    },
+    {
+     "id": "cou-te28",
+     "label": "housing",
+     "tag": "misleading",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.001809436772121498,
+      0.006177721828584251,
+      0.042200239965774156,
+      0.9489012209830846,
+      0.0005595866817799355,
+      0.0003517937686555505
+     ],
+     "pred": "highways",
+     "conf": 0.9489012209830846,
+     "ms": 801.7433369999999,
+     "first": false
+    },
+    {
+     "id": "cou-te29",
+     "label": "housing",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0772007067430486,
+      0.03438657245375713,
+      0.8582144428092702,
+      0.02580859070278621,
+      0.0012584095509728752,
+      0.0031312777401649714
+     ],
+     "pred": "housing",
+     "conf": 0.8582144428092702,
+     "ms": 585.7931430000026,
+     "first": false
+    },
+    {
+     "id": "cou-te30",
+     "label": "housing",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.02294931062332468,
+      0.018340950955659553,
+      0.8597124945460225,
+      0.01594626488491788,
+      0.07694218649381653,
+      0.006108792496258826
+     ],
+     "pred": "housing",
+     "conf": 0.8597124945460225,
+     "ms": 500.5824650000068,
+     "first": false
+    },
+    {
+     "id": "cou-te31",
+     "label": "highways",
+     "tag": "slang",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.2881150015414766,
+      0.147764236887438,
+      0.2063972430521183,
+      0.12888619500562776,
+      0.07538656462208164,
+      0.1534507588912577
+     ],
+     "pred": "waste",
+     "conf": 0.2881150015414766,
+     "ms": 510.39818899999955,
+     "first": false
+    },
+    {
+     "id": "cou-te32",
+     "label": "highways",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.010530453110894933,
+      0.04169230375041451,
+      0.030126104491525977,
+      0.8918578424003298,
+      0.009612403246348747,
+      0.01618089300048598
+     ],
+     "pred": "highways",
+     "conf": 0.8918578424003298,
+     "ms": 502.07561500000156,
+     "first": false
+    },
+    {
+     "id": "cou-te33",
+     "label": "highways",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0402337452298814,
+      0.027159411105379307,
+      0.08695719971132865,
+      0.8395983344782579,
+      0.002739664515741394,
+      0.0033116449594112643
+     ],
+     "pred": "highways",
+     "conf": 0.8395983344782579,
+     "ms": 544.9014349999998,
+     "first": false
+    },
+    {
+     "id": "cou-te34",
+     "label": "highways",
+     "tag": "negation",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0009374305001758668,
+      0.9851561027123409,
+      0.0020254661281420487,
+      0.010979304036686505,
+      0.0004103478080912097,
+      0.0004913488145634368
+     ],
+     "pred": "council_tax",
+     "conf": 0.9851561027123409,
+     "ms": 947.649605000006,
+     "first": false
+    },
+    {
+     "id": "cou-te35",
+     "label": "highways",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0027797419649877603,
+      0.007536849041139693,
+      0.014661272170073718,
+      0.9732826680953988,
+      0.0004812699507053107,
+      0.0012581987776947813
+     ],
+     "pred": "highways",
+     "conf": 0.9732826680953988,
+     "ms": 606.0357569999978,
+     "first": false
+    },
+    {
+     "id": "cou-te36",
+     "label": "highways",
+     "tag": "slang",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.011415871959454387,
+      0.663278952102463,
+      0.0219648338610545,
+      0.0658229936297882,
+      0.031266828817801885,
+      0.20625051962943805
+     ],
+     "pred": "council_tax",
+     "conf": 0.663278952102463,
+     "ms": 427.0588050000006,
+     "first": false
+    },
+    {
+     "id": "cou-te37",
+     "label": "highways",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.011229086550895453,
+      0.07314704627591533,
+      0.04379864418913524,
+      0.8680386240765495,
+      0.0014147694417857993,
+      0.002371829465718665
+     ],
+     "pred": "highways",
+     "conf": 0.8680386240765495,
+     "ms": 583.6075359999959,
+     "first": false
+    },
+    {
+     "id": "cou-te38",
+     "label": "highways",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.12994885777610457,
+      0.07393805433195019,
+      0.36238219170831776,
+      0.2868112123608207,
+      0.08051981377849257,
+      0.06639987004431425
+     ],
+     "pred": "housing",
+     "conf": 0.36238219170831776,
+     "ms": 654.8318429999999,
+     "first": false
+    },
+    {
+     "id": "cou-te39",
+     "label": "highways",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.019687929011490097,
+      0.11047831098607981,
+      0.6699995098696027,
+      0.17770904141144744,
+      0.0047094650234822165,
+      0.017415743697897813
+     ],
+     "pred": "housing",
+     "conf": 0.6699995098696027,
+     "ms": 719.0494390000022,
+     "first": false
+    },
+    {
+     "id": "cou-te40",
+     "label": "highways",
+     "tag": "sarcasm",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.08188077165529294,
+      0.10265195245148578,
+      0.11089673264960079,
+      0.6146102741739654,
+      0.04362853526101504,
+      0.04633173380864006
+     ],
+     "pred": "highways",
+     "conf": 0.6146102741739654,
+     "ms": 908.3032630000016,
+     "first": false
+    },
+    {
+     "id": "cou-te41",
+     "label": "planning",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.00029474668178898576,
+      0.0006173858880886689,
+      0.0009096638866888308,
+      0.0004485512488104434,
+      0.9965748763928676,
+      0.001154775901755555
+     ],
+     "pred": "planning",
+     "conf": 0.9965748763928676,
+     "ms": 546.2235660000006,
+     "first": false
+    },
+    {
+     "id": "cou-te42",
+     "label": "planning",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0009780121670419657,
+      0.005830676029058068,
+      0.9766454455081771,
+      0.002422917703816949,
+      0.013211528736021317,
+      0.000911419855884617
+     ],
+     "pred": "housing",
+     "conf": 0.9766454455081771,
+     "ms": 797.099553,
+     "first": false
+    },
+    {
+     "id": "cou-te43",
+     "label": "planning",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.000501530100508072,
+      0.0007873608603527546,
+      0.0005325691286694888,
+      0.0006507449827396816,
+      0.9810754995741939,
+      0.016452295353536036
+     ],
+     "pred": "planning",
+     "conf": 0.9810754995741939,
+     "ms": 730.8406250000044,
+     "first": false
+    },
+    {
+     "id": "cou-te44",
+     "label": "planning",
+     "tag": "negation",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.00038945181873323374,
+      0.0008033930586533196,
+      0.00024322973652000278,
+      0.0003376086441913972,
+      0.9922222473700326,
+      0.0060040693718694665
+     ],
+     "pred": "planning",
+     "conf": 0.9922222473700326,
+     "ms": 816.2015479999973,
+     "first": false
+    },
+    {
+     "id": "cou-te45",
+     "label": "planning",
+     "tag": "slang",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.01002915476590987,
+      0.91058311292954,
+      0.006809274048142522,
+      0.003951043702998668,
+      0.06388530349822165,
+      0.0047421110551873575
+     ],
+     "pred": "council_tax",
+     "conf": 0.91058311292954,
+     "ms": 492.7138750000013,
+     "first": false
+    },
+    {
+     "id": "cou-te46",
+     "label": "planning",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0012897711309021803,
+      0.0008201865671636204,
+      0.0008010494476394946,
+      0.0004562640822388709,
+      0.9952062282265306,
+      0.001426500545525267
+     ],
+     "pred": "planning",
+     "conf": 0.9952062282265306,
+     "ms": 533.6358449999971,
+     "first": false
+    },
+    {
+     "id": "cou-te47",
+     "label": "planning",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0015975683220346565,
+      0.0037233313196008747,
+      0.0015993488995981091,
+      0.001894754697064973,
+      0.9835330107552815,
+      0.007651986006419844
+     ],
+     "pred": "planning",
+     "conf": 0.9835330107552815,
+     "ms": 771.1654049999997,
+     "first": false
+    },
+    {
+     "id": "cou-te48",
+     "label": "planning",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.023070152176594482,
+      0.14590995258851658,
+      0.22297678176482935,
+      0.009547982388157752,
+      0.5937071718096958,
+      0.004787959272206029
+     ],
+     "pred": "planning",
+     "conf": 0.5937071718096958,
+     "ms": 563.7353300000032,
+     "first": false
+    },
+    {
+     "id": "cou-te49",
+     "label": "planning",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.029585737135570472,
+      0.00908011261114021,
+      0.0101684686695587,
+      0.00773499538392737,
+      0.9007467028976327,
+      0.042683983302170506
+     ],
+     "pred": "planning",
+     "conf": 0.9007467028976327,
+     "ms": 752.4333590000024,
+     "first": false
+    },
+    {
+     "id": "cou-te50",
+     "label": "planning",
+     "tag": "slang",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0027659642930510575,
+      0.005855311948180183,
+      0.012860015838254182,
+      0.0019967346206255284,
+      0.9618737572488271,
+      0.014648216051062028
+     ],
+     "pred": "planning",
+     "conf": 0.9618737572488271,
+     "ms": 651.2507609999957,
+     "first": false
+    },
+    {
+     "id": "cou-te51",
+     "label": "environmental_health",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.20669666814388227,
+      0.11811933529841157,
+      0.1974722542720738,
+      0.4152799272737513,
+      0.02656801694008956,
+      0.03586379807179152
+     ],
+     "pred": "highways",
+     "conf": 0.4152799272737513,
+     "ms": 801.6855940000023,
+     "first": false
+    },
+    {
+     "id": "cou-te52",
+     "label": "environmental_health",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.034415222297636196,
+      0.13855983794447804,
+      0.07142455278804846,
+      0.030403033291558794,
+      0.017412169114461314,
+      0.7077851845638172
+     ],
+     "pred": "environmental_health",
+     "conf": 0.7077851845638172,
+     "ms": 542.1936169999972,
+     "first": false
+    },
+    {
+     "id": "cou-te53",
+     "label": "environmental_health",
+     "tag": "negation",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.023313433707925966,
+      0.203284168533508,
+      0.5761577435266341,
+      0.05568928664945963,
+      0.012819057962629209,
+      0.1287363096198431
+     ],
+     "pred": "housing",
+     "conf": 0.5761577435266341,
+     "ms": 591.490168999997,
+     "first": false
+    },
+    {
+     "id": "cou-te54",
+     "label": "environmental_health",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.021511726565266235,
+      0.07937187374418173,
+      0.02351424901290593,
+      0.04501894986474792,
+      0.09325893174990527,
+      0.7373242690629929
+     ],
+     "pred": "environmental_health",
+     "conf": 0.7373242690629929,
+     "ms": 535.6945849999975,
+     "first": false
+    },
+    {
+     "id": "cou-te55",
+     "label": "environmental_health",
+     "tag": "plain",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.046217227105417355,
+      0.1622619568625076,
+      0.04788483283761539,
+      0.036225564832955054,
+      0.04147312751280329,
+      0.6659372908487013
+     ],
+     "pred": "environmental_health",
+     "conf": 0.6659372908487013,
+     "ms": 574.7857220000005,
+     "first": false
+    },
+    {
+     "id": "cou-te56",
+     "label": "environmental_health",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0006917036919136747,
+      0.003618707807111678,
+      0.0003770927400352797,
+      0.002156534934892145,
+      0.0008518737041572384,
+      0.99230408712189
+     ],
+     "pred": "environmental_health",
+     "conf": 0.99230408712189,
+     "ms": 589.2582150000017,
+     "first": false
+    },
+    {
+     "id": "cou-te57",
+     "label": "environmental_health",
+     "tag": "sarcasm",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.0017235741462833826,
+      0.02294354187076105,
+      0.001973375581758327,
+      0.006734442502276455,
+      0.0009969708518652932,
+      0.9656280950470555
+     ],
+     "pred": "environmental_health",
+     "conf": 0.9656280950470555,
+     "ms": 571.9185080000025,
+     "first": false
+    },
+    {
+     "id": "cou-te58",
+     "label": "environmental_health",
+     "tag": "implicit",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.00030137150099379846,
+      0.0015499677255744661,
+      0.00012010295397004061,
+      0.0013566069689130717,
+      0.00215062060351276,
+      0.9945213302470358
+     ],
+     "pred": "environmental_health",
+     "conf": 0.9945213302470358,
+     "ms": 768.9999640000024,
+     "first": false
+    },
+    {
+     "id": "cou-te59",
+     "label": "environmental_health",
+     "tag": "slang",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.009100305336895749,
+      0.015560599715702257,
+      0.016491509228960404,
+      0.007919160213027573,
+      0.04539360384845994,
+      0.9055348216569541
+     ],
+     "pred": "environmental_health",
+     "conf": 0.9055348216569541,
+     "ms": 505.0783880000017,
+     "first": false
+    },
+    {
+     "id": "cou-te60",
+     "label": "environmental_health",
+     "tag": "misleading",
+     "keys": [
+      "waste",
+      "council_tax",
+      "housing",
+      "highways",
+      "planning",
+      "environmental_health"
+     ],
+     "probs": [
+      0.004182624464359558,
+      0.025622072731115345,
+      0.007309145578855693,
+      0.017864892935845412,
+      0.0348982588533341,
+      0.9101230054364899
+     ],
+     "pred": "environmental_health",
+     "conf": 0.9101230054364899,
+     "ms": 549.8346670000028,
+     "first": false
+    }
+   ]
+  },
+  "severity": {
+   "accuracy": 0.7111111111111111,
+   "prefix_ms": 6484,
+   "median_ms": 497,
+   "rows": [
+    {
+     "id": "sev-te01",
+     "label": 0,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.9879185852964203,
+      0.010712684148958347,
+      0.0013687305546213595
+     ],
+     "pred": 0,
+     "conf": 0.9879185852964203,
+     "ms": 6484.206308000001,
+     "first": true
+    },
+    {
+     "id": "sev-te02",
+     "label": 0,
+     "tag": "negation",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.902668346263004,
+      0.09473889937592835,
+      0.002592754361067658
+     ],
+     "pred": 0,
+     "conf": 0.902668346263004,
+     "ms": 527.3492810000025,
+     "first": false
+    },
+    {
+     "id": "sev-te03",
+     "label": 0,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.16947475338737777,
+      0.819470468667828,
+      0.011054777944794158
+     ],
+     "pred": 1,
+     "conf": 0.819470468667828,
+     "ms": 439.1729889999988,
+     "first": false
+    },
+    {
+     "id": "sev-te04",
+     "label": 0,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.8205917370778087,
+      0.1735744552410481,
+      0.005833807681143157
+     ],
+     "pred": 0,
+     "conf": 0.8205917370778087,
+     "ms": 729.613562999999,
+     "first": false
+    },
+    {
+     "id": "sev-te05",
+     "label": 0,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.66229156388715,
+      0.31980910977890437,
+      0.017899326333945566
+     ],
+     "pred": 0,
+     "conf": 0.66229156388715,
+     "ms": 461.57157500000176,
+     "first": false
+    },
+    {
+     "id": "sev-te06",
+     "label": 0,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.9899984349268611,
+      0.009324747836955423,
+      0.0006768172361834859
+     ],
+     "pred": 0,
+     "conf": 0.9899984349268611,
+     "ms": 504.0926069999987,
+     "first": false
+    },
+    {
+     "id": "sev-te07",
+     "label": 0,
+     "tag": "negation",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.9738217536029052,
+      0.023762592168898245,
+      0.002415654228196551
+     ],
+     "pred": 0,
+     "conf": 0.9738217536029052,
+     "ms": 546.1312350000007,
+     "first": false
+    },
+    {
+     "id": "sev-te08",
+     "label": 0,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.8045154150807146,
+      0.17688337470379634,
+      0.01860121021548915
+     ],
+     "pred": 0,
+     "conf": 0.8045154150807146,
+     "ms": 454.62092799999664,
+     "first": false
+    },
+    {
+     "id": "sev-te09",
+     "label": 0,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.9351951455761114,
+      0.06158735147754901,
+      0.0032175029463395815
+     ],
+     "pred": 0,
+     "conf": 0.9351951455761114,
+     "ms": 483.8237749999971,
+     "first": false
+    },
+    {
+     "id": "sev-te10",
+     "label": 0,
+     "tag": "slang",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.8395737751671042,
+      0.1522862591744175,
+      0.008139965658478325
+     ],
+     "pred": 0,
+     "conf": 0.8395737751671042,
+     "ms": 440.8718929999959,
+     "first": false
+    },
+    {
+     "id": "sev-te11",
+     "label": 0,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.9470689903664099,
+      0.0475143509397552,
+      0.005416658693834947
+     ],
+     "pred": 0,
+     "conf": 0.9470689903664099,
+     "ms": 568.806270000001,
+     "first": false
+    },
+    {
+     "id": "sev-te12",
+     "label": 0,
+     "tag": "misleading",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.9517366520205778,
+      0.04474425222385238,
+      0.003519095755569829
+     ],
+     "pred": 0,
+     "conf": 0.9517366520205778,
+     "ms": 671.1392809999961,
+     "first": false
+    },
+    {
+     "id": "sev-te13",
+     "label": 0,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.754187192125575,
+      0.23395333394821885,
+      0.01185947392620619
+     ],
+     "pred": 0,
+     "conf": 0.754187192125575,
+     "ms": 449.40964200001326,
+     "first": false
+    },
+    {
+     "id": "sev-te14",
+     "label": 0,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.9718892375786353,
+      0.02689413232083743,
+      0.0012166301005272376
+     ],
+     "pred": 0,
+     "conf": 0.9718892375786353,
+     "ms": 414.4001949999947,
+     "first": false
+    },
+    {
+     "id": "sev-te15",
+     "label": 0,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.9412716950964937,
+      0.0549215623681955,
+      0.003806742535310868
+     ],
+     "pred": 0,
+     "conf": 0.9412716950964937,
+     "ms": 451.2894779999915,
+     "first": false
+    },
+    {
+     "id": "sev-te16",
+     "label": 1,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.1480713700327722,
+      0.8302808291515859,
+      0.021647800815641896
+     ],
+     "pred": 1,
+     "conf": 0.8302808291515859,
+     "ms": 856.7414180000051,
+     "first": false
+    },
+    {
+     "id": "sev-te17",
+     "label": 1,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.6884459652515749,
+      0.30005329730945934,
+      0.011500737438965816
+     ],
+     "pred": 0,
+     "conf": 0.6884459652515749,
+     "ms": 470.5401170000114,
+     "first": false
+    },
+    {
+     "id": "sev-te18",
+     "label": 1,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.02029438011261735,
+      0.8663395826231292,
+      0.1133660372642535
+     ],
+     "pred": 1,
+     "conf": 0.8663395826231292,
+     "ms": 431.52977499998815,
+     "first": false
+    },
+    {
+     "id": "sev-te19",
+     "label": 1,
+     "tag": "slang",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.0005397395782559643,
+      0.98392179280875,
+      0.015538467612993954
+     ],
+     "pred": 1,
+     "conf": 0.98392179280875,
+     "ms": 514.5443369999994,
+     "first": false
+    },
+    {
+     "id": "sev-te20",
+     "label": 1,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.1815800414202328,
+      0.7630776036769278,
+      0.05534235490283944
+     ],
+     "pred": 1,
+     "conf": 0.7630776036769278,
+     "ms": 584.0338150000025,
+     "first": false
+    },
+    {
+     "id": "sev-te21",
+     "label": 1,
+     "tag": "negation",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.02293821239895218,
+      0.9679815194811058,
+      0.009080268119942093
+     ],
+     "pred": 1,
+     "conf": 0.9679815194811058,
+     "ms": 543.527860000002,
+     "first": false
+    },
+    {
+     "id": "sev-te22",
+     "label": 1,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.03147855361277472,
+      0.9270419696887671,
+      0.04147947669845826
+     ],
+     "pred": 1,
+     "conf": 0.9270419696887671,
+     "ms": 480.8980540000048,
+     "first": false
+    },
+    {
+     "id": "sev-te23",
+     "label": 1,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.1252225790704439,
+      0.8275827106444995,
+      0.04719471028505657
+     ],
+     "pred": 1,
+     "conf": 0.8275827106444995,
+     "ms": 426.55624000000535,
+     "first": false
+    },
+    {
+     "id": "sev-te24",
+     "label": 1,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.7615426465240864,
+      0.2226931663672984,
+      0.01576418710861512
+     ],
+     "pred": 0,
+     "conf": 0.7615426465240864,
+     "ms": 474.55547099999967,
+     "first": false
+    },
+    {
+     "id": "sev-te25",
+     "label": 1,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.7252005767836214,
+      0.2638160684131828,
+      0.010983354803195844
+     ],
+     "pred": 0,
+     "conf": 0.7252005767836214,
+     "ms": 493.9551799999899,
+     "first": false
+    },
+    {
+     "id": "sev-te26",
+     "label": 1,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.11038827717828635,
+      0.7308020150146368,
+      0.15880970780707676
+     ],
+     "pred": 1,
+     "conf": 0.7308020150146368,
+     "ms": 538.7608739999996,
+     "first": false
+    },
+    {
+     "id": "sev-te27",
+     "label": 1,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.12985856745227775,
+      0.6714528000138886,
+      0.19868863253383362
+     ],
+     "pred": 1,
+     "conf": 0.6714528000138886,
+     "ms": 478.3848330000037,
+     "first": false
+    },
+    {
+     "id": "sev-te28",
+     "label": 1,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.05871778084603558,
+      0.9299553511624779,
+      0.011326867991486564
+     ],
+     "pred": 1,
+     "conf": 0.9299553511624779,
+     "ms": 497.33847499999683,
+     "first": false
+    },
+    {
+     "id": "sev-te29",
+     "label": 1,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.062154573873282375,
+      0.9074024162586869,
+      0.030443009868030703
+     ],
+     "pred": 1,
+     "conf": 0.9074024162586869,
+     "ms": 481.50264099999913,
+     "first": false
+    },
+    {
+     "id": "sev-te30",
+     "label": 1,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.2713958169081901,
+      0.7020470987959293,
+      0.026557084295880645
+     ],
+     "pred": 1,
+     "conf": 0.7020470987959293,
+     "ms": 464.13359800000035,
+     "first": false
+    },
+    {
+     "id": "sev-te31",
+     "label": 2,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.001642047033593535,
+      0.5233830294575677,
+      0.4749749235088388
+     ],
+     "pred": 1,
+     "conf": 0.5233830294575677,
+     "ms": 417.9207469999965,
+     "first": false
+    },
+    {
+     "id": "sev-te32",
+     "label": 2,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.0008565158534430893,
+      0.26782810036881033,
+      0.7313153837777466
+     ],
+     "pred": 2,
+     "conf": 0.7313153837777466,
+     "ms": 711.3230700000131,
+     "first": false
+    },
+    {
+     "id": "sev-te33",
+     "label": 2,
+     "tag": "slang",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.0004641143346268751,
+      0.34742249304516165,
+      0.6521133926202115
+     ],
+     "pred": 2,
+     "conf": 0.6521133926202115,
+     "ms": 725.6257239999977,
+     "first": false
+    },
+    {
+     "id": "sev-te34",
+     "label": 2,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.013682161867747487,
+      0.6112678415154134,
+      0.37504999661683913
+     ],
+     "pred": 1,
+     "conf": 0.6112678415154134,
+     "ms": 801.919367999988,
+     "first": false
+    },
+    {
+     "id": "sev-te35",
+     "label": 2,
+     "tag": "negation",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.00011091440645448261,
+      0.2759741006598275,
+      0.723914984933718
+     ],
+     "pred": 2,
+     "conf": 0.723914984933718,
+     "ms": 784.3030029999936,
+     "first": false
+    },
+    {
+     "id": "sev-te36",
+     "label": 2,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.19478497386022955,
+      0.7162995614748435,
+      0.08891546466492696
+     ],
+     "pred": 1,
+     "conf": 0.7162995614748435,
+     "ms": 475.6236840000056,
+     "first": false
+    },
+    {
+     "id": "sev-te37",
+     "label": 2,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.0015389395515239418,
+      0.732618234647867,
+      0.2658428258006091
+     ],
+     "pred": 1,
+     "conf": 0.732618234647867,
+     "ms": 804.1224389999988,
+     "first": false
+    },
+    {
+     "id": "sev-te38",
+     "label": 2,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.00943774231132928,
+      0.7412496862087599,
+      0.24931257147991082
+     ],
+     "pred": 1,
+     "conf": 0.7412496862087599,
+     "ms": 496.74008499999763,
+     "first": false
+    },
+    {
+     "id": "sev-te39",
+     "label": 2,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.015507856391331495,
+      0.9010241151644031,
+      0.08346802844426546
+     ],
+     "pred": 1,
+     "conf": 0.9010241151644031,
+     "ms": 527.8717990000005,
+     "first": false
+    },
+    {
+     "id": "sev-te40",
+     "label": 2,
+     "tag": "slang",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.0022803653260665612,
+      0.3078994165022928,
+      0.6898202181716406
+     ],
+     "pred": 2,
+     "conf": 0.6898202181716406,
+     "ms": 553.4690730000002,
+     "first": false
+    },
+    {
+     "id": "sev-te41",
+     "label": 2,
+     "tag": "misleading",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.010910629152213528,
+      0.6576442255253919,
+      0.33144514532239455
+     ],
+     "pred": 1,
+     "conf": 0.6576442255253919,
+     "ms": 730.950714999999,
+     "first": false
+    },
+    {
+     "id": "sev-te42",
+     "label": 2,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.0023276066640327353,
+      0.2251362221231242,
+      0.772536171212843
+     ],
+     "pred": 2,
+     "conf": 0.772536171212843,
+     "ms": 423.3888830000069,
+     "first": false
+    },
+    {
+     "id": "sev-te43",
+     "label": 2,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.005107081083769058,
+      0.1141927409535301,
+      0.8807001779627008
+     ],
+     "pred": 2,
+     "conf": 0.8807001779627008,
+     "ms": 469.55642900000385,
+     "first": false
+    },
+    {
+     "id": "sev-te44",
+     "label": 2,
+     "tag": "implicit",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.045498784654651764,
+      0.6268431061942618,
+      0.3276581091510864
+     ],
+     "pred": 1,
+     "conf": 0.6268431061942618,
+     "ms": 493.3547480000125,
+     "first": false
+    },
+    {
+     "id": "sev-te45",
+     "label": 2,
+     "tag": "plain",
+     "keys": [
+      0,
+      1,
+      2
+     ],
+     "probs": [
+      0.006086980987756953,
+      0.9682737463259928,
+      0.025639272686250162
+     ],
+     "pred": 1,
+     "conf": 0.9682737463259928,
+     "ms": 533.7319160000043,
+     "first": false
+    }
+   ]
+  },
+  "deadline": {
+   "accuracy": 0.7111111111111111,
+   "prefix_ms": 6592,
+   "median_ms": 467,
+   "rows": [
+    {
+     "id": "dea-te01",
+     "label": true,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.626216593669253,
+      0.373783406330747
+     ],
+     "pred": true,
+     "conf": 0.626216593669253,
+     "ms": 6592.024032999994,
+     "first": true
+    },
+    {
+     "id": "dea-te02",
+     "label": true,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.28855341433414206,
+      0.711446585665858
+     ],
+     "pred": false,
+     "conf": 0.711446585665858,
+     "ms": 469.14766699999745,
+     "first": false
+    },
+    {
+     "id": "dea-te03",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.8343636610123257,
+      0.16563633898767424
+     ],
+     "pred": true,
+     "conf": 0.8343636610123257,
+     "ms": 520.3320489999896,
+     "first": false
+    },
+    {
+     "id": "dea-te04",
+     "label": true,
+     "tag": "slang",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.6349156616231754,
+      0.3650843383768247
+     ],
+     "pred": true,
+     "conf": 0.6349156616231754,
+     "ms": 448.09587000000465,
+     "first": false
+    },
+    {
+     "id": "dea-te05",
+     "label": true,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.7939269344367381,
+      0.2060730655632619
+     ],
+     "pred": true,
+     "conf": 0.7939269344367381,
+     "ms": 584.0126239999954,
+     "first": false
+    },
+    {
+     "id": "dea-te06",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.43604785991408557,
+      0.5639521400859144
+     ],
+     "pred": false,
+     "conf": 0.5639521400859144,
+     "ms": 535.5082729999995,
+     "first": false
+    },
+    {
+     "id": "dea-te07",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.4881027945114128,
+      0.5118972054885872
+     ],
+     "pred": false,
+     "conf": 0.5118972054885872,
+     "ms": 502.3506619999971,
+     "first": false
+    },
+    {
+     "id": "dea-te08",
+     "label": true,
+     "tag": "negation",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.1004619358534171,
+      0.8995380641465829
+     ],
+     "pred": false,
+     "conf": 0.8995380641465829,
+     "ms": 703.2431660000002,
+     "first": false
+    },
+    {
+     "id": "dea-te09",
+     "label": true,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.9440268786582707,
+      0.05597312134172927
+     ],
+     "pred": true,
+     "conf": 0.9440268786582707,
+     "ms": 467.4992490000004,
+     "first": false
+    },
+    {
+     "id": "dea-te10",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.23807031857366373,
+      0.7619296814263363
+     ],
+     "pred": false,
+     "conf": 0.7619296814263363,
+     "ms": 427.9242520000116,
+     "first": false
+    },
+    {
+     "id": "dea-te11",
+     "label": true,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.4533048684720384,
+      0.5466951315279617
+     ],
+     "pred": false,
+     "conf": 0.5466951315279617,
+     "ms": 469.7244849999988,
+     "first": false
+    },
+    {
+     "id": "dea-te12",
+     "label": true,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.36290614864398385,
+      0.6370938513560161
+     ],
+     "pred": false,
+     "conf": 0.6370938513560161,
+     "ms": 497.2766580000025,
+     "first": false
+    },
+    {
+     "id": "dea-te13",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.24189034860542416,
+      0.7581096513945759
+     ],
+     "pred": false,
+     "conf": 0.7581096513945759,
+     "ms": 537.6233619999985,
+     "first": false
+    },
+    {
+     "id": "dea-te14",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.7355203218911764,
+      0.26447967810882356
+     ],
+     "pred": true,
+     "conf": 0.7355203218911764,
+     "ms": 534.5627109999914,
+     "first": false
+    },
+    {
+     "id": "dea-te15",
+     "label": true,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.7659552870589967,
+      0.23404471294100324
+     ],
+     "pred": true,
+     "conf": 0.7659552870589967,
+     "ms": 506.7039819999918,
+     "first": false
+    },
+    {
+     "id": "dea-te16",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.32000602357756835,
+      0.6799939764224316
+     ],
+     "pred": false,
+     "conf": 0.6799939764224316,
+     "ms": 478.3037769999937,
+     "first": false
+    },
+    {
+     "id": "dea-te17",
+     "label": true,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.9622907918099799,
+      0.037709208190020105
+     ],
+     "pred": true,
+     "conf": 0.9622907918099799,
+     "ms": 732.7396810000064,
+     "first": false
+    },
+    {
+     "id": "dea-te18",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.376722976882703,
+      0.6232770231172969
+     ],
+     "pred": false,
+     "conf": 0.6232770231172969,
+     "ms": 518.3849800000025,
+     "first": false
+    },
+    {
+     "id": "dea-te19",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.08476876277937646,
+      0.9152312372206235
+     ],
+     "pred": false,
+     "conf": 0.9152312372206235,
+     "ms": 445.0371690000029,
+     "first": false
+    },
+    {
+     "id": "dea-te20",
+     "label": true,
+     "tag": "slang",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.9780481425678431,
+      0.02195185743215688
+     ],
+     "pred": true,
+     "conf": 0.9780481425678431,
+     "ms": 528.668823,
+     "first": false
+    },
+    {
+     "id": "dea-te21",
+     "label": true,
+     "tag": "implicit",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.32374955896963825,
+      0.6762504410303617
+     ],
+     "pred": false,
+     "conf": 0.6762504410303617,
+     "ms": 746.7321190000075,
+     "first": false
+    },
+    {
+     "id": "dea-te22",
+     "label": true,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.44040061921000295,
+      0.559599380789997
+     ],
+     "pred": false,
+     "conf": 0.559599380789997,
+     "ms": 508.14128199999686,
+     "first": false
+    },
+    {
+     "id": "dea-te23",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.05313697337994599,
+      0.9468630266200541
+     ],
+     "pred": false,
+     "conf": 0.9468630266200541,
+     "ms": 448.3261510000011,
+     "first": false
+    },
+    {
+     "id": "dea-te24",
+     "label": false,
+     "tag": "negation",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.006736918602212592,
+      0.9932630813977874
+     ],
+     "pred": false,
+     "conf": 0.9932630813977874,
+     "ms": 425.9669889999932,
+     "first": false
+    },
+    {
+     "id": "dea-te25",
+     "label": false,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.008827774062413292,
+      0.9911722259375867
+     ],
+     "pred": false,
+     "conf": 0.9911722259375867,
+     "ms": 390.43407099999604,
+     "first": false
+    },
+    {
+     "id": "dea-te26",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.00694362748043043,
+      0.9930563725195696
+     ],
+     "pred": false,
+     "conf": 0.9930563725195696,
+     "ms": 462.3348960000003,
+     "first": false
+    },
+    {
+     "id": "dea-te27",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.03768582458162849,
+      0.9623141754183715
+     ],
+     "pred": false,
+     "conf": 0.9623141754183715,
+     "ms": 450.6133569999947,
+     "first": false
+    },
+    {
+     "id": "dea-te28",
+     "label": false,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.002980052172698353,
+      0.9970199478273016
+     ],
+     "pred": false,
+     "conf": 0.9970199478273016,
+     "ms": 417.81262600001355,
+     "first": false
+    },
+    {
+     "id": "dea-te29",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.027210196549948905,
+      0.9727898034500511
+     ],
+     "pred": false,
+     "conf": 0.9727898034500511,
+     "ms": 442.5667859999958,
+     "first": false
+    },
+    {
+     "id": "dea-te30",
+     "label": false,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.003455220820291492,
+      0.9965447791797085
+     ],
+     "pred": false,
+     "conf": 0.9965447791797085,
+     "ms": 435.44774499999767,
+     "first": false
+    },
+    {
+     "id": "dea-te31",
+     "label": false,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.017360397437657677,
+      0.9826396025623423
+     ],
+     "pred": false,
+     "conf": 0.9826396025623423,
+     "ms": 377.23551399999997,
+     "first": false
+    },
+    {
+     "id": "dea-te32",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.06928929322737755,
+      0.9307107067726225
+     ],
+     "pred": false,
+     "conf": 0.9307107067726225,
+     "ms": 474.90716200000315,
+     "first": false
+    },
+    {
+     "id": "dea-te33",
+     "label": false,
+     "tag": "slang",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.010169081649442278,
+      0.9898309183505577
+     ],
+     "pred": false,
+     "conf": 0.9898309183505577,
+     "ms": 411.9321029999992,
+     "first": false
+    },
+    {
+     "id": "dea-te34",
+     "label": false,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.062424072604525635,
+      0.9375759273954744
+     ],
+     "pred": false,
+     "conf": 0.9375759273954744,
+     "ms": 497.6831450000027,
+     "first": false
+    },
+    {
+     "id": "dea-te35",
+     "label": false,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.03692264609216762,
+      0.9630773539078323
+     ],
+     "pred": false,
+     "conf": 0.9630773539078323,
+     "ms": 419.6719029999949,
+     "first": false
+    },
+    {
+     "id": "dea-te36",
+     "label": false,
+     "tag": "negation",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.04569660289644246,
+      0.9543033971035575
+     ],
+     "pred": false,
+     "conf": 0.9543033971035575,
+     "ms": 481.79343700000027,
+     "first": false
+    },
+    {
+     "id": "dea-te37",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.009351361518306163,
+      0.9906486384816938
+     ],
+     "pred": false,
+     "conf": 0.9906486384816938,
+     "ms": 388.9669270000013,
+     "first": false
+    },
+    {
+     "id": "dea-te38",
+     "label": false,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.018424748290786472,
+      0.9815752517092136
+     ],
+     "pred": false,
+     "conf": 0.9815752517092136,
+     "ms": 433.4310159999877,
+     "first": false
+    },
+    {
+     "id": "dea-te39",
+     "label": false,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.02112680935739072,
+      0.9788731906426092
+     ],
+     "pred": false,
+     "conf": 0.9788731906426092,
+     "ms": 402.09982099999615,
+     "first": false
+    },
+    {
+     "id": "dea-te40",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.07906326067900607,
+      0.920936739320994
+     ],
+     "pred": false,
+     "conf": 0.920936739320994,
+     "ms": 466.05848399999377,
+     "first": false
+    },
+    {
+     "id": "dea-te41",
+     "label": false,
+     "tag": "plain",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.019755366096750968,
+      0.980244633903249
+     ],
+     "pred": false,
+     "conf": 0.980244633903249,
+     "ms": 406.47960399999283,
+     "first": false
+    },
+    {
+     "id": "dea-te42",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.03419214031076455,
+      0.9658078596892354
+     ],
+     "pred": false,
+     "conf": 0.9658078596892354,
+     "ms": 409.51207699999213,
+     "first": false
+    },
+    {
+     "id": "dea-te43",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.003274982204296998,
+      0.996725017795703
+     ],
+     "pred": false,
+     "conf": 0.996725017795703,
+     "ms": 386.975735,
+     "first": false
+    },
+    {
+     "id": "dea-te44",
+     "label": false,
+     "tag": "negation",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.010893265824891056,
+      0.989106734175109
+     ],
+     "pred": false,
+     "conf": 0.989106734175109,
+     "ms": 480.3311939999985,
+     "first": false
+    },
+    {
+     "id": "dea-te45",
+     "label": false,
+     "tag": "misleading",
+     "keys": [
+      true,
+      false
+     ],
+     "probs": [
+      0.03615333349942163,
+      0.9638466665005784
+     ],
+     "pred": false,
+     "conf": 0.9638466665005784,
+     "ms": 415.3760420000035,
+     "first": false
+    }
+   ]
+  }
+ }
+}

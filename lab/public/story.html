@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local or Hosted Decisions</title>
+<meta name="description" content="How we tested @ruvector/typesafe against Jev, typesafe.ai's System One model — reproduced, challenged, re-run live, and combined into a cascade. By Mondweep Chakravorty.">
+<meta property="og:title" content="Local or hosted typed decisions? Testing @ruvector/typesafe against Jev">
+<meta property="og:description" content="An open, reproducible evaluation — and an invitation to peer review.">
+<meta property="og:image" content="/story/11-cascade-tuner.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  body { background: var(--bg); }
+  .progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); width: 0; z-index: 20; transition: width .1s linear; }
+  .topbar { max-width: 1240px; margin: 0 auto; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .topbar a.btn { text-decoration: none; }
+  .hero { max-width: 1240px; margin: 0 auto; padding: 40px 16px 30px; }
+  .hero h1 { font-size: clamp(32px, 5.4vw, 60px); line-height: 1.04; letter-spacing: -.03em; max-width: 900px; }
+  .hero .kicker { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; color: var(--accent); font-weight: 700; margin-bottom: 14px; }
+  .hero p { font-size: 19px; color: var(--ink-2); max-width: 760px; }
+  .scrolly { max-width: 1240px; margin: 0 auto; padding: 0 16px 60px; display: grid; grid-template-columns: minmax(300px, 440px) 1fr; gap: 48px; }
+  .steps { padding-bottom: 30vh; }
+  .step { min-height: 78vh; display: flex; flex-direction: column; justify-content: center; opacity: .35; transition: opacity .35s; }
+  .step.on { opacity: 1; }
+  .step .num { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+  .step h2 { margin: 0 0 10px; font-size: 26px; line-height: 1.2; }
+  .step p, .step li { font-size: 16.5px; color: var(--ink-2); }
+  .step .big { font-size: 40px; font-weight: 800; letter-spacing: -.02em; color: var(--ink); line-height: 1.05; margin: 6px 0; }
+  .step .big .j { color: var(--jev); } .step .big .t { color: var(--ts); }
+  .step .inline-fig { display: none; }
+  .stage { position: sticky; top: 8vh; height: 84vh; display: flex; align-items: center; }
+  .stage figure { position: absolute; inset: 0; margin: 0; display: flex; flex-direction: column; justify-content: center; opacity: 0; transform: translateY(14px) scale(.985); transition: opacity .45s, transform .45s; pointer-events: none; }
+  .stage figure.on { opacity: 1; transform: none; pointer-events: auto; }
+  .stage img, .inline-fig img { width: 100%; max-height: 74vh; object-fit: contain; object-position: top; border-radius: 12px; border: 1px solid var(--line); box-shadow: 0 10px 40px rgba(0,0,0,.08); background: var(--surface); }
+  .stage figcaption, .inline-fig figcaption { font-size: 13px; color: var(--ink-3); margin-top: 10px; }
+  .cta { max-width: 1240px; margin: 0 auto; padding: 20px 16px 80px; }
+  .cta .grid a { text-decoration: none; color: inherit; }
+  .cta .card:hover { border-color: var(--accent); }
+  @media (max-width: 900px) {
+    .scrolly { grid-template-columns: 1fr; gap: 0; }
+    .stage { display: none; }
+    .step { min-height: auto; opacity: 1; padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .step .inline-fig { display: block; margin-top: 14px; }
+    .steps { padding-bottom: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="topbar">
+  <a href="/" class="brand" style="text-decoration:none;color:var(--ink)">Typed Decisions Lab</a>
+  <div class="row"><a class="btn" href="https://github.com/mondweep/typesafe-lab" target="_blank" rel="noopener">GitHub</a><a class="btn primary" href="/">Open the lab</a></div>
+</div>
+
+<header class="hero">
+  <div class="kicker">An open, reproducible evaluation · September 2026</div>
+  <h1>Fast and local, or smart and hosted? What we learned putting @ruvector/typesafe against Jev</h1>
+  <p>Six days after TypeSafe AI launched Jev, its "System One" model for typed decisions, an open-source clone of its API appeared in RuVector. It promised 5 ms decisions, no network and no token bill. We rebuilt it, reproduced its claims, tested both systems live on fresh data, and then combined them. This is what we found, and what we still don't know.</p>
+  <div class="byline small" style="margin-top:22px"><span class="avatar" aria-hidden="true">MC</span><span>Investigated and orchestrated by <a href="https://www.linkedin.com/in/mondweepchakravorty/" target="_blank" rel="noopener"><b>Mondweep Chakravorty</b></a> · DxSure / Agentics Consulting · built with Claude</span></div>
+</header>
+
+<section class="scrolly">
+  <div class="steps" id="steps">
+    <div class="step" data-fig="f1"><div class="num">01 · The question</div><h2>Two ways to make software decide</h2>
+      <p><b>Jev</b> is a hosted model that returns typed answers: pick one of these options, place this on a scale, or say how true this statement is. You describe the options in words, and it decides.</p>
+      <p><b>@ruvector/typesafe</b> copies Jev's request and response format exactly, but runs in-process. It compares text embeddings and learns from your labelled examples.</p>
+      <p>Could the free, local one stand in for the hosted one?</p>
+      <figure class="inline-fig"><img src="/story/01-start-hero.webp" alt="The lab's start page comparing Jev and typesafe"></figure></div>
+
+    <div class="step" data-fig="f2"><div class="num">02 · The approach</div><h2>Reproduce, challenge, go live, go fresh, then build</h2>
+      <ol><li><b>Reproduce.</b> We built the package from source and re-ran its author's own benchmarks. The headline numbers matched exactly.</li><li><b>Challenge.</b> Was the published comparison like-for-like?</li><li><b>Go live.</b> We ran Jev on the same tickets with a real API key.</li><li><b>Go fresh.</b> We tested on 150 new messages that neither system had seen.</li><li><b>Build.</b> Could the two work better together?</li></ol>
+      <p>Every step is live in a public lab, so anyone can re-run it.</p>
+      <figure class="inline-fig"><img src="/story/02-headline-findings.webp" alt="Headline findings"></figure></div>
+
+    <div class="step" data-fig="f3"><div class="num">03 · Like-for-like</div><h2>The published comparison wasn't apples to apples</h2>
+      <p>Jev scored 85% routing support tickets to the right team using <em>only a one-line description of each team</em>. typesafe's matching numbers used around 120 labelled tickets. Given the same descriptions and no examples:</p>
+      <div class="big"><span class="j">84.7%</span> vs <span class="t">44.0%</span></div>
+      <p>The ticket explorer shows Jev's recorded answer, Jev live, and typesafe untrained and trained, side by side for all 150 tickets.</p>
+      <figure class="inline-fig"><img src="/story/03-ticket-explorer.webp" alt="Ticket explorer with four answers"></figure></div>
+
+    <div class="step" data-fig="f4"><div class="num">04 · Does it read the question?</div><h2>Change one word and see who notices</h2>
+      <p>We changed "Which team should <b>own</b> this message" to "<b>avoid</b>". typesafe gave the same answer, because it never reads the instruction of a choice question. Jev noticed the question had become odd, and its confidence dropped from 100% to 31%.</p>
+      <p>With a negation, "needs a response soon" vs "does <b>NOT</b> need one", typesafe scored 0.84 vs 0.81. Jev scored 0.97 vs 0.04.</p>
+      <p>typesafe needs meaning in <em>labelled examples</em>, not in wording. With 12 examples, the same negated question works.</p>
+      <figure class="inline-fig"><img src="/story/06-negation.webp" alt="Negation experiment"></figure></div>
+
+    <div class="step" data-fig="f5"><div class="num">05 · Off-topic messages</div><h2>Neither system knows when to say "none of these"</h2>
+      <p>Asked "What is the capital of Australia?", Jev routed it to <em>feedback</em> at 96% confidence. With an explicit <code>other</code> option, which Jev's own guidance recommends, Jev caught <b>77%</b> of off-topic messages with 1% false alarms. typesafe caught 17%, with 24% false alarms.</p>
+      <figure class="inline-fig"><img src="/story/04-out-of-scope.webp" alt="Out-of-scope experiment"></figure></div>
+
+    <div class="step" data-fig="f6"><div class="num">06 · Confidence you can trust</div><h2>typesafe earns calibration once it has labels</h2>
+      <p>When a system says "90% sure", is it right 90% of the time? With about 100 labels per question, typesafe's confidence was <b>better calibrated than Jev's</b>: an error of 0.035–0.039, against 0.056–0.066. Untrained, it was badly off at 0.31.</p>
+      <p>We also corrected one claim. The package's README said Jev's urgency detection was worse than guessing. That was an artefact of a 0.5 cut-off. With the cut-off tuned on separate data, Jev scored 91%.</p>
+      <figure class="inline-fig"><img src="/story/07-calibration.webp" alt="Reliability diagrams"></figure></div>
+
+    <div class="step" data-fig="f7"><div class="num">07 · Fresh data</div><h2>150 new messages, three unrelated tasks</h2>
+      <p>The tasks were council enquiry routing, construction-site safety severity, and "does this message set a deadline?". Training and test messages were kept strictly apart, and each test message is tagged by what makes it tricky: slang, negation, misleading keywords, unstated intent or sarcasm.</p>
+      <div class="big"><span class="j">93–98%</span> vs <span class="t">61–75%</span></div>
+      <p>The trained typesafe model rated 9 of 15 <em>immediate</em> dangers as merely "Medium". Jev caught all 15.</p>
+      <figure class="inline-fig"><img src="/story/08-fresh-benchmark.webp" alt="Fresh benchmark results"></figure></div>
+
+    <div class="step" data-fig="f8"><div class="num">08 · Where it breaks</div><h2>Negation and misleading keywords</h2>
+      <p>"No council tax question here, I just want to pay my parking fine" was routed to council tax. Across the tricky categories, typesafe scored 50–71% and Jev 100%.</p>
+      <p>typesafe's real strengths are elsewhere: <b>10–40× lower latency</b>, answers that never leave your servers, and no per-token cost.</p>
+      <figure class="inline-fig"><img src="/story/09-by-difficulty.webp" alt="Accuracy by difficulty tag"></figure></div>
+
+    <div class="step" data-fig="f9"><div class="num">09 · Build</div><h2>A cascade: cheapest first, Jev last</h2>
+      <p>Each message goes to typesafe first. If typesafe isn't confident enough, it passes to a small <b>re-reader</b>, a 22M-parameter model fine-tuned in 6 minutes on CPU that reads the message and each option together. Next comes a <b>local LLM</b>, Qwen2.5-1.5B with the training examples in its prompt, and finally <b>Jev</b>.</p>
+      <p>We tried RuVector's own LLM runtime, ruvllm, first. It returned random characters, or silently gave canned "mock" replies, so the local stage runs llama.cpp for now. That finding is shared with the author.</p>
+      <figure class="inline-fig"><img src="/story/10-cascade-diagram.webp" alt="Cascade diagram"></figure></div>
+
+    <div class="step" data-fig="f10"><div class="num">10 · Result</div><h2>Jev-level accuracy with 41% of the traffic sent to Jev</h2>
+      <div class="big"><span class="j">93.3%</span> <span style="font-size:22px;color:var(--ink-3)">with only 41% sent to Jev</span></div>
+      <p>At 31% sent to Jev the cascade scored 92.7%; with everything kept local, about 81%. One caveat: these cut-offs were tuned on the same 150 test messages, so treat them as an upper bound. The lab lets you move the sliders yourself.</p>
+      <figure class="inline-fig"><img src="/story/11-cascade-tuner.webp" alt="Cascade tuner"></figure></div>
+
+    <div class="step" data-fig="f11"><div class="num">11 · Honest failure</div><h2>A confidently wrong local stage stops escalation</h2>
+      <p>The local LLM was 98% sure the parking-fine message was about council tax, so it never reached Jev, which would have been right. Deciding when to trust a cheap stage is the real engineering problem, and where we'd most value your ideas.</p>
+      <figure class="inline-fig"><img src="/story/13-cascade-try.webp" alt="Try a message in the cascade"></figure></div>
+
+    <div class="step" data-fig="f12"><div class="num">12 · Verdict</div><h2>Not substitutes: two different tools</h2>
+      <p><b>Jev</b> understands a decision you describe in words, with few or no examples. <b>typesafe</b> is a fast, private classifier that is well calibrated once you have labels. The most promising pattern combines them: Jev labels and adjudicates, typesafe serves the known, high-volume cases locally, and anything uncertain escalates.</p>
+      <figure class="inline-fig"><img src="/story/14-verdict.webp" alt="Verdict table"></figure></div>
+  </div>
+
+  <div class="stage" aria-hidden="true">
+    <figure id="f1"><img src="/story/01-start-hero.webp" alt=""><figcaption>The lab: both systems, live, side by side</figcaption></figure>
+    <figure id="f2"><img src="/story/02-headline-findings.webp" alt=""><figcaption>Headline findings, each labelled with where the number came from</figcaption></figure>
+    <figure id="f3"><img src="/story/03-ticket-explorer.webp" alt=""><figcaption>Ticket explorer: Jev recorded, Jev live, and typesafe untrained and trained</figcaption></figure>
+    <figure id="f4"><img src="/story/06-negation.webp" alt=""><figcaption>Experiment E6: negation</figcaption></figure>
+    <figure id="f5"><img src="/story/04-out-of-scope.webp" alt=""><figcaption>Experiment E2: off-topic messages, with and without an "other" option</figcaption></figure>
+    <figure id="f6"><img src="/story/07-calibration.webp" alt=""><figcaption>Reliability diagrams: does 90% confident mean 90% right?</figcaption></figure>
+    <figure id="f7"><img src="/story/08-fresh-benchmark.webp" alt=""><figcaption>Fresh benchmark: four setups on 150 unseen messages</figcaption></figure>
+    <figure id="f8"><img src="/story/09-by-difficulty.webp" alt=""><figcaption>Accuracy by difficulty tag</figcaption></figure>
+    <figure id="f9"><img src="/story/10-cascade-diagram.webp" alt=""><figcaption>The cascade: typesafe → re-reader → local LLM → Jev</figcaption></figure>
+    <figure id="f10"><img src="/story/11-cascade-tuner.webp" alt=""><figcaption>Tune it yourself: accuracy against the share sent to Jev</figcaption></figure>
+    <figure id="f11"><img src="/story/13-cascade-try.webp" alt=""><figcaption>Try any message: every stage runs live</figcaption></figure>
+    <figure id="f12"><img src="/story/14-verdict.webp" alt=""><figcaption>Verdict</figcaption></figure>
+  </div>
+</section>
+
+<section class="cta">
+  <h2 style="font-size:30px">Review it, break it, build on it</h2>
+  <p class="lede">This is one investigator's evaluation, on one hand-written dataset, over two days. It needs more eyes. We'd especially welcome:</p>
+  <div class="grid g3">
+    <div class="card"><h3>Peer review</h3><p class="small">Challenge the method, the dataset or the numbers. Every result has a runnable script and a downloadable receipt.</p></div>
+    <div class="card"><h3>Real use cases</h3><p class="small">Bring a real routing, triage or guardrail problem, ideally with labelled data, and let's test whether a local-first cascade holds up.</p></div>
+    <div class="card"><h3>Better stages</h3><p class="small">Better out-of-scope guards, calibrated escalation rules, a working ruvllm path, or RuVector's coherence gates as the "should I escalate?" signal.</p></div>
+  </div>
+  <div class="grid g3" style="margin-top:14px">
+    <a class="card" href="/"><span class="pill">Lab</span><h3 style="margin-top:6px">Open the Typed Decisions Lab →</h3><p class="small muted">Run the experiments live</p></a>
+    <a class="card" href="https://github.com/mondweep/typesafe-lab" target="_blank" rel="noopener"><span class="pill">GitHub</span><h3 style="margin-top:6px">mondweep/typesafe-lab →</h3><p class="small muted">Source, dataset, scripts, results</p></a>
+    <a class="card" href="https://www.linkedin.com/in/mondweepchakravorty/" target="_blank" rel="noopener"><span class="pill">Contact</span><h3 style="margin-top:6px">Mondweep Chakravorty →</h3><p class="small muted">Get involved or share a use case</p></a>
+  </div>
+  <p class="small muted" style="margin-top:24px">Tested: <a href="https://github.com/ruvnet/RuVector/tree/main/npm/packages/typesafe" target="_blank" rel="noopener">@ruvector/typesafe</a> (ruvnet/RuVector, MIT) and <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank" rel="noopener">Jev by TypeSafe AI</a>. Not affiliated with either. Independent evaluation by DxSure Ltd (Agentics Consulting), built with Claude.</p>
+</section>
+
+<script>
+(function () {
+  const steps = [...document.querySelectorAll('.step')];
+  const figs = Object.fromEntries([...document.querySelectorAll('.stage figure')].map((f) => [f.id, f]));
+  function activate(step) {
+    steps.forEach((s) => s.classList.toggle('on', s === step));
+    Object.values(figs).forEach((f) => f.classList.toggle('on', f.id === step.dataset.fig));
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) activate(e.target); });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  steps.forEach((s) => io.observe(s));
+  activate(steps[0]);
+  const bar = document.getElementById('progress');
+  addEventListener('scroll', () => { const h = document.documentElement; bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%'; }, { passive: true });
+})();
+</script>
+</body>
+</html>

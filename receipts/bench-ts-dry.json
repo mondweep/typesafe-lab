@@ -1,0 +1,7680 @@
+{
+ "dataset": "bench-v1",
+ "generated": "2026-09-26T11:21:10.314Z",
+ "embedder": "bge-small-en-v1.5-int8",
+ "train_reports": {
+  "council": {
+   "question": "council",
+   "accepted": 48,
+   "rejected": 0,
+   "head": "linear-probe",
+   "calibrated": false
+  },
+  "severity": {
+   "question": "severity",
+   "accepted": 36,
+   "rejected": 0,
+   "head": "linear-probe",
+   "calibrated": false
+  },
+  "deadline": {
+   "question": "deadline",
+   "accepted": 40,
+   "rejected": 0,
+   "head": "logistic",
+   "calibrated": false
+  }
+ },
+ "arms": {
+  "ts_zero": {
+   "tasks": {
+    "council": {
+     "metrics": {
+      "n": 60,
+      "answered": 60,
+      "accuracy": 0.7333333333333333,
+      "ece": 0.5628682106666666,
+      "mean_conf": 0.17046512266666666,
+      "p50_ms": 5.1,
+      "p95_ms": 6.8,
+      "mean_tokens": null
+     },
+     "rows": [
+      {
+       "id": "cou-te01",
+       "label": "waste",
+       "tag": "misleading",
+       "ms": 26.7,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.1812519,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.18764728,
+         "environmental_health": 0.15234396,
+         "highways": 0.1583068,
+         "housing": 0.17147438,
+         "planning": 0.15717092,
+         "waste": 0.1730567
+        },
+        "confidence": 0.1812519,
+        "abstain": 0.034081906,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te02",
+       "label": "waste",
+       "tag": "slang",
+       "ms": 5.2,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.16914251,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.16301994,
+         "environmental_health": 0.1669596,
+         "highways": 0.16926134,
+         "housing": 0.16429953,
+         "planning": 0.15927243,
+         "waste": 0.17718716
+        },
+        "confidence": 0.16914251,
+        "abstain": 0.045401905,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te03",
+       "label": "waste",
+       "tag": "plain",
+       "ms": 5.7,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.17087542,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.16031201,
+         "environmental_health": 0.1666062,
+         "highways": 0.16740125,
+         "housing": 0.16435464,
+         "planning": 0.16197757,
+         "waste": 0.17934836
+        },
+        "confidence": 0.17087542,
+        "abstain": 0.04724302,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te04",
+       "label": "waste",
+       "tag": "plain",
+       "ms": 4.9,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.16319494,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.15989731,
+         "environmental_health": 0.16295986,
+         "highways": 0.16220099,
+         "housing": 0.17541909,
+         "planning": 0.16788132,
+         "waste": 0.17164135
+        },
+        "confidence": 0.16319494,
+        "abstain": 0.0696854,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te05",
+       "label": "waste",
+       "tag": "negation",
+       "ms": 5.4,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.17543004,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.15841939,
+         "environmental_health": 0.16746303,
+         "highways": 0.16918802,
+         "housing": 0.15738301,
+         "planning": 0.16163108,
+         "waste": 0.18591547
+        },
+        "confidence": 0.17543004,
+        "abstain": 0.056398883,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te06",
+       "label": "waste",
+       "tag": "implicit",
+       "ms": 4.4,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.18010609,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.17045832,
+         "environmental_health": 0.1613635,
+         "highways": 0.15271325,
+         "housing": 0.16683574,
+         "planning": 0.1597513,
+         "waste": 0.18887787
+        },
+        "confidence": 0.18010609,
+        "abstain": 0.04644152,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te07",
+       "label": "waste",
+       "tag": "implicit",
+       "ms": 4.1,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.16504274,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.16605587,
+         "environmental_health": 0.16990125,
+         "highways": 0.17307448,
+         "housing": 0.16430603,
+         "planning": 0.15198813,
+         "waste": 0.17467423
+        },
+        "confidence": 0.16504274,
+        "abstain": 0.05513964,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te08",
+       "label": "waste",
+       "tag": "misleading",
+       "ms": 3.9,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.17061631,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.15894054,
+         "environmental_health": 0.16478588,
+         "highways": 0.15949011,
+         "housing": 0.17143469,
+         "planning": 0.16058649,
+         "waste": 0.18476231
+        },
+        "confidence": 0.17061631,
+        "abstain": 0.076563254,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te09",
+       "label": "waste",
+       "tag": "misleading",
+       "ms": 4.7,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.16930598,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.16890228,
+         "environmental_health": 0.16048658,
+         "highways": 0.16662005,
+         "housing": 0.16680758,
+         "planning": 0.15907787,
+         "waste": 0.17810567
+        },
+        "confidence": 0.16930598,
+        "abstain": 0.049407102,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te10",
+       "label": "waste",
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.16851455,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.17763007,
+         "environmental_health": 0.15991442,
+         "highways": 0.1663807,
+         "housing": 0.15893684,
+         "planning": 0.15796639,
+         "waste": 0.17917156
+        },
+        "confidence": 0.16851455,
+        "abstain": 0.059479352,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te11",
+       "label": "council_tax",
+       "tag": "implicit",
+       "ms": 4.4,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.16899955,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.18192238,
+         "environmental_health": 0.16803463,
+         "highways": 0.17099579,
+         "housing": 0.16629031,
+         "planning": 0.15676048,
+         "waste": 0.15599635
+        },
+        "confidence": 0.16899955,
+        "abstain": 0.07103479,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te12",
+       "label": "council_tax",
+       "tag": "slang",
+       "ms": 9.2,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.16666442,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.17879769,
+         "environmental_health": 0.15641409,
+         "highways": 0.1680228,
+         "housing": 0.16649976,
+         "planning": 0.1642704,
+         "waste": 0.1659953
+        },
+        "confidence": 0.16666442,
+        "abstain": 0.06786028,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te13",
+       "label": "council_tax",
+       "tag": "implicit",
+       "ms": 4.9,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.15945534,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.1697332,
+         "environmental_health": 0.16326554,
+         "highways": 0.16058196,
+         "housing": 0.17385066,
+         "planning": 0.16516227,
+         "waste": 0.16740641
+        },
+        "confidence": 0.15945534,
+        "abstain": 0.08280275,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te14",
+       "label": "council_tax",
+       "tag": "negation",
+       "ms": 6.8,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.17672032,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.17395487,
+         "environmental_health": 0.15677051,
+         "highways": 0.15656666,
+         "housing": 0.1869413,
+         "planning": 0.16547693,
+         "waste": 0.16028975
+        },
+        "confidence": 0.17672032,
+        "abstain": 0.054674745,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te15",
+       "label": "council_tax",
+       "tag": "plain",
+       "ms": 7.1,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.18345964,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.1922381,
+         "environmental_health": 0.15597792,
+         "highways": 0.16145743,
+         "housing": 0.16972846,
+         "planning": 0.16090178,
+         "waste": 0.1596963
+        },
+        "confidence": 0.18345964,
+        "abstain": 0.04566455,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te16",
+       "label": "council_tax",
+       "tag": "slang",
+       "ms": 5.6,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.18104455,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.1906189,
+         "environmental_health": 0.16072594,
+         "highways": 0.16253436,
+         "housing": 0.16630246,
+         "planning": 0.16227818,
+         "waste": 0.15754011
+        },
+        "confidence": 0.18104455,
+        "abstain": 0.050227746,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te17",
+       "label": "council_tax",
+       "tag": "implicit",
+       "ms": 5,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.17121908,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.1804015,
+         "environmental_health": 0.15164329,
+         "highways": 0.16637063,
+         "housing": 0.16896337,
+         "planning": 0.16898161,
+         "waste": 0.1636396
+        },
+        "confidence": 0.17121908,
+        "abstain": 0.0508999,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te18",
+       "label": "council_tax",
+       "tag": "plain",
+       "ms": 5.5,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.17363226,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.1834058,
+         "environmental_health": 0.15788577,
+         "highways": 0.16720305,
+         "housing": 0.16294235,
+         "planning": 0.16363777,
+         "waste": 0.16492522
+        },
+        "confidence": 0.17363226,
+        "abstain": 0.053289115,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te19",
+       "label": "council_tax",
+       "tag": "plain",
+       "ms": 5.3,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.17030525,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.17974421,
+         "environmental_health": 0.15931463,
+         "highways": 0.16041492,
+         "housing": 0.17576502,
+         "planning": 0.17091294,
+         "waste": 0.15384826
+        },
+        "confidence": 0.17030525,
+        "abstain": 0.052513283,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te20",
+       "label": "council_tax",
+       "tag": "sarcasm",
+       "ms": 5.7,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.16870944,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.16985138,
+         "environmental_health": 0.16103432,
+         "highways": 0.15772395,
+         "housing": 0.17755887,
+         "planning": 0.17082289,
+         "waste": 0.16300853
+        },
+        "confidence": 0.16870944,
+        "abstain": 0.049839392,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te21",
+       "label": "housing",
+       "tag": "implicit",
+       "ms": 5.3,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.16620281,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.17463413,
+         "environmental_health": 0.15378784,
+         "highways": 0.16443832,
+         "housing": 0.17594866,
+         "planning": 0.16632274,
+         "waste": 0.16486828
+        },
+        "confidence": 0.16620281,
+        "abstain": 0.05539029,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te22",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 5.9,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.17815337,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.16192487,
+         "environmental_health": 0.17231779,
+         "highways": 0.15681805,
+         "housing": 0.1870312,
+         "planning": 0.16007094,
+         "waste": 0.16183712
+        },
+        "confidence": 0.17815337,
+        "abstain": 0.04746711,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te23",
+       "label": "housing",
+       "tag": "slang",
+       "ms": 4.5,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.1760641,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.1644284,
+         "environmental_health": 0.16353545,
+         "highways": 0.16188256,
+         "housing": 0.18559198,
+         "planning": 0.16430564,
+         "waste": 0.16025597
+        },
+        "confidence": 0.1760641,
+        "abstain": 0.05133777,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te24",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 5.2,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.17429066,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.1577981,
+         "environmental_health": 0.17222331,
+         "highways": 0.15991965,
+         "housing": 0.1847124,
+         "planning": 0.16076499,
+         "waste": 0.16458154
+        },
+        "confidence": 0.17429066,
+        "abstain": 0.056421466,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te25",
+       "label": "housing",
+       "tag": "negation",
+       "ms": 6.6,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.17609067,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.16702116,
+         "environmental_health": 0.15844235,
+         "highways": 0.15488692,
+         "housing": 0.1770814,
+         "planning": 0.18486895,
+         "waste": 0.15769923
+        },
+        "confidence": 0.17609067,
+        "abstain": 0.04748381,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te26",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 5.5,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.17655785,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.17738488,
+         "environmental_health": 0.15428138,
+         "highways": 0.15439405,
+         "housing": 0.18639635,
+         "planning": 0.16999611,
+         "waste": 0.15754728
+        },
+        "confidence": 0.17655785,
+        "abstain": 0.05278268,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te27",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 5.4,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.16152637,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.16455851,
+         "environmental_health": 0.16543278,
+         "highways": 0.17319596,
+         "housing": 0.17187428,
+         "planning": 0.16688167,
+         "waste": 0.15805677
+        },
+        "confidence": 0.16152637,
+        "abstain": 0.0673779,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te28",
+       "label": "housing",
+       "tag": "misleading",
+       "ms": 5.1,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.16678888,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.1556795,
+         "environmental_health": 0.1665133,
+         "highways": 0.17001118,
+         "housing": 0.17823999,
+         "planning": 0.16956243,
+         "waste": 0.15999357
+        },
+        "confidence": 0.16678888,
+        "abstain": 0.06424545,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te29",
+       "label": "housing",
+       "tag": "implicit",
+       "ms": 4.9,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.17335196,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.15642326,
+         "environmental_health": 0.16272469,
+         "highways": 0.15873751,
+         "housing": 0.18721753,
+         "planning": 0.17093791,
+         "waste": 0.16395903
+        },
+        "confidence": 0.17335196,
+        "abstain": 0.074061334,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te30",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 4.5,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.17425218,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.17921606,
+         "environmental_health": 0.15084788,
+         "highways": 0.1581806,
+         "housing": 0.18161085,
+         "planning": 0.17052811,
+         "waste": 0.15961646
+        },
+        "confidence": 0.17425218,
+        "abstain": 0.040518872,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te31",
+       "label": "highways",
+       "tag": "slang",
+       "ms": 4.4,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.16311999,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.1707011,
+         "environmental_health": 0.1586262,
+         "highways": 0.17176868,
+         "housing": 0.17340557,
+         "planning": 0.16518077,
+         "waste": 0.16031761
+        },
+        "confidence": 0.16311999,
+        "abstain": 0.0593152,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te32",
+       "label": "highways",
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.17780481,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.16140634,
+         "environmental_health": 0.15662059,
+         "highways": 0.19108534,
+         "housing": 0.1695552,
+         "planning": 0.16416605,
+         "waste": 0.1571665
+        },
+        "confidence": 0.17780481,
+        "abstain": 0.06950048,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te33",
+       "label": "highways",
+       "tag": "implicit",
+       "ms": 5.1,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.16177914,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.16499218,
+         "environmental_health": 0.16800605,
+         "highways": 0.17538743,
+         "housing": 0.16798984,
+         "planning": 0.16262238,
+         "waste": 0.16100216
+        },
+        "confidence": 0.16177914,
+        "abstain": 0.0775899,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te34",
+       "label": "highways",
+       "tag": "negation",
+       "ms": 6.6,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.173434,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.1808256,
+         "environmental_health": 0.15431944,
+         "highways": 0.18176365,
+         "housing": 0.16800986,
+         "planning": 0.16153005,
+         "waste": 0.15355141
+        },
+        "confidence": 0.173434,
+        "abstain": 0.045826796,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te35",
+       "label": "highways",
+       "tag": "implicit",
+       "ms": 3.9,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.15966026,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.1623035,
+         "environmental_health": 0.16591121,
+         "highways": 0.17080669,
+         "housing": 0.16379131,
+         "planning": 0.16621232,
+         "waste": 0.1709749
+        },
+        "confidence": 0.15966026,
+        "abstain": 0.0661771,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te36",
+       "label": "highways",
+       "tag": "slang",
+       "ms": 2.8,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.18724856,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.15829591,
+         "environmental_health": 0.16879502,
+         "highways": 0.19545336,
+         "housing": 0.16199939,
+         "planning": 0.15852574,
+         "waste": 0.15693063
+        },
+        "confidence": 0.18724856,
+        "abstain": 0.041978326,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te37",
+       "label": "highways",
+       "tag": "plain",
+       "ms": 5.3,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.17394903,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.1640611,
+         "environmental_health": 0.16230732,
+         "highways": 0.18267319,
+         "housing": 0.16536021,
+         "planning": 0.16766462,
+         "waste": 0.15793356
+        },
+        "confidence": 0.17394903,
+        "abstain": 0.047758244,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te38",
+       "label": "highways",
+       "tag": "implicit",
+       "ms": 5.1,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.1661461,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.16180839,
+         "environmental_health": 0.17006013,
+         "highways": 0.17932624,
+         "housing": 0.16945466,
+         "planning": 0.15923156,
+         "waste": 0.16011901
+        },
+        "confidence": 0.1661461,
+        "abstain": 0.073498115,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te39",
+       "label": "highways",
+       "tag": "plain",
+       "ms": 5,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.16216551,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.16852427,
+         "environmental_health": 0.16087683,
+         "highways": 0.17272297,
+         "housing": 0.16340403,
+         "planning": 0.16402154,
+         "waste": 0.17045039
+        },
+        "confidence": 0.16216551,
+        "abstain": 0.06112359,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te40",
+       "label": "highways",
+       "tag": "sarcasm",
+       "ms": 6.1,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.16106115,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.16142072,
+         "environmental_health": 0.1577364,
+         "highways": 0.16816837,
+         "housing": 0.17182772,
+         "planning": 0.16845635,
+         "waste": 0.1723904
+        },
+        "confidence": 0.16106115,
+        "abstain": 0.06571856,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te41",
+       "label": "planning",
+       "tag": "implicit",
+       "ms": 4.8,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.17948197,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.16182671,
+         "environmental_health": 0.15564606,
+         "highways": 0.15768199,
+         "housing": 0.18069643,
+         "planning": 0.18953502,
+         "waste": 0.1546138
+        },
+        "confidence": 0.17948197,
+        "abstain": 0.05304062,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te42",
+       "label": "planning",
+       "tag": "implicit",
+       "ms": 5.8,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.16783819,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.1601433,
+         "environmental_health": 0.16171128,
+         "highways": 0.15858887,
+         "housing": 0.17832468,
+         "planning": 0.17678797,
+         "waste": 0.16444394
+        },
+        "confidence": 0.16783819,
+        "abstain": 0.058805663,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te43",
+       "label": "planning",
+       "tag": "plain",
+       "ms": 5.2,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.17364427,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.16235526,
+         "environmental_health": 0.15380795,
+         "highways": 0.16517128,
+         "housing": 0.16647552,
+         "planning": 0.1840852,
+         "waste": 0.1681047
+        },
+        "confidence": 0.17364427,
+        "abstain": 0.056717906,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te44",
+       "label": "planning",
+       "tag": "negation",
+       "ms": 6.1,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.16808797,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.17000331,
+         "environmental_health": 0.16011012,
+         "highways": 0.16888553,
+         "housing": 0.16885455,
+         "planning": 0.1777385,
+         "waste": 0.15440798
+        },
+        "confidence": 0.16808797,
+        "abstain": 0.054296218,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te45",
+       "label": "planning",
+       "tag": "slang",
+       "ms": 4,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.16515124,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.1758985,
+         "environmental_health": 0.16088536,
+         "highways": 0.16832747,
+         "housing": 0.1674769,
+         "planning": 0.17252444,
+         "waste": 0.1548873
+        },
+        "confidence": 0.16515124,
+        "abstain": 0.06109923,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te46",
+       "label": "planning",
+       "tag": "plain",
+       "ms": 5,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.17707095,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.16143943,
+         "environmental_health": 0.15557267,
+         "highways": 0.16297017,
+         "housing": 0.185555,
+         "planning": 0.18123278,
+         "waste": 0.15322994
+        },
+        "confidence": 0.17707095,
+        "abstain": 0.04572259,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te47",
+       "label": "planning",
+       "tag": "plain",
+       "ms": 5.3,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.17312339,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.16563113,
+         "environmental_health": 0.1550264,
+         "highways": 0.15776831,
+         "housing": 0.17283958,
+         "planning": 0.1885112,
+         "waste": 0.16022338
+        },
+        "confidence": 0.17312339,
+        "abstain": 0.081628114,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te48",
+       "label": "planning",
+       "tag": "implicit",
+       "ms": 4.9,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.17405333,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.16860884,
+         "environmental_health": 0.15884788,
+         "highways": 0.15917319,
+         "housing": 0.16880101,
+         "planning": 0.18451947,
+         "waste": 0.16004959
+        },
+        "confidence": 0.17405333,
+        "abstain": 0.05672109,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te49",
+       "label": "planning",
+       "tag": "plain",
+       "ms": 5.1,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.16629128,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.17142625,
+         "environmental_health": 0.16171321,
+         "highways": 0.16645573,
+         "housing": 0.1602482,
+         "planning": 0.17735939,
+         "waste": 0.16279726
+        },
+        "confidence": 0.16629128,
+        "abstain": 0.06240499,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te50",
+       "label": "planning",
+       "tag": "slang",
+       "ms": 4.2,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.16862898,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.16134486,
+         "environmental_health": 0.16221943,
+         "highways": 0.16684988,
+         "housing": 0.1776536,
+         "planning": 0.17423311,
+         "waste": 0.1576991
+        },
+        "confidence": 0.16862898,
+        "abstain": 0.05079904,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te51",
+       "label": "environmental_health",
+       "tag": "implicit",
+       "ms": 5.6,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.16469012,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.16491196,
+         "environmental_health": 0.17708729,
+         "highways": 0.16995843,
+         "housing": 0.16225219,
+         "planning": 0.15520641,
+         "waste": 0.17058377
+        },
+        "confidence": 0.16469012,
+        "abstain": 0.07000593,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te52",
+       "label": "environmental_health",
+       "tag": "plain",
+       "ms": 5.2,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.16376084,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.16186,
+         "environmental_health": 0.17825443,
+         "highways": 0.17080939,
+         "housing": 0.15863319,
+         "planning": 0.1610397,
+         "waste": 0.16940327
+        },
+        "confidence": 0.16376084,
+        "abstain": 0.08130841,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te53",
+       "label": "environmental_health",
+       "tag": "negation",
+       "ms": 5.2,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.16363241,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.17250884,
+         "environmental_health": 0.17485198,
+         "highways": 0.16373019,
+         "housing": 0.16702622,
+         "planning": 0.16371042,
+         "waste": 0.15817237
+        },
+        "confidence": 0.16363241,
+        "abstain": 0.06416615,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te54",
+       "label": "environmental_health",
+       "tag": "implicit",
+       "ms": 4.4,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.17032334,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.15297548,
+         "environmental_health": 0.1825787,
+         "highways": 0.16705546,
+         "housing": 0.16837904,
+         "planning": 0.15910529,
+         "waste": 0.16990605
+        },
+        "confidence": 0.17032334,
+        "abstain": 0.067123674,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te55",
+       "label": "environmental_health",
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.16531499,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.16361542,
+         "environmental_health": 0.1703565,
+         "highways": 0.15911023,
+         "housing": 0.17572479,
+         "planning": 0.16690153,
+         "waste": 0.16429153
+        },
+        "confidence": 0.16531499,
+        "abstain": 0.059239265,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te56",
+       "label": "environmental_health",
+       "tag": "implicit",
+       "ms": 4.8,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.18171401,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.15767865,
+         "environmental_health": 0.19337001,
+         "highways": 0.15878424,
+         "housing": 0.16734447,
+         "planning": 0.15469323,
+         "waste": 0.16812947
+        },
+        "confidence": 0.18171401,
+        "abstain": 0.060278237,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te57",
+       "label": "environmental_health",
+       "tag": "sarcasm",
+       "ms": 4.4,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.16223328,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.1654787,
+         "environmental_health": 0.17239039,
+         "highways": 0.16788602,
+         "housing": 0.16198896,
+         "planning": 0.16748103,
+         "waste": 0.16477494
+        },
+        "confidence": 0.16223328,
+        "abstain": 0.05891922,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te58",
+       "label": "environmental_health",
+       "tag": "implicit",
+       "ms": 4.8,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.16388398,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.16428898,
+         "environmental_health": 0.17135331,
+         "highways": 0.15940298,
+         "housing": 0.168865,
+         "planning": 0.16113733,
+         "waste": 0.1749524
+        },
+        "confidence": 0.16388398,
+        "abstain": 0.06326531,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te59",
+       "label": "environmental_health",
+       "tag": "slang",
+       "ms": 4,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.17071828,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.15986331,
+         "environmental_health": 0.18056369,
+         "highways": 0.15945819,
+         "housing": 0.17221542,
+         "planning": 0.16841882,
+         "waste": 0.1594806
+        },
+        "confidence": 0.17071828,
+        "abstain": 0.054525923,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te60",
+       "label": "environmental_health",
+       "tag": "misleading",
+       "ms": 5.2,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.16492681,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.15339029,
+         "environmental_health": 0.17692189,
+         "highways": 0.1579593,
+         "housing": 0.169672,
+         "planning": 0.16856661,
+         "waste": 0.1734899
+        },
+        "confidence": 0.16492681,
+        "abstain": 0.06779871,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      }
+     ]
+    },
+    "severity": {
+     "metrics": {
+      "n": 45,
+      "answered": 45,
+      "accuracy": 0.3333333333333333,
+      "mae": 0.6666666666666666,
+      "high_recall": 0,
+      "high_missed_as_low": 0,
+      "p50_ms": 4.7,
+      "p95_ms": 5.5,
+      "mean_tokens": null
+     },
+     "rows": [
+      {
+       "id": "sev-te01",
+       "label": 0,
+       "tag": "plain",
+       "ms": 24.4,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29402268,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33511877,
+         0.33559248,
+         0.32928875
+        ],
+        "confidence": 0.29402268,
+        "abstain": 0.123869844,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te02",
+       "label": 0,
+       "tag": "negation",
+       "ms": 3.9,
+       "ans": {
+        "pred": 1,
+        "conf": 0.30724746,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.34604788,
+         0.3371851,
+         0.31676704
+        ],
+        "confidence": 0.30724746,
+        "abstain": 0.112124376,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te03",
+       "label": 0,
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": 1,
+        "conf": 0.30122972,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.34453872,
+         0.32728198,
+         0.3281793
+        ],
+        "confidence": 0.30122972,
+        "abstain": 0.12570141,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te04",
+       "label": 0,
+       "tag": "implicit",
+       "ms": 5.3,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29513583,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33036143,
+         0.32772672,
+         0.34191188
+        ],
+        "confidence": 0.29513583,
+        "abstain": 0.13680732,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te05",
+       "label": 0,
+       "tag": "plain",
+       "ms": 4.6,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29898155,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33573383,
+         0.33465567,
+         0.3296104
+        ],
+        "confidence": 0.29898155,
+        "abstain": 0.109468505,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te06",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.9,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29940662,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33970815,
+         0.32923582,
+         0.33105603
+        ],
+        "confidence": 0.29940662,
+        "abstain": 0.1186357,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te07",
+       "label": 0,
+       "tag": "negation",
+       "ms": 4,
+       "ans": {
+        "pred": 1,
+        "conf": 0.296414,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33782285,
+         0.33416542,
+         0.3280117
+        ],
+        "confidence": 0.296414,
+        "abstain": 0.12257569,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te08",
+       "label": 0,
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29529023,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3359171,
+         0.33715087,
+         0.32693204
+        ],
+        "confidence": 0.29529023,
+        "abstain": 0.12416001,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te09",
+       "label": 0,
+       "tag": "implicit",
+       "ms": 3.7,
+       "ans": {
+        "pred": 1,
+        "conf": 0.3045725,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3369742,
+         0.33859715,
+         0.3244287
+        ],
+        "confidence": 0.3045725,
+        "abstain": 0.10048719,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te10",
+       "label": 0,
+       "tag": "slang",
+       "ms": 3.9,
+       "ans": {
+        "pred": 1,
+        "conf": 0.2914928,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33392018,
+         0.33231393,
+         0.33376592
+        ],
+        "confidence": 0.2914928,
+        "abstain": 0.12705845,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te11",
+       "label": 0,
+       "tag": "plain",
+       "ms": 5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.30617195,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.34768808,
+         0.3220238,
+         0.3302881
+        ],
+        "confidence": 0.30617195,
+        "abstain": 0.11940625,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te12",
+       "label": 0,
+       "tag": "misleading",
+       "ms": 4.7,
+       "ans": {
+        "pred": 1,
+        "conf": 0.3050268,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3367692,
+         0.34041426,
+         0.32281658
+        ],
+        "confidence": 0.3050268,
+        "abstain": 0.10395408,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te13",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.8,
+       "ans": {
+        "pred": 1,
+        "conf": 0.30133012,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33711305,
+         0.34111324,
+         0.32177377
+        ],
+        "confidence": 0.30133012,
+        "abstain": 0.116627365,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te14",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.7,
+       "ans": {
+        "pred": 1,
+        "conf": 0.30285844,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.34413937,
+         0.3369533,
+         0.31890726
+        ],
+        "confidence": 0.30285844,
+        "abstain": 0.11995412,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te15",
+       "label": 0,
+       "tag": "plain",
+       "ms": 4.5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.2784931,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33738616,
+         0.3300766,
+         0.33253723
+        ],
+        "confidence": 0.2784931,
+        "abstain": 0.17455687,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te16",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.28825495,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33249784,
+         0.33656213,
+         0.33094
+        ],
+        "confidence": 0.28825495,
+        "abstain": 0.14353122,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te17",
+       "label": 1,
+       "tag": "plain",
+       "ms": 5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.2890862,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33076856,
+         0.33466306,
+         0.33456838
+        ],
+        "confidence": 0.2890862,
+        "abstain": 0.1361873,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te18",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 3.8,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29436597,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32793808,
+         0.3403905,
+         0.33167136
+        ],
+        "confidence": 0.29436597,
+        "abstain": 0.13521095,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te19",
+       "label": 1,
+       "tag": "slang",
+       "ms": 3.8,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29117754,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3353236,
+         0.328329,
+         0.33634734
+        ],
+        "confidence": 0.29117754,
+        "abstain": 0.13429514,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te20",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 5.5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.28838748,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33249792,
+         0.3326893,
+         0.3348128
+        ],
+        "confidence": 0.28838748,
+        "abstain": 0.13866052,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te21",
+       "label": 1,
+       "tag": "negation",
+       "ms": 5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.2971403,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33418813,
+         0.3327466,
+         0.33306524
+        ],
+        "confidence": 0.2971403,
+        "abstain": 0.11085919,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te22",
+       "label": 1,
+       "tag": "plain",
+       "ms": 4.5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.28769478,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32944012,
+         0.3345161,
+         0.33604378
+        ],
+        "confidence": 0.28769478,
+        "abstain": 0.14387704,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te23",
+       "label": 1,
+       "tag": "plain",
+       "ms": 3.4,
+       "ans": {
+        "pred": 1,
+        "conf": 0.2941658,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.34794497,
+         0.33771977,
+         0.31433532
+        ],
+        "confidence": 0.2941658,
+        "abstain": 0.15456234,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te24",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 5.3,
+       "ans": {
+        "pred": 1,
+        "conf": 0.30470982,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.34271017,
+         0.33024088,
+         0.32704896
+        ],
+        "confidence": 0.30470982,
+        "abstain": 0.11088187,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te25",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 5.2,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29547498,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32878897,
+         0.3311889,
+         0.34002218
+        ],
+        "confidence": 0.29547498,
+        "abstain": 0.13101262,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te26",
+       "label": 1,
+       "tag": "plain",
+       "ms": 5.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.2895912,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32852173,
+         0.3318144,
+         0.3396638
+        ],
+        "confidence": 0.2895912,
+        "abstain": 0.14741817,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te27",
+       "label": 1,
+       "tag": "plain",
+       "ms": 4.4,
+       "ans": {
+        "pred": 1,
+        "conf": 0.26945984,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33728707,
+         0.33282948,
+         0.32988346
+        ],
+        "confidence": 0.26945984,
+        "abstain": 0.2010964,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te28",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 4.8,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29851434,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32291815,
+         0.3349379,
+         0.34214395
+        ],
+        "confidence": 0.29851434,
+        "abstain": 0.1275183,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te29",
+       "label": 1,
+       "tag": "plain",
+       "ms": 5.2,
+       "ans": {
+        "pred": 1,
+        "conf": 0.31437507,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32025173,
+         0.33125865,
+         0.34848958
+        ],
+        "confidence": 0.31437507,
+        "abstain": 0.0978925,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te30",
+       "label": 1,
+       "tag": "plain",
+       "ms": 4.9,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29956743,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3337093,
+         0.33087474,
+         0.3354159
+        ],
+        "confidence": 0.29956743,
+        "abstain": 0.10687769,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te31",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 3.6,
+       "ans": {
+        "pred": 1,
+        "conf": 0.31089053,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32388705,
+         0.3295695,
+         0.34654343
+        ],
+        "confidence": 0.31089053,
+        "abstain": 0.10288147,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te32",
+       "label": 2,
+       "tag": "plain",
+       "ms": 5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.30755353,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32115126,
+         0.33242872,
+         0.34642
+        ],
+        "confidence": 0.30755353,
+        "abstain": 0.11219463,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te33",
+       "label": 2,
+       "tag": "slang",
+       "ms": 4.9,
+       "ans": {
+        "pred": 1,
+        "conf": 0.2818197,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3321372,
+         0.3361303,
+         0.33173257
+        ],
+        "confidence": 0.2818197,
+        "abstain": 0.16157606,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te34",
+       "label": 2,
+       "tag": "plain",
+       "ms": 4.9,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29498783,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.31922334,
+         0.3387168,
+         0.34205982
+        ],
+        "confidence": 0.29498783,
+        "abstain": 0.13761333,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te35",
+       "label": 2,
+       "tag": "negation",
+       "ms": 6,
+       "ans": {
+        "pred": 1,
+        "conf": 0.28858846,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3371351,
+         0.33358333,
+         0.32928157
+        ],
+        "confidence": 0.28858846,
+        "abstain": 0.14399755,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te36",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 3.7,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29851273,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.31799126,
+         0.33484307,
+         0.34716564
+        ],
+        "confidence": 0.29851273,
+        "abstain": 0.1401432,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te37",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 4.8,
+       "ans": {
+        "pred": 1,
+        "conf": 0.294741,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.34247476,
+         0.3348305,
+         0.3226948
+        ],
+        "confidence": 0.294741,
+        "abstain": 0.13937888,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te38",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 4.8,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29289216,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.31626105,
+         0.33379608,
+         0.34994283
+        ],
+        "confidence": 0.29289216,
+        "abstain": 0.16302854,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te39",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 4.2,
+       "ans": {
+        "pred": 1,
+        "conf": 0.28254667,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3298169,
+         0.3357283,
+         0.33445483
+        ],
+        "confidence": 0.28254667,
+        "abstain": 0.15840676,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te40",
+       "label": 2,
+       "tag": "slang",
+       "ms": 5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.270583,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33230713,
+         0.33658093,
+         0.33111194
+        ],
+        "confidence": 0.270583,
+        "abstain": 0.19608344,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te41",
+       "label": 2,
+       "tag": "misleading",
+       "ms": 5.6,
+       "ans": {
+        "pred": 1,
+        "conf": 0.28841153,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3287008,
+         0.3334998,
+         0.3377994
+        ],
+        "confidence": 0.28841153,
+        "abstain": 0.14620472,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te42",
+       "label": 2,
+       "tag": "plain",
+       "ms": 3.6,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29294714,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.33205938,
+         0.33109668,
+         0.33684388
+        ],
+        "confidence": 0.29294714,
+        "abstain": 0.13031773,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te43",
+       "label": 2,
+       "tag": "plain",
+       "ms": 4.8,
+       "ans": {
+        "pred": 1,
+        "conf": 0.2823701,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32783514,
+         0.32924542,
+         0.34291938
+        ],
+        "confidence": 0.2823701,
+        "abstain": 0.17657001,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te44",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.2923461,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32385284,
+         0.33367243,
+         0.34247476
+        ],
+        "confidence": 0.2923461,
+        "abstain": 0.14637189,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te45",
+       "label": 2,
+       "tag": "plain",
+       "ms": 4.3,
+       "ans": {
+        "pred": 1,
+        "conf": 0.29320893,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.32531935,
+         0.33270445,
+         0.34197617
+        ],
+        "confidence": 0.29320893,
+        "abstain": 0.14260417,
+        "calibrated": false,
+        "head": "nearest-prototype",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      }
+     ]
+    },
+    "deadline": {
+     "metrics": {
+      "n": 45,
+      "answered": 45,
+      "auroc": 0.7786561264822134,
+      "acc_05": 0.4888888888888889,
+      "threshold": 0.78,
+      "accuracy": 0.7333333333333333,
+      "p50_ms": 4.2,
+      "p95_ms": 5.3,
+      "mean_tokens": null
+     },
+     "rows": [
+      {
+       "id": "dea-te01",
+       "label": true,
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": 0.7997693,
+        "conf": null,
+        "score": 0.7997693
+       },
+       "raw": {
+        "noul": 0.7997693,
+        "confidence": 0.7997693,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te02",
+       "label": true,
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": 0.83715844,
+        "conf": null,
+        "score": 0.83715844
+       },
+       "raw": {
+        "noul": 0.83715844,
+        "confidence": 0.83715844,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te03",
+       "label": true,
+       "tag": "implicit",
+       "ms": 4.6,
+       "ans": {
+        "pred": 0.80346596,
+        "conf": null,
+        "score": 0.80346596
+       },
+       "raw": {
+        "noul": 0.80346596,
+        "confidence": 0.80346596,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te04",
+       "label": true,
+       "tag": "slang",
+       "ms": 3.3,
+       "ans": {
+        "pred": 0.805488,
+        "conf": null,
+        "score": 0.805488
+       },
+       "raw": {
+        "noul": 0.805488,
+        "confidence": 0.805488,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te05",
+       "label": true,
+       "tag": "plain",
+       "ms": 4.7,
+       "ans": {
+        "pred": 0.77964664,
+        "conf": null,
+        "score": 0.77964664
+       },
+       "raw": {
+        "noul": 0.77964664,
+        "confidence": 0.77964664,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te06",
+       "label": true,
+       "tag": "implicit",
+       "ms": 5,
+       "ans": {
+        "pred": 0.78373086,
+        "conf": null,
+        "score": 0.78373086
+       },
+       "raw": {
+        "noul": 0.78373086,
+        "confidence": 0.78373086,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te07",
+       "label": true,
+       "tag": "implicit",
+       "ms": 4.6,
+       "ans": {
+        "pred": 0.7839123,
+        "conf": null,
+        "score": 0.7839123
+       },
+       "raw": {
+        "noul": 0.7839123,
+        "confidence": 0.7839123,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te08",
+       "label": true,
+       "tag": "negation",
+       "ms": 5.5,
+       "ans": {
+        "pred": 0.7960059,
+        "conf": null,
+        "score": 0.7960059
+       },
+       "raw": {
+        "noul": 0.7960059,
+        "confidence": 0.7960059,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te09",
+       "label": true,
+       "tag": "plain",
+       "ms": 5.3,
+       "ans": {
+        "pred": 0.795735,
+        "conf": null,
+        "score": 0.795735
+       },
+       "raw": {
+        "noul": 0.795735,
+        "confidence": 0.795735,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te10",
+       "label": true,
+       "tag": "implicit",
+       "ms": 4.1,
+       "ans": {
+        "pred": 0.80417645,
+        "conf": null,
+        "score": 0.80417645
+       },
+       "raw": {
+        "noul": 0.80417645,
+        "confidence": 0.80417645,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te11",
+       "label": true,
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": 0.79422605,
+        "conf": null,
+        "score": 0.79422605
+       },
+       "raw": {
+        "noul": 0.79422605,
+        "confidence": 0.79422605,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te12",
+       "label": true,
+       "tag": "plain",
+       "ms": 4,
+       "ans": {
+        "pred": 0.7843148,
+        "conf": null,
+        "score": 0.7843148
+       },
+       "raw": {
+        "noul": 0.7843148,
+        "confidence": 0.7843148,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te13",
+       "label": true,
+       "tag": "implicit",
+       "ms": 5.1,
+       "ans": {
+        "pred": 0.80429333,
+        "conf": null,
+        "score": 0.80429333
+       },
+       "raw": {
+        "noul": 0.80429333,
+        "confidence": 0.80429333,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te14",
+       "label": true,
+       "tag": "implicit",
+       "ms": 4.8,
+       "ans": {
+        "pred": 0.7976971,
+        "conf": null,
+        "score": 0.7976971
+       },
+       "raw": {
+        "noul": 0.7976971,
+        "confidence": 0.7976971,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te15",
+       "label": true,
+       "tag": "plain",
+       "ms": 4.7,
+       "ans": {
+        "pred": 0.78836644,
+        "conf": null,
+        "score": 0.78836644
+       },
+       "raw": {
+        "noul": 0.78836644,
+        "confidence": 0.78836644,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te16",
+       "label": true,
+       "tag": "implicit",
+       "ms": 4.5,
+       "ans": {
+        "pred": 0.83187187,
+        "conf": null,
+        "score": 0.83187187
+       },
+       "raw": {
+        "noul": 0.83187187,
+        "confidence": 0.83187187,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te17",
+       "label": true,
+       "tag": "plain",
+       "ms": 5.1,
+       "ans": {
+        "pred": 0.83220315,
+        "conf": null,
+        "score": 0.83220315
+       },
+       "raw": {
+        "noul": 0.83220315,
+        "confidence": 0.83220315,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te18",
+       "label": true,
+       "tag": "implicit",
+       "ms": 5.8,
+       "ans": {
+        "pred": 0.79236144,
+        "conf": null,
+        "score": 0.79236144
+       },
+       "raw": {
+        "noul": 0.79236144,
+        "confidence": 0.79236144,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te19",
+       "label": true,
+       "tag": "implicit",
+       "ms": 3.7,
+       "ans": {
+        "pred": 0.7866296,
+        "conf": null,
+        "score": 0.7866296
+       },
+       "raw": {
+        "noul": 0.7866296,
+        "confidence": 0.7866296,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te20",
+       "label": true,
+       "tag": "slang",
+       "ms": 3.6,
+       "ans": {
+        "pred": 0.7954212,
+        "conf": null,
+        "score": 0.7954212
+       },
+       "raw": {
+        "noul": 0.7954212,
+        "confidence": 0.7954212,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te21",
+       "label": true,
+       "tag": "implicit",
+       "ms": 5.7,
+       "ans": {
+        "pred": 0.7758907,
+        "conf": null,
+        "score": 0.7758907
+       },
+       "raw": {
+        "noul": 0.7758907,
+        "confidence": 0.7758907,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te22",
+       "label": true,
+       "tag": "plain",
+       "ms": 4.9,
+       "ans": {
+        "pred": 0.8064747,
+        "conf": null,
+        "score": 0.8064747
+       },
+       "raw": {
+        "noul": 0.8064747,
+        "confidence": 0.8064747,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te23",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.6,
+       "ans": {
+        "pred": 0.80371875,
+        "conf": null,
+        "score": 0.80371875
+       },
+       "raw": {
+        "noul": 0.80371875,
+        "confidence": 0.80371875,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te24",
+       "label": false,
+       "tag": "negation",
+       "ms": 3.9,
+       "ans": {
+        "pred": 0.80929685,
+        "conf": null,
+        "score": 0.80929685
+       },
+       "raw": {
+        "noul": 0.80929685,
+        "confidence": 0.80929685,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te25",
+       "label": false,
+       "tag": "plain",
+       "ms": 3.3,
+       "ans": {
+        "pred": 0.7620094,
+        "conf": null,
+        "score": 0.7620094
+       },
+       "raw": {
+        "noul": 0.7620094,
+        "confidence": 0.7620094,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te26",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.1,
+       "ans": {
+        "pred": 0.760005,
+        "conf": null,
+        "score": 0.760005
+       },
+       "raw": {
+        "noul": 0.760005,
+        "confidence": 0.760005,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te27",
+       "label": false,
+       "tag": "misleading",
+       "ms": 3.3,
+       "ans": {
+        "pred": 0.80879927,
+        "conf": null,
+        "score": 0.80879927
+       },
+       "raw": {
+        "noul": 0.80879927,
+        "confidence": 0.80879927,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te28",
+       "label": false,
+       "tag": "plain",
+       "ms": 3.8,
+       "ans": {
+        "pred": 0.7845739,
+        "conf": null,
+        "score": 0.7845739
+       },
+       "raw": {
+        "noul": 0.7845739,
+        "confidence": 0.7845739,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te29",
+       "label": false,
+       "tag": "misleading",
+       "ms": 5,
+       "ans": {
+        "pred": 0.77206194,
+        "conf": null,
+        "score": 0.77206194
+       },
+       "raw": {
+        "noul": 0.77206194,
+        "confidence": 0.77206194,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te30",
+       "label": false,
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": 0.7633532,
+        "conf": null,
+        "score": 0.7633532
+       },
+       "raw": {
+        "noul": 0.7633532,
+        "confidence": 0.7633532,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te31",
+       "label": false,
+       "tag": "plain",
+       "ms": 3.2,
+       "ans": {
+        "pred": 0.80323315,
+        "conf": null,
+        "score": 0.80323315
+       },
+       "raw": {
+        "noul": 0.80323315,
+        "confidence": 0.80323315,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te32",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.2,
+       "ans": {
+        "pred": 0.7598263,
+        "conf": null,
+        "score": 0.7598263
+       },
+       "raw": {
+        "noul": 0.7598263,
+        "confidence": 0.7598263,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te33",
+       "label": false,
+       "tag": "slang",
+       "ms": 3.3,
+       "ans": {
+        "pred": 0.7759492,
+        "conf": null,
+        "score": 0.7759492
+       },
+       "raw": {
+        "noul": 0.7759492,
+        "confidence": 0.7759492,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te34",
+       "label": false,
+       "tag": "plain",
+       "ms": 5.2,
+       "ans": {
+        "pred": 0.75056165,
+        "conf": null,
+        "score": 0.75056165
+       },
+       "raw": {
+        "noul": 0.75056165,
+        "confidence": 0.75056165,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te35",
+       "label": false,
+       "tag": "plain",
+       "ms": 4.7,
+       "ans": {
+        "pred": 0.8053739,
+        "conf": null,
+        "score": 0.8053739
+       },
+       "raw": {
+        "noul": 0.8053739,
+        "confidence": 0.8053739,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te36",
+       "label": false,
+       "tag": "negation",
+       "ms": 5.2,
+       "ans": {
+        "pred": 0.7369774,
+        "conf": null,
+        "score": 0.7369774
+       },
+       "raw": {
+        "noul": 0.7369774,
+        "confidence": 0.7369774,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te37",
+       "label": false,
+       "tag": "misleading",
+       "ms": 3.5,
+       "ans": {
+        "pred": 0.75898993,
+        "conf": null,
+        "score": 0.75898993
+       },
+       "raw": {
+        "noul": 0.75898993,
+        "confidence": 0.75898993,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te38",
+       "label": false,
+       "tag": "plain",
+       "ms": 4,
+       "ans": {
+        "pred": 0.7872063,
+        "conf": null,
+        "score": 0.7872063
+       },
+       "raw": {
+        "noul": 0.7872063,
+        "confidence": 0.7872063,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te39",
+       "label": false,
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": 0.7586921,
+        "conf": null,
+        "score": 0.7586921
+       },
+       "raw": {
+        "noul": 0.7586921,
+        "confidence": 0.7586921,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te40",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.4,
+       "ans": {
+        "pred": 0.79164255,
+        "conf": null,
+        "score": 0.79164255
+       },
+       "raw": {
+        "noul": 0.79164255,
+        "confidence": 0.79164255,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te41",
+       "label": false,
+       "tag": "plain",
+       "ms": 3.7,
+       "ans": {
+        "pred": 0.74190843,
+        "conf": null,
+        "score": 0.74190843
+       },
+       "raw": {
+        "noul": 0.74190843,
+        "confidence": 0.74190843,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te42",
+       "label": false,
+       "tag": "misleading",
+       "ms": 3.6,
+       "ans": {
+        "pred": 0.76037014,
+        "conf": null,
+        "score": 0.76037014
+       },
+       "raw": {
+        "noul": 0.76037014,
+        "confidence": 0.76037014,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te43",
+       "label": false,
+       "tag": "misleading",
+       "ms": 3.5,
+       "ans": {
+        "pred": 0.7644625,
+        "conf": null,
+        "score": 0.7644625
+       },
+       "raw": {
+        "noul": 0.7644625,
+        "confidence": 0.7644625,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te44",
+       "label": false,
+       "tag": "negation",
+       "ms": 4.1,
+       "ans": {
+        "pred": 0.78448397,
+        "conf": null,
+        "score": 0.78448397
+       },
+       "raw": {
+        "noul": 0.78448397,
+        "confidence": 0.78448397,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te45",
+       "label": false,
+       "tag": "misleading",
+       "ms": 5,
+       "ans": {
+        "pred": 0.78415847,
+        "conf": null,
+        "score": 0.78415847
+       },
+       "raw": {
+        "noul": 0.78415847,
+        "confidence": 0.78415847,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "similarity-uncalibrated",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      }
+     ]
+    }
+   },
+   "by_tag": {
+    "misleading": {
+     "n": 17,
+     "accuracy": 0.5882352941176471
+    },
+    "slang": {
+     "n": 16,
+     "accuracy": 0.625
+    },
+    "plain": {
+     "n": 59,
+     "accuracy": 0.6101694915254238
+    },
+    "negation": {
+     "n": 14,
+     "accuracy": 0.5
+    },
+    "implicit": {
+     "n": 41,
+     "accuracy": 0.6829268292682927
+    },
+    "sarcasm": {
+     "n": 3,
+     "accuracy": 0.3333333333333333
+    }
+   },
+   "overall_accuracy": 0.6133333333333333
+  },
+  "ts_trained": {
+   "tasks": {
+    "council": {
+     "metrics": {
+      "n": 60,
+      "answered": 60,
+      "accuracy": 0.8,
+      "ece": 0.36949524899999997,
+      "mean_conf": 0.430504751,
+      "p50_ms": 4.3,
+      "p95_ms": 6.6,
+      "mean_tokens": null
+     },
+     "rows": [
+      {
+       "id": "cou-te01",
+       "label": "waste",
+       "tag": "misleading",
+       "ms": 66,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.4842086,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.22353265,
+         "environmental_health": 0.050951503,
+         "highways": 0.057100333,
+         "housing": 0.07123439,
+         "planning": 0.09588742,
+         "waste": 0.50129366
+        },
+        "confidence": 0.4842086,
+        "abstain": 0.034081906,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te02",
+       "label": "waste",
+       "tag": "slang",
+       "ms": 6.1,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.57498986,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.045115512,
+         "environmental_health": 0.08718863,
+         "highways": 0.12489358,
+         "housing": 0.06981175,
+         "planning": 0.070653446,
+         "waste": 0.6023371
+        },
+        "confidence": 0.57498986,
+        "abstain": 0.045401905,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te03",
+       "label": "waste",
+       "tag": "plain",
+       "ms": 6.8,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.5194746,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.1660556,
+         "environmental_health": 0.10409372,
+         "highways": 0.0712648,
+         "housing": 0.072879836,
+         "planning": 0.040472925,
+         "waste": 0.5452331
+        },
+        "confidence": 0.5194746,
+        "abstain": 0.04724302,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te04",
+       "label": "waste",
+       "tag": "plain",
+       "ms": 5.9,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.35586685,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.03351144,
+         "environmental_health": 0.15351863,
+         "highways": 0.12523262,
+         "housing": 0.18247332,
+         "planning": 0.122740835,
+         "waste": 0.38252312
+        },
+        "confidence": 0.35586685,
+        "abstain": 0.0696854,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te05",
+       "label": "waste",
+       "tag": "negation",
+       "ms": 6.6,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.63519883,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.013235308,
+         "environmental_health": 0.14412421,
+         "highways": 0.10678161,
+         "housing": 0.028720878,
+         "planning": 0.0339734,
+         "waste": 0.67316455
+        },
+        "confidence": 0.63519883,
+        "abstain": 0.056398883,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te06",
+       "label": "waste",
+       "tag": "implicit",
+       "ms": 5.1,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.7510485,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.04064796,
+         "environmental_health": 0.031055784,
+         "highways": 0.040938023,
+         "housing": 0.062657684,
+         "planning": 0.037073493,
+         "waste": 0.7876271
+        },
+        "confidence": 0.7510485,
+        "abstain": 0.04644152,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te07",
+       "label": "waste",
+       "tag": "implicit",
+       "ms": 4.8,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.4159409,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.070935965,
+         "environmental_health": 0.13714738,
+         "highways": 0.21397427,
+         "housing": 0.075061694,
+         "planning": 0.06266655,
+         "waste": 0.44021416
+        },
+        "confidence": 0.4159409,
+        "abstain": 0.05513964,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te08",
+       "label": "waste",
+       "tag": "misleading",
+       "ms": 4.1,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.2950203,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.037573755,
+         "environmental_health": 0.2940455,
+         "highways": 0.06476483,
+         "housing": 0.3194808,
+         "planning": 0.024450362,
+         "waste": 0.25968474
+        },
+        "confidence": 0.2950203,
+        "abstain": 0.076563254,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te09",
+       "label": "waste",
+       "tag": "misleading",
+       "ms": 5.5,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.58085597,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.05551128,
+         "environmental_health": 0.05750107,
+         "highways": 0.1201374,
+         "housing": 0.060345385,
+         "planning": 0.095458806,
+         "waste": 0.611046
+        },
+        "confidence": 0.58085597,
+        "abstain": 0.049407102,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te10",
+       "label": "waste",
+       "tag": "plain",
+       "ms": 4.7,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.63150305,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.15535852,
+         "environmental_health": 0.04130671,
+         "highways": 0.06394157,
+         "housing": 0.035880294,
+         "planning": 0.032073043,
+         "waste": 0.6714398
+        },
+        "confidence": 0.63150305,
+        "abstain": 0.059479352,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te11",
+       "label": "council_tax",
+       "tag": "implicit",
+       "ms": 5.1,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.26445353,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.2846754,
+         "environmental_health": 0.20120896,
+         "highways": 0.1979327,
+         "housing": 0.17240174,
+         "planning": 0.04480419,
+         "waste": 0.098977
+        },
+        "confidence": 0.26445353,
+        "abstain": 0.07103479,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te12",
+       "label": "council_tax",
+       "tag": "slang",
+       "ms": 4.9,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.5867566,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.6294728,
+         "environmental_health": 0.053292494,
+         "highways": 0.05901579,
+         "housing": 0.052894123,
+         "planning": 0.028171577,
+         "waste": 0.17715326
+        },
+        "confidence": 0.5867566,
+        "abstain": 0.06786028,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te13",
+       "label": "council_tax",
+       "tag": "implicit",
+       "ms": 5.2,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.27947247,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.21625938,
+         "environmental_health": 0.15595135,
+         "highways": 0.0616866,
+         "housing": 0.18673262,
+         "planning": 0.0746673,
+         "waste": 0.3047027
+        },
+        "confidence": 0.27947247,
+        "abstain": 0.08280275,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te14",
+       "label": "council_tax",
+       "tag": "negation",
+       "ms": 6.5,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.28460598,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.18207143,
+         "environmental_health": 0.07718041,
+         "highways": 0.0616553,
+         "housing": 0.30106673,
+         "planning": 0.22425874,
+         "waste": 0.1537674
+        },
+        "confidence": 0.28460598,
+        "abstain": 0.054674745,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te15",
+       "label": "council_tax",
+       "tag": "plain",
+       "ms": 8.1,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.6752949,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.70760745,
+         "environmental_health": 0.037557263,
+         "highways": 0.04439355,
+         "housing": 0.057838462,
+         "planning": 0.054419775,
+         "waste": 0.09818349
+        },
+        "confidence": 0.6752949,
+        "abstain": 0.04566455,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te16",
+       "label": "council_tax",
+       "tag": "slang",
+       "ms": 4.4,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.49463072,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.5207888,
+         "environmental_health": 0.05449039,
+         "highways": 0.05685961,
+         "housing": 0.09546556,
+         "planning": 0.051185217,
+         "waste": 0.2212105
+        },
+        "confidence": 0.49463072,
+        "abstain": 0.050227746,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te17",
+       "label": "council_tax",
+       "tag": "implicit",
+       "ms": 3.9,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.3001357,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.31623188,
+         "environmental_health": 0.037522104,
+         "highways": 0.12264304,
+         "housing": 0.1296826,
+         "planning": 0.20457526,
+         "waste": 0.18934518
+        },
+        "confidence": 0.3001357,
+        "abstain": 0.0508999,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te18",
+       "label": "council_tax",
+       "tag": "plain",
+       "ms": 4.5,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.4708799,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.4973851,
+         "environmental_health": 0.034689765,
+         "highways": 0.104165465,
+         "housing": 0.09927242,
+         "planning": 0.040546704,
+         "waste": 0.22394054
+        },
+        "confidence": 0.4708799,
+        "abstain": 0.053289115,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te19",
+       "label": "council_tax",
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.41068748,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.43344933,
+         "environmental_health": 0.04539227,
+         "highways": 0.05152728,
+         "housing": 0.069570385,
+         "planning": 0.26373917,
+         "waste": 0.13632159
+        },
+        "confidence": 0.41068748,
+        "abstain": 0.052513283,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te20",
+       "label": "council_tax",
+       "tag": "sarcasm",
+       "ms": 4.7,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.24799323,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.26100138,
+         "environmental_health": 0.20018458,
+         "highways": 0.039238043,
+         "housing": 0.16173051,
+         "planning": 0.15761061,
+         "waste": 0.18023488
+        },
+        "confidence": 0.24799323,
+        "abstain": 0.049839392,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te21",
+       "label": "housing",
+       "tag": "implicit",
+       "ms": 4.3,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.35289004,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.1318061,
+         "environmental_health": 0.07110236,
+         "highways": 0.15016119,
+         "housing": 0.3735829,
+         "planning": 0.115166605,
+         "waste": 0.15818082
+        },
+        "confidence": 0.35289004,
+        "abstain": 0.05539029,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te22",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 5.3,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.36035898,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.064763024,
+         "environmental_health": 0.22356042,
+         "highways": 0.0814808,
+         "housing": 0.37831658,
+         "planning": 0.11547385,
+         "waste": 0.13640535
+        },
+        "confidence": 0.36035898,
+        "abstain": 0.04746711,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te23",
+       "label": "housing",
+       "tag": "slang",
+       "ms": 4,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.3688932,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.0976449,
+         "environmental_health": 0.12464321,
+         "highways": 0.0885334,
+         "housing": 0.38885623,
+         "planning": 0.16852888,
+         "waste": 0.1317934
+        },
+        "confidence": 0.3688932,
+        "abstain": 0.05133777,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te24",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.51792914,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.06082171,
+         "environmental_health": 0.19786674,
+         "highways": 0.061548132,
+         "housing": 0.5488988,
+         "planning": 0.05260979,
+         "waste": 0.07825484
+        },
+        "confidence": 0.51792914,
+        "abstain": 0.056421466,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te25",
+       "label": "housing",
+       "tag": "negation",
+       "ms": 5.3,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.45714897,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.06818204,
+         "environmental_health": 0.05088978,
+         "highways": 0.048141975,
+         "housing": 0.3049329,
+         "planning": 0.47993827,
+         "waste": 0.047915075
+        },
+        "confidence": 0.45714897,
+        "abstain": 0.04748381,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te26",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.29226065,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.304694,
+         "environmental_health": 0.03661436,
+         "highways": 0.033699825,
+         "housing": 0.2161514,
+         "planning": 0.30854654,
+         "waste": 0.10029386
+        },
+        "confidence": 0.29226065,
+        "abstain": 0.05278268,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te27",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 4.3,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.7164313,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.020899428,
+         "environmental_health": 0.07809193,
+         "highways": 0.06732666,
+         "housing": 0.7681904,
+         "planning": 0.047839634,
+         "waste": 0.01765202
+        },
+        "confidence": 0.7164313,
+        "abstain": 0.0673779,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te28",
+       "label": "housing",
+       "tag": "misleading",
+       "ms": 4.5,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.5318361,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.029239317,
+         "environmental_health": 0.11453841,
+         "highways": 0.22434543,
+         "housing": 0.56835,
+         "planning": 0.03484334,
+         "waste": 0.0286835
+        },
+        "confidence": 0.5318361,
+        "abstain": 0.06424545,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te29",
+       "label": "housing",
+       "tag": "implicit",
+       "ms": 3.8,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.3784479,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.06622979,
+         "environmental_health": 0.17606883,
+         "highways": 0.043034818,
+         "housing": 0.4087181,
+         "planning": 0.14381555,
+         "waste": 0.16213292
+        },
+        "confidence": 0.3784479,
+        "abstain": 0.074061334,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te30",
+       "label": "housing",
+       "tag": "plain",
+       "ms": 3.7,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.28211722,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.15928061,
+         "environmental_health": 0.026721228,
+         "highways": 0.1706511,
+         "housing": 0.20791142,
+         "planning": 0.29403102,
+         "waste": 0.1414046
+        },
+        "confidence": 0.28211722,
+        "abstain": 0.040518872,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te31",
+       "label": "highways",
+       "tag": "slang",
+       "ms": 4.3,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.24294618,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.18858546,
+         "environmental_health": 0.059821844,
+         "highways": 0.21220678,
+         "housing": 0.19704077,
+         "planning": 0.084079936,
+         "waste": 0.25826523
+        },
+        "confidence": 0.24294618,
+        "abstain": 0.0593152,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te32",
+       "label": "highways",
+       "tag": "plain",
+       "ms": 3.7,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.70549136,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.037504632,
+         "environmental_health": 0.0687257,
+         "highways": 0.7581856,
+         "housing": 0.091522805,
+         "planning": 0.014802453,
+         "waste": 0.029258853
+        },
+        "confidence": 0.70549136,
+        "abstain": 0.06950048,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te33",
+       "label": "highways",
+       "tag": "implicit",
+       "ms": 4.1,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.4218575,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.06485979,
+         "environmental_health": 0.18186414,
+         "highways": 0.45734265,
+         "housing": 0.073956616,
+         "planning": 0.029572146,
+         "waste": 0.19240473
+        },
+        "confidence": 0.4218575,
+        "abstain": 0.0775899,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te34",
+       "label": "highways",
+       "tag": "negation",
+       "ms": 5.1,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.36007923,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.37737304,
+         "environmental_health": 0.04719071,
+         "highways": 0.26090857,
+         "housing": 0.13130252,
+         "planning": 0.08490893,
+         "waste": 0.098316275
+        },
+        "confidence": 0.36007923,
+        "abstain": 0.045826796,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te35",
+       "label": "highways",
+       "tag": "implicit",
+       "ms": 3.4,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.42220762,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.035448726,
+         "environmental_health": 0.17293702,
+         "highways": 0.45212817,
+         "housing": 0.085603446,
+         "planning": 0.10559171,
+         "waste": 0.1482909
+        },
+        "confidence": 0.42220762,
+        "abstain": 0.0661771,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te36",
+       "label": "highways",
+       "tag": "slang",
+       "ms": 2.3,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.5780984,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.03978106,
+         "environmental_health": 0.12721369,
+         "highways": 0.6034294,
+         "housing": 0.105705895,
+         "planning": 0.05953157,
+         "waste": 0.06433835
+        },
+        "confidence": 0.5780984,
+        "abstain": 0.041978326,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te37",
+       "label": "highways",
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.37179762,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.12862757,
+         "environmental_health": 0.06403,
+         "highways": 0.39044455,
+         "housing": 0.06867422,
+         "planning": 0.13927665,
+         "waste": 0.20894706
+        },
+        "confidence": 0.37179762,
+        "abstain": 0.047758244,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te38",
+       "label": "highways",
+       "tag": "implicit",
+       "ms": 5.2,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.26953158,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.040671986,
+         "environmental_health": 0.26305,
+         "highways": 0.29091313,
+         "housing": 0.28133032,
+         "planning": 0.06699891,
+         "waste": 0.05703575
+        },
+        "confidence": 0.26953158,
+        "abstain": 0.073498115,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te39",
+       "label": "highways",
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.42424205,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.0808141,
+         "environmental_health": 0.05825209,
+         "highways": 0.45186144,
+         "housing": 0.10379486,
+         "planning": 0.07142154,
+         "waste": 0.23385601
+        },
+        "confidence": 0.42424205,
+        "abstain": 0.06112359,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te40",
+       "label": "highways",
+       "tag": "sarcasm",
+       "ms": 4.7,
+       "ans": {
+        "pred": "waste",
+        "conf": 0.31261414,
+        "score": null
+       },
+       "raw": {
+        "choice": "waste",
+        "probabilities": {
+         "council_tax": 0.052476697,
+         "environmental_health": 0.114893965,
+         "highways": 0.15754047,
+         "housing": 0.17261486,
+         "planning": 0.1678702,
+         "waste": 0.33460382
+        },
+        "confidence": 0.31261414,
+        "abstain": 0.06571856,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te41",
+       "label": "planning",
+       "tag": "implicit",
+       "ms": 3.9,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.46098688,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.047431495,
+         "environmental_health": 0.047096647,
+         "highways": 0.057781998,
+         "housing": 0.32595316,
+         "planning": 0.48680747,
+         "waste": 0.034929197
+        },
+        "confidence": 0.46098688,
+        "abstain": 0.05304062,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te42",
+       "label": "planning",
+       "tag": "implicit",
+       "ms": 4.6,
+       "ans": {
+        "pred": "housing",
+        "conf": 0.34918773,
+        "score": null
+       },
+       "raw": {
+        "choice": "housing",
+        "probabilities": {
+         "council_tax": 0.0986253,
+         "environmental_health": 0.06511629,
+         "highways": 0.055513635,
+         "housing": 0.3710049,
+         "planning": 0.3472064,
+         "waste": 0.06253343
+        },
+        "confidence": 0.34918773,
+        "abstain": 0.058805663,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te43",
+       "label": "planning",
+       "tag": "plain",
+       "ms": 4.3,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.32383588,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.063278824,
+         "environmental_health": 0.08469169,
+         "highways": 0.13589776,
+         "housing": 0.19776377,
+         "planning": 0.34330758,
+         "waste": 0.17506042
+        },
+        "confidence": 0.32383588,
+        "abstain": 0.056717906,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te44",
+       "label": "planning",
+       "tag": "negation",
+       "ms": 4.8,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.2206864,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.17982788,
+         "environmental_health": 0.14378585,
+         "highways": 0.11911109,
+         "housing": 0.20398614,
+         "planning": 0.23335679,
+         "waste": 0.11993229
+        },
+        "confidence": 0.2206864,
+        "abstain": 0.054296218,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te45",
+       "label": "planning",
+       "tag": "slang",
+       "ms": 3.2,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.33909887,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.34504408,
+         "environmental_health": 0.038967066,
+         "highways": 0.10562197,
+         "housing": 0.07375757,
+         "planning": 0.36116582,
+         "waste": 0.07544346
+        },
+        "confidence": 0.33909887,
+        "abstain": 0.06109923,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te46",
+       "label": "planning",
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.5672822,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.06645343,
+         "environmental_health": 0.04030297,
+         "highways": 0.05533031,
+         "housing": 0.1966002,
+         "planning": 0.5944626,
+         "waste": 0.04685052
+        },
+        "confidence": 0.5672822,
+        "abstain": 0.04572259,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te47",
+       "label": "planning",
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.27253243,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.14715968,
+         "environmental_health": 0.08847583,
+         "highways": 0.094897985,
+         "housing": 0.27909386,
+         "planning": 0.29675606,
+         "waste": 0.09361659
+        },
+        "confidence": 0.27253243,
+        "abstain": 0.081628114,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te48",
+       "label": "planning",
+       "tag": "implicit",
+       "ms": 4,
+       "ans": {
+        "pred": "council_tax",
+        "conf": 0.330032,
+        "score": null
+       },
+       "raw": {
+        "choice": "council_tax",
+        "probabilities": {
+         "council_tax": 0.34987742,
+         "environmental_health": 0.043230195,
+         "highways": 0.059996117,
+         "housing": 0.2002105,
+         "planning": 0.21013078,
+         "waste": 0.13655491
+        },
+        "confidence": 0.330032,
+        "abstain": 0.05672109,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te49",
+       "label": "planning",
+       "tag": "plain",
+       "ms": 4,
+       "ans": {
+        "pred": "highways",
+        "conf": 0.26370502,
+        "score": null
+       },
+       "raw": {
+        "choice": "highways",
+        "probabilities": {
+         "council_tax": 0.09158797,
+         "environmental_health": 0.1017347,
+         "highways": 0.28125685,
+         "housing": 0.13832411,
+         "planning": 0.22906397,
+         "waste": 0.15803245
+        },
+        "confidence": 0.26370502,
+        "abstain": 0.06240499,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te50",
+       "label": "planning",
+       "tag": "slang",
+       "ms": 3.5,
+       "ans": {
+        "pred": "planning",
+        "conf": 0.4070592,
+        "score": null
+       },
+       "raw": {
+        "choice": "planning",
+        "probabilities": {
+         "council_tax": 0.12862699,
+         "environmental_health": 0.056862257,
+         "highways": 0.09627542,
+         "housing": 0.17419551,
+         "planning": 0.42884403,
+         "waste": 0.11519576
+        },
+        "confidence": 0.4070592,
+        "abstain": 0.05079904,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te51",
+       "label": "environmental_health",
+       "tag": "implicit",
+       "ms": 5.1,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.5066782,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.08801898,
+         "environmental_health": 0.54481876,
+         "highways": 0.12397079,
+         "housing": 0.092989594,
+         "planning": 0.026382448,
+         "waste": 0.1238194
+        },
+        "confidence": 0.5066782,
+        "abstain": 0.07000593,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te52",
+       "label": "environmental_health",
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.62254715,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.02237459,
+         "environmental_health": 0.67764544,
+         "highways": 0.11711079,
+         "housing": 0.06737094,
+         "planning": 0.05947546,
+         "waste": 0.05602285
+        },
+        "confidence": 0.62254715,
+        "abstain": 0.08130841,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te53",
+       "label": "environmental_health",
+       "tag": "negation",
+       "ms": 4,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.35672736,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.12594163,
+         "environmental_health": 0.38118663,
+         "highways": 0.10658883,
+         "housing": 0.22381492,
+         "planning": 0.07223478,
+         "waste": 0.090233155
+        },
+        "confidence": 0.35672736,
+        "abstain": 0.06416615,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te54",
+       "label": "environmental_health",
+       "tag": "implicit",
+       "ms": 3.8,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.4228143,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.024236493,
+         "environmental_health": 0.45323724,
+         "highways": 0.10166183,
+         "housing": 0.25905156,
+         "planning": 0.029282073,
+         "waste": 0.13253078
+        },
+        "confidence": 0.4228143,
+        "abstain": 0.067123674,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te55",
+       "label": "environmental_health",
+       "tag": "plain",
+       "ms": 3.6,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.3529899,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.08141433,
+         "environmental_health": 0.37521753,
+         "highways": 0.041012093,
+         "housing": 0.19903065,
+         "planning": 0.22013454,
+         "waste": 0.083190806
+        },
+        "confidence": 0.3529899,
+        "abstain": 0.059239265,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te56",
+       "label": "environmental_health",
+       "tag": "implicit",
+       "ms": 4.2,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.78257984,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.025208415,
+         "environmental_health": 0.8327783,
+         "highways": 0.01885112,
+         "housing": 0.06337067,
+         "planning": 0.021795824,
+         "waste": 0.037995785
+        },
+        "confidence": 0.78257984,
+        "abstain": 0.060278237,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te57",
+       "label": "environmental_health",
+       "tag": "sarcasm",
+       "ms": 3.8,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.38961917,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.13869125,
+         "environmental_health": 0.41401246,
+         "highways": 0.08439801,
+         "housing": 0.15265119,
+         "planning": 0.12363935,
+         "waste": 0.086607754
+        },
+        "confidence": 0.38961917,
+        "abstain": 0.05891922,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te58",
+       "label": "environmental_health",
+       "tag": "implicit",
+       "ms": 3.9,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.46860397,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.08600158,
+         "environmental_health": 0.5002526,
+         "highways": 0.051913764,
+         "housing": 0.10174238,
+         "planning": 0.0369326,
+         "waste": 0.22315705
+        },
+        "confidence": 0.46860397,
+        "abstain": 0.06326531,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te59",
+       "label": "environmental_health",
+       "tag": "slang",
+       "ms": 3.2,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.27000526,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.069314785,
+         "environmental_health": 0.28557658,
+         "highways": 0.099662006,
+         "housing": 0.27273872,
+         "planning": 0.2055893,
+         "waste": 0.06711867
+        },
+        "confidence": 0.27000526,
+        "abstain": 0.054525923,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "cou-te60",
+       "label": "environmental_health",
+       "tag": "misleading",
+       "ms": 4,
+       "ans": {
+        "pred": "environmental_health",
+        "conf": 0.49711615,
+        "score": null
+       },
+       "raw": {
+        "choice": "environmental_health",
+        "probabilities": {
+         "council_tax": 0.022350188,
+         "environmental_health": 0.53327125,
+         "highways": 0.13254485,
+         "housing": 0.08338894,
+         "planning": 0.09178566,
+         "waste": 0.13665912
+        },
+        "confidence": 0.49711615,
+        "abstain": 0.06779871,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      }
+     ]
+    },
+    "severity": {
+     "metrics": {
+      "n": 45,
+      "answered": 45,
+      "accuracy": 0.5333333333333333,
+      "mae": 0.4666666666666667,
+      "high_recall": 0.4,
+      "high_missed_as_low": 0,
+      "p50_ms": 3.8,
+      "p95_ms": 4.4,
+      "mean_tokens": null
+     },
+     "rows": [
+      {
+       "id": "sev-te01",
+       "label": 0,
+       "tag": "plain",
+       "ms": 27.7,
+       "ans": {
+        "pred": 1,
+        "conf": 0.46008137,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.525129,
+         0.430163,
+         0.04470798
+        ],
+        "confidence": 0.46008137,
+        "abstain": 0.123869844,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te02",
+       "label": 0,
+       "tag": "negation",
+       "ms": 3.5,
+       "ans": {
+        "pred": 1,
+        "conf": 0.45017308,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.42964903,
+         0.063328266,
+         0.5070227
+        ],
+        "confidence": 0.45017308,
+        "abstain": 0.112124376,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te03",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.5,
+       "ans": {
+        "pred": 0,
+        "conf": 0.5742958,
+        "score": 0
+       },
+       "raw": {
+        "score": 0,
+        "legend": "Low: minor housekeeping or good-practice note, no real hazard",
+        "probabilities": [
+         0.65686464,
+         0.30637926,
+         0.03675604
+        ],
+        "confidence": 0.5742958,
+        "abstain": 0.12570141,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te04",
+       "label": 0,
+       "tag": "implicit",
+       "ms": 4.3,
+       "ans": {
+        "pred": 1,
+        "conf": 0.40070873,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.41806665,
+         0.117716365,
+         0.46421704
+        ],
+        "confidence": 0.40070873,
+        "abstain": 0.13680732,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te05",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.8,
+       "ans": {
+        "pred": 0,
+        "conf": 0.64090127,
+        "score": 0
+       },
+       "raw": {
+        "score": 0,
+        "legend": "Low: minor housekeeping or good-practice note, no real hazard",
+        "probabilities": [
+         0.719684,
+         0.24073273,
+         0.039583273
+        ],
+        "confidence": 0.64090127,
+        "abstain": 0.109468505,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te06",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.5873972,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.6664636,
+         0.16526358,
+         0.16827276
+        ],
+        "confidence": 0.5873972,
+        "abstain": 0.1186357,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te07",
+       "label": 0,
+       "tag": "negation",
+       "ms": 3.2,
+       "ans": {
+        "pred": 0,
+        "conf": 0.5816328,
+        "score": 0
+       },
+       "raw": {
+        "score": 0,
+        "legend": "Low: minor housekeeping or good-practice note, no real hazard",
+        "probabilities": [
+         0.66288656,
+         0.2404981,
+         0.09661533
+        ],
+        "confidence": 0.5816328,
+        "abstain": 0.12257569,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te08",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.3,
+       "ans": {
+        "pred": 1,
+        "conf": 0.495126,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.34948474,
+         0.5653156,
+         0.08519967
+        ],
+        "confidence": 0.495126,
+        "abstain": 0.12416001,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te09",
+       "label": 0,
+       "tag": "implicit",
+       "ms": 3.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.46811622,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.52041084,
+         0.27734986,
+         0.20223935
+        ],
+        "confidence": 0.46811622,
+        "abstain": 0.10048719,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te10",
+       "label": 0,
+       "tag": "slang",
+       "ms": 3.4,
+       "ans": {
+        "pred": 1,
+        "conf": 0.37750733,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.4324543,
+         0.17824292,
+         0.38930288
+        ],
+        "confidence": 0.37750733,
+        "abstain": 0.12705845,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te11",
+       "label": 0,
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.56149554,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.6376329,
+         0.14960667,
+         0.2127604
+        ],
+        "confidence": 0.56149554,
+        "abstain": 0.11940625,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te12",
+       "label": 0,
+       "tag": "misleading",
+       "ms": 3.9,
+       "ans": {
+        "pred": 1,
+        "conf": 0.4627455,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.2277535,
+         0.51643056,
+         0.25581598
+        ],
+        "confidence": 0.4627455,
+        "abstain": 0.10395408,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te13",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.3,
+       "ans": {
+        "pred": 0,
+        "conf": 0.68508494,
+        "score": 0
+       },
+       "raw": {
+        "score": 0,
+        "legend": "Low: minor housekeeping or good-practice note, no real hazard",
+        "probabilities": [
+         0.7755333,
+         0.1548941,
+         0.06957259
+        ],
+        "confidence": 0.68508494,
+        "abstain": 0.116627365,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te14",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.3,
+       "ans": {
+        "pred": 1,
+        "conf": 0.4759791,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.34287333,
+         0.116269544,
+         0.54085714
+        ],
+        "confidence": 0.4759791,
+        "abstain": 0.11995412,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te15",
+       "label": 0,
+       "tag": "plain",
+       "ms": 3.6,
+       "ans": {
+        "pred": 0,
+        "conf": 0.68464935,
+        "score": 0
+       },
+       "raw": {
+        "score": 0,
+        "legend": "Low: minor housekeeping or good-practice note, no real hazard",
+        "probabilities": [
+         0.8294325,
+         0.050955832,
+         0.11961167
+        ],
+        "confidence": 0.68464935,
+        "abstain": 0.17455687,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te16",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.4374422,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.29035035,
+         0.5107509,
+         0.19889878
+        ],
+        "confidence": 0.4374422,
+        "abstain": 0.14353122,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te17",
+       "label": 1,
+       "tag": "plain",
+       "ms": 4,
+       "ans": {
+        "pred": 1,
+        "conf": 0.5691461,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.14267589,
+         0.6588768,
+         0.19844736
+        ],
+        "confidence": 0.5691461,
+        "abstain": 0.1361873,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te18",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 3,
+       "ans": {
+        "pred": 2,
+        "conf": 0.587725,
+        "score": 2
+       },
+       "raw": {
+        "score": 2,
+        "legend": "High: immediate danger of serious injury, stop work now",
+        "probabilities": [
+         0.095304675,
+         0.22507875,
+         0.6796166
+        ],
+        "confidence": 0.587725,
+        "abstain": 0.13521095,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te19",
+       "label": 1,
+       "tag": "slang",
+       "ms": 3.3,
+       "ans": {
+        "pred": 1,
+        "conf": 0.5194624,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.05029781,
+         0.60004556,
+         0.3496566
+        ],
+        "confidence": 0.5194624,
+        "abstain": 0.13429514,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te20",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 4.4,
+       "ans": {
+        "pred": 1,
+        "conf": 0.34321904,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.3984713,
+         0.31018445,
+         0.29134426
+        ],
+        "confidence": 0.34321904,
+        "abstain": 0.13866052,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te21",
+       "label": 1,
+       "tag": "negation",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.3986322,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.24549499,
+         0.44833416,
+         0.3061709
+        ],
+        "confidence": 0.3986322,
+        "abstain": 0.11085919,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te22",
+       "label": 1,
+       "tag": "plain",
+       "ms": 3.6,
+       "ans": {
+        "pred": 1,
+        "conf": 0.5590716,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.15569234,
+         0.19128038,
+         0.65302724
+        ],
+        "confidence": 0.5590716,
+        "abstain": 0.14387704,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te23",
+       "label": 1,
+       "tag": "plain",
+       "ms": 2.9,
+       "ans": {
+        "pred": 1,
+        "conf": 0.5897822,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.16731022,
+         0.6976058,
+         0.13508394
+        ],
+        "confidence": 0.5897822,
+        "abstain": 0.15456234,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te24",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.39269105,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.38801613,
+         0.44166353,
+         0.17032035
+        ],
+        "confidence": 0.39269105,
+        "abstain": 0.11088187,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te25",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.520727,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.24111958,
+         0.5992342,
+         0.15964621
+        ],
+        "confidence": 0.520727,
+        "abstain": 0.13101262,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te26",
+       "label": 1,
+       "tag": "plain",
+       "ms": 4,
+       "ans": {
+        "pred": 1,
+        "conf": 0.66602457,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.09757497,
+         0.7811855,
+         0.12123955
+        ],
+        "confidence": 0.66602457,
+        "abstain": 0.14741817,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te27",
+       "label": 1,
+       "tag": "plain",
+       "ms": 3.6,
+       "ans": {
+        "pred": 1,
+        "conf": 0.37417576,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.4683616,
+         0.3084054,
+         0.22323306
+        ],
+        "confidence": 0.37417576,
+        "abstain": 0.2010964,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te28",
+       "label": 1,
+       "tag": "implicit",
+       "ms": 3.7,
+       "ans": {
+        "pred": 2,
+        "conf": 0.55468494,
+        "score": 2
+       },
+       "raw": {
+        "score": 2,
+        "legend": "High: immediate danger of serious injury, stop work now",
+        "probabilities": [
+         0.088222355,
+         0.2760223,
+         0.63575536
+        ],
+        "confidence": 0.55468494,
+        "abstain": 0.1275183,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te29",
+       "label": 1,
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.51923746,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.17720583,
+         0.5755827,
+         0.24721147
+        ],
+        "confidence": 0.51923746,
+        "abstain": 0.0978925,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te30",
+       "label": 1,
+       "tag": "plain",
+       "ms": 3.8,
+       "ans": {
+        "pred": 1,
+        "conf": 0.47114894,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.26503852,
+         0.52753013,
+         0.20743133
+        ],
+        "confidence": 0.47114894,
+        "abstain": 0.10687769,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te31",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 3,
+       "ans": {
+        "pred": 2,
+        "conf": 0.5743101,
+        "score": 2
+       },
+       "raw": {
+        "score": 2,
+        "legend": "High: immediate danger of serious injury, stop work now",
+        "probabilities": [
+         0.10899542,
+         0.25083262,
+         0.64017195
+        ],
+        "confidence": 0.5743101,
+        "abstain": 0.10288147,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te32",
+       "label": 2,
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": 1,
+        "conf": 0.44122198,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.2326883,
+         0.49698055,
+         0.27033123
+        ],
+        "confidence": 0.44122198,
+        "abstain": 0.11219463,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te33",
+       "label": 2,
+       "tag": "slang",
+       "ms": 4,
+       "ans": {
+        "pred": 1,
+        "conf": 0.5445375,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.10352693,
+         0.6494775,
+         0.24699557
+        ],
+        "confidence": 0.5445375,
+        "abstain": 0.16157606,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te34",
+       "label": 2,
+       "tag": "plain",
+       "ms": 3.9,
+       "ans": {
+        "pred": 2,
+        "conf": 0.606869,
+        "score": 2
+       },
+       "raw": {
+        "score": 2,
+        "legend": "High: immediate danger of serious injury, stop work now",
+        "probabilities": [
+         0.079962544,
+         0.21632881,
+         0.70370865
+        ],
+        "confidence": 0.606869,
+        "abstain": 0.13761333,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te35",
+       "label": 2,
+       "tag": "negation",
+       "ms": 4.9,
+       "ans": {
+        "pred": 1,
+        "conf": 0.39030063,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.17941795,
+         0.36462468,
+         0.45595738
+        ],
+        "confidence": 0.39030063,
+        "abstain": 0.14399755,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te36",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 3.2,
+       "ans": {
+        "pred": 1,
+        "conf": 0.5123234,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.11414073,
+         0.59582406,
+         0.29003516
+        ],
+        "confidence": 0.5123234,
+        "abstain": 0.1401432,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te37",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.34214374,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.27295837,
+         0.32948717,
+         0.39755446
+        ],
+        "confidence": 0.34214374,
+        "abstain": 0.13937888,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te38",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 4.1,
+       "ans": {
+        "pred": 2,
+        "conf": 0.4950508,
+        "score": 2
+       },
+       "raw": {
+        "score": 2,
+        "legend": "High: immediate danger of serious injury, stop work now",
+        "probabilities": [
+         0.04109878,
+         0.36742252,
+         0.5914787
+        ],
+        "confidence": 0.4950508,
+        "abstain": 0.16302854,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te39",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 3.7,
+       "ans": {
+        "pred": 1,
+        "conf": 0.4787184,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.26899007,
+         0.162186,
+         0.56882393
+        ],
+        "confidence": 0.4787184,
+        "abstain": 0.15840676,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te40",
+       "label": 2,
+       "tag": "slang",
+       "ms": 4.4,
+       "ans": {
+        "pred": 2,
+        "conf": 0.46951675,
+        "score": 2
+       },
+       "raw": {
+        "score": 2,
+        "legend": "High: immediate danger of serious injury, stop work now",
+        "probabilities": [
+         0.028105043,
+         0.3878583,
+         0.58403665
+        ],
+        "confidence": 0.46951675,
+        "abstain": 0.19608344,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te41",
+       "label": 2,
+       "tag": "misleading",
+       "ms": 4.6,
+       "ans": {
+        "pred": 1,
+        "conf": 0.3887082,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.41977367,
+         0.12495536,
+         0.45527098
+        ],
+        "confidence": 0.3887082,
+        "abstain": 0.14620472,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te42",
+       "label": 2,
+       "tag": "plain",
+       "ms": 3.2,
+       "ans": {
+        "pred": 2,
+        "conf": 0.64663553,
+        "score": 2
+       },
+       "raw": {
+        "score": 2,
+        "legend": "High: immediate danger of serious injury, stop work now",
+        "probabilities": [
+         0.056047466,
+         0.20042174,
+         0.7435308
+        ],
+        "confidence": 0.64663553,
+        "abstain": 0.13031773,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te43",
+       "label": 2,
+       "tag": "plain",
+       "ms": 4.1,
+       "ans": {
+        "pred": 1,
+        "conf": 0.43309647,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.08089112,
+         0.39314255,
+         0.52596635
+        ],
+        "confidence": 0.43309647,
+        "abstain": 0.17657001,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te44",
+       "label": 2,
+       "tag": "implicit",
+       "ms": 3.6,
+       "ans": {
+        "pred": 1,
+        "conf": 0.4896941,
+        "score": 1
+       },
+       "raw": {
+        "score": 1,
+        "legend": "Medium: a hazard that needs correcting soon, but no immediate danger",
+        "probabilities": [
+         0.09259572,
+         0.33374217,
+         0.5736621
+        ],
+        "confidence": 0.4896941,
+        "abstain": 0.14637189,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "sev-te45",
+       "label": 2,
+       "tag": "plain",
+       "ms": 3.8,
+       "ans": {
+        "pred": 2,
+        "conf": 0.7179462,
+        "score": 2
+       },
+       "raw": {
+        "score": 2,
+        "legend": "High: immediate danger of serious injury, stop work now",
+        "probabilities": [
+         0.03149176,
+         0.13115148,
+         0.83735675
+        ],
+        "confidence": 0.7179462,
+        "abstain": 0.14260417,
+        "calibrated": false,
+        "head": "linear-probe",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      }
+     ]
+    },
+    "deadline": {
+     "metrics": {
+      "n": 45,
+      "answered": 45,
+      "auroc": 0.9426877470355731,
+      "acc_05": 0.8888888888888888,
+      "threshold": 0.48,
+      "accuracy": 0.8888888888888888,
+      "p50_ms": 4.5,
+      "p95_ms": 6,
+      "mean_tokens": null
+     },
+     "rows": [
+      {
+       "id": "dea-te01",
+       "label": true,
+       "tag": "plain",
+       "ms": 3.9,
+       "ans": {
+        "pred": 0.85337234,
+        "conf": null,
+        "score": 0.85337234
+       },
+       "raw": {
+        "noul": 0.85337234,
+        "confidence": 0.85337234,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te02",
+       "label": true,
+       "tag": "plain",
+       "ms": 4.6,
+       "ans": {
+        "pred": 0.69454455,
+        "conf": null,
+        "score": 0.69454455
+       },
+       "raw": {
+        "noul": 0.69454455,
+        "confidence": 0.69454455,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te03",
+       "label": true,
+       "tag": "implicit",
+       "ms": 5.2,
+       "ans": {
+        "pred": 0.8443229,
+        "conf": null,
+        "score": 0.8443229
+       },
+       "raw": {
+        "noul": 0.8443229,
+        "confidence": 0.8443229,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te04",
+       "label": true,
+       "tag": "slang",
+       "ms": 3.2,
+       "ans": {
+        "pred": 0.5517255,
+        "conf": null,
+        "score": 0.5517255
+       },
+       "raw": {
+        "noul": 0.5517255,
+        "confidence": 0.5517255,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te05",
+       "label": true,
+       "tag": "plain",
+       "ms": 4.3,
+       "ans": {
+        "pred": 0.6124096,
+        "conf": null,
+        "score": 0.6124096
+       },
+       "raw": {
+        "noul": 0.6124096,
+        "confidence": 0.6124096,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te06",
+       "label": true,
+       "tag": "implicit",
+       "ms": 4.7,
+       "ans": {
+        "pred": 0.61814606,
+        "conf": null,
+        "score": 0.61814606
+       },
+       "raw": {
+        "noul": 0.61814606,
+        "confidence": 0.61814606,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te07",
+       "label": true,
+       "tag": "implicit",
+       "ms": 4.2,
+       "ans": {
+        "pred": 0.8410106,
+        "conf": null,
+        "score": 0.8410106
+       },
+       "raw": {
+        "noul": 0.8410106,
+        "confidence": 0.8410106,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te08",
+       "label": true,
+       "tag": "negation",
+       "ms": 4.8,
+       "ans": {
+        "pred": 0.4897924,
+        "conf": null,
+        "score": 0.4897924
+       },
+       "raw": {
+        "noul": 0.4897924,
+        "confidence": 0.5102076,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te09",
+       "label": true,
+       "tag": "plain",
+       "ms": 4.6,
+       "ans": {
+        "pred": 0.6250145,
+        "conf": null,
+        "score": 0.6250145
+       },
+       "raw": {
+        "noul": 0.6250145,
+        "confidence": 0.6250145,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te10",
+       "label": true,
+       "tag": "implicit",
+       "ms": 3.7,
+       "ans": {
+        "pred": 0.59067327,
+        "conf": null,
+        "score": 0.59067327
+       },
+       "raw": {
+        "noul": 0.59067327,
+        "confidence": 0.59067327,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te11",
+       "label": true,
+       "tag": "plain",
+       "ms": 3.7,
+       "ans": {
+        "pred": 0.7696968,
+        "conf": null,
+        "score": 0.7696968
+       },
+       "raw": {
+        "noul": 0.7696968,
+        "confidence": 0.7696968,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te12",
+       "label": true,
+       "tag": "plain",
+       "ms": 3.7,
+       "ans": {
+        "pred": 0.7751184,
+        "conf": null,
+        "score": 0.7751184
+       },
+       "raw": {
+        "noul": 0.7751184,
+        "confidence": 0.7751184,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te13",
+       "label": true,
+       "tag": "implicit",
+       "ms": 4,
+       "ans": {
+        "pred": 0.83267146,
+        "conf": null,
+        "score": 0.83267146
+       },
+       "raw": {
+        "noul": 0.83267146,
+        "confidence": 0.83267146,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te14",
+       "label": true,
+       "tag": "implicit",
+       "ms": 5.7,
+       "ans": {
+        "pred": 0.779598,
+        "conf": null,
+        "score": 0.779598
+       },
+       "raw": {
+        "noul": 0.779598,
+        "confidence": 0.779598,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te15",
+       "label": true,
+       "tag": "plain",
+       "ms": 5.9,
+       "ans": {
+        "pred": 0.69165546,
+        "conf": null,
+        "score": 0.69165546
+       },
+       "raw": {
+        "noul": 0.69165546,
+        "confidence": 0.69165546,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te16",
+       "label": true,
+       "tag": "implicit",
+       "ms": 5.6,
+       "ans": {
+        "pred": 0.802676,
+        "conf": null,
+        "score": 0.802676
+       },
+       "raw": {
+        "noul": 0.802676,
+        "confidence": 0.802676,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te17",
+       "label": true,
+       "tag": "plain",
+       "ms": 6.1,
+       "ans": {
+        "pred": 0.8228652,
+        "conf": null,
+        "score": 0.8228652
+       },
+       "raw": {
+        "noul": 0.8228652,
+        "confidence": 0.8228652,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te18",
+       "label": true,
+       "tag": "implicit",
+       "ms": 6,
+       "ans": {
+        "pred": 0.6980642,
+        "conf": null,
+        "score": 0.6980642
+       },
+       "raw": {
+        "noul": 0.6980642,
+        "confidence": 0.6980642,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te19",
+       "label": true,
+       "tag": "implicit",
+       "ms": 4.3,
+       "ans": {
+        "pred": 0.64256173,
+        "conf": null,
+        "score": 0.64256173
+       },
+       "raw": {
+        "noul": 0.64256173,
+        "confidence": 0.64256173,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te20",
+       "label": true,
+       "tag": "slang",
+       "ms": 4.6,
+       "ans": {
+        "pred": 0.83114076,
+        "conf": null,
+        "score": 0.83114076
+       },
+       "raw": {
+        "noul": 0.83114076,
+        "confidence": 0.83114076,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te21",
+       "label": true,
+       "tag": "implicit",
+       "ms": 6.3,
+       "ans": {
+        "pred": 0.67577565,
+        "conf": null,
+        "score": 0.67577565
+       },
+       "raw": {
+        "noul": 0.67577565,
+        "confidence": 0.67577565,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te22",
+       "label": true,
+       "tag": "plain",
+       "ms": 6.1,
+       "ans": {
+        "pred": 0.7508245,
+        "conf": null,
+        "score": 0.7508245
+       },
+       "raw": {
+        "noul": 0.7508245,
+        "confidence": 0.7508245,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te23",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.7,
+       "ans": {
+        "pred": 0.20228545,
+        "conf": null,
+        "score": 0.20228545
+       },
+       "raw": {
+        "noul": 0.20228545,
+        "confidence": 0.79771453,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te24",
+       "label": false,
+       "tag": "negation",
+       "ms": 5.1,
+       "ans": {
+        "pred": 0.42902392,
+        "conf": null,
+        "score": 0.42902392
+       },
+       "raw": {
+        "noul": 0.42902392,
+        "confidence": 0.5709761,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te25",
+       "label": false,
+       "tag": "plain",
+       "ms": 4.7,
+       "ans": {
+        "pred": 0.17354763,
+        "conf": null,
+        "score": 0.17354763
+       },
+       "raw": {
+        "noul": 0.17354763,
+        "confidence": 0.8264524,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te26",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.1,
+       "ans": {
+        "pred": 0.3532393,
+        "conf": null,
+        "score": 0.3532393
+       },
+       "raw": {
+        "noul": 0.3532393,
+        "confidence": 0.6467607,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te27",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.8,
+       "ans": {
+        "pred": 0.23440905,
+        "conf": null,
+        "score": 0.23440905
+       },
+       "raw": {
+        "noul": 0.23440905,
+        "confidence": 0.76559097,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te28",
+       "label": false,
+       "tag": "plain",
+       "ms": 3.3,
+       "ans": {
+        "pred": 0.55858797,
+        "conf": null,
+        "score": 0.55858797
+       },
+       "raw": {
+        "noul": 0.55858797,
+        "confidence": 0.55858797,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te29",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.6,
+       "ans": {
+        "pred": 0.47942403,
+        "conf": null,
+        "score": 0.47942403
+       },
+       "raw": {
+        "noul": 0.47942403,
+        "confidence": 0.520576,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te30",
+       "label": false,
+       "tag": "plain",
+       "ms": 4.5,
+       "ans": {
+        "pred": 0.08941839,
+        "conf": null,
+        "score": 0.08941839
+       },
+       "raw": {
+        "noul": 0.08941839,
+        "confidence": 0.9105816,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te31",
+       "label": false,
+       "tag": "plain",
+       "ms": 3.2,
+       "ans": {
+        "pred": 0.49122167,
+        "conf": null,
+        "score": 0.49122167
+       },
+       "raw": {
+        "noul": 0.49122167,
+        "confidence": 0.50877833,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te32",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.1,
+       "ans": {
+        "pred": 0.4340686,
+        "conf": null,
+        "score": 0.4340686
+       },
+       "raw": {
+        "noul": 0.4340686,
+        "confidence": 0.56593144,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te33",
+       "label": false,
+       "tag": "slang",
+       "ms": 3.2,
+       "ans": {
+        "pred": 0.40443808,
+        "conf": null,
+        "score": 0.40443808
+       },
+       "raw": {
+        "noul": 0.40443808,
+        "confidence": 0.5955619,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te34",
+       "label": false,
+       "tag": "plain",
+       "ms": 5,
+       "ans": {
+        "pred": 0.69743854,
+        "conf": null,
+        "score": 0.69743854
+       },
+       "raw": {
+        "noul": 0.69743854,
+        "confidence": 0.69743854,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te35",
+       "label": false,
+       "tag": "plain",
+       "ms": 4.2,
+       "ans": {
+        "pred": 0.17430839,
+        "conf": null,
+        "score": 0.17430839
+       },
+       "raw": {
+        "noul": 0.17430839,
+        "confidence": 0.8256916,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te36",
+       "label": false,
+       "tag": "negation",
+       "ms": 5.3,
+       "ans": {
+        "pred": 0.1947616,
+        "conf": null,
+        "score": 0.1947616
+       },
+       "raw": {
+        "noul": 0.1947616,
+        "confidence": 0.80523837,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te37",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.1,
+       "ans": {
+        "pred": 0.6228607,
+        "conf": null,
+        "score": 0.6228607
+       },
+       "raw": {
+        "noul": 0.6228607,
+        "confidence": 0.6228607,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te38",
+       "label": false,
+       "tag": "plain",
+       "ms": 3.9,
+       "ans": {
+        "pred": 0.24463661,
+        "conf": null,
+        "score": 0.24463661
+       },
+       "raw": {
+        "noul": 0.24463661,
+        "confidence": 0.7553634,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te39",
+       "label": false,
+       "tag": "plain",
+       "ms": 3.6,
+       "ans": {
+        "pred": 0.2663057,
+        "conf": null,
+        "score": 0.2663057
+       },
+       "raw": {
+        "noul": 0.2663057,
+        "confidence": 0.7336943,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te40",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.2,
+       "ans": {
+        "pred": 0.7165419,
+        "conf": null,
+        "score": 0.7165419
+       },
+       "raw": {
+        "noul": 0.7165419,
+        "confidence": 0.7165419,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te41",
+       "label": false,
+       "tag": "plain",
+       "ms": 3.3,
+       "ans": {
+        "pred": 0.2375617,
+        "conf": null,
+        "score": 0.2375617
+       },
+       "raw": {
+        "noul": 0.2375617,
+        "confidence": 0.7624383,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te42",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.1,
+       "ans": {
+        "pred": 0.1458809,
+        "conf": null,
+        "score": 0.1458809
+       },
+       "raw": {
+        "noul": 0.1458809,
+        "confidence": 0.8541191,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te43",
+       "label": false,
+       "tag": "misleading",
+       "ms": 4.6,
+       "ans": {
+        "pred": 0.37900203,
+        "conf": null,
+        "score": 0.37900203
+       },
+       "raw": {
+        "noul": 0.37900203,
+        "confidence": 0.62099797,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te44",
+       "label": false,
+       "tag": "negation",
+       "ms": 5.8,
+       "ans": {
+        "pred": 0.09600429,
+        "conf": null,
+        "score": 0.09600429
+       },
+       "raw": {
+        "noul": 0.09600429,
+        "confidence": 0.9039957,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      },
+      {
+       "id": "dea-te45",
+       "label": false,
+       "tag": "misleading",
+       "ms": 3.6,
+       "ans": {
+        "pred": 0.32133704,
+        "conf": null,
+        "score": 0.32133704
+       },
+       "raw": {
+        "noul": 0.32133704,
+        "confidence": 0.67866296,
+        "abstain": 0,
+        "calibrated": false,
+        "head": "logistic",
+        "model": "bge-small-en-v1.5-int8@6c9c6101a956",
+        "temperature": 1
+       }
+      }
+     ]
+    }
+   },
+   "by_tag": {
+    "misleading": {
+     "n": 17,
+     "accuracy": 0.7058823529411765
+    },
+    "slang": {
+     "n": 16,
+     "accuracy": 0.8125
+    },
+    "plain": {
+     "n": 59,
+     "accuracy": 0.7796610169491526
+    },
+    "negation": {
+     "n": 14,
+     "accuracy": 0.6428571428571429
+    },
+    "implicit": {
+     "n": 41,
+     "accuracy": 0.7317073170731707
+    },
+    "sarcasm": {
+     "n": 3,
+     "accuracy": 0.6666666666666666
+    }
+   },
+   "overall_accuracy": 0.7466666666666667
+  }
+ }
+}

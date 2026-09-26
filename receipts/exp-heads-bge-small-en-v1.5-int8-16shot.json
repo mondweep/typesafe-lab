@@ -1,0 +1,88 @@
+{
+  "model": "bge-small-en-v1.5-int8",
+  "shots": 16,
+  "train_reports": {
+    "department": {
+      "question": "department",
+      "accepted": 128,
+      "rejected": 0,
+      "head": "linear-probe",
+      "calibrated": true
+    },
+    "urgent": {
+      "question": "urgent",
+      "accepted": 200,
+      "rejected": 0,
+      "head": "logistic",
+      "calibrated": true
+    },
+    "frustration": {
+      "question": "frustration",
+      "accepted": 200,
+      "rejected": 0,
+      "head": "linear-probe",
+      "calibrated": true
+    }
+  },
+  "department": {
+    "accuracy": 79.3,
+    "ece": 0.039,
+    "calibrated": true,
+    "head": "linear-probe",
+    "mean_abstain_in_scope": 0.0011
+  },
+  "urgent": {
+    "accuracy_at_0_5": 84.7,
+    "majority_baseline": 71.3,
+    "auroc": 0.859,
+    "head": "logistic",
+    "calibrated": true
+  },
+  "frustration": {
+    "accuracy": 72,
+    "head": "linear-probe",
+    "calibrated": true
+  },
+  "latency_ms_all_three_questions": {
+    "p50": 9.7,
+    "p95": 13
+  },
+  "oos_probe": [
+    {
+      "state": "What is the capital of Australia?",
+      "choice": "legal",
+      "confidence": 0.87787426,
+      "abstain": 0.013487253
+    },
+    {
+      "state": "Write me a haiku about autumn leaves.",
+      "choice": "feedback",
+      "confidence": 0.7198767,
+      "abstain": 0.0067619984
+    },
+    {
+      "state": "My neighbour’s dog keeps barking at night, any tips?",
+      "choice": "technical",
+      "confidence": 0.7907274,
+      "abstain": 0.0075685126
+    },
+    {
+      "state": "Can you recommend a good lasagne recipe?",
+      "choice": "feedback",
+      "confidence": 0.48399493,
+      "abstain": 0.011883009
+    },
+    {
+      "state": "Who won the football last night?",
+      "choice": "legal",
+      "confidence": 0.3208837,
+      "abstain": 0.008506918
+    },
+    {
+      "state": "asdf qwerty zxcv",
+      "choice": "legal",
+      "confidence": 0.53006613,
+      "abstain": 0.0024224569
+    }
+  ]
+}

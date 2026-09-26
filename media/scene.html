@@ -1,0 +1,174 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Inter;font-weight:400;src:url(node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2)}
+@font-face{font-family:Inter;font-weight:600;src:url(node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2)}
+@font-face{font-family:Inter;font-weight:800;src:url(node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2)}
+:root{--bg:#141412;--surface:#1c1c1a;--s2:#252522;--ink:#ecebe6;--ink2:#b5b2a9;--ink3:#85827a;--line:#34332f;--accent:#7d9cf0;--jev:#f0a064;--ts:#5fcf9f;--bad:#f28b82;--warn:#e8c060}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1080px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased}
+.scene{position:absolute;inset:0;padding:96px 88px 200px;opacity:0;display:flex;flex-direction:column;justify-content:center}
+.kicker{font-size:26px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}
+h1{font-size:84px;line-height:1.05;font-weight:800;letter-spacing:-.02em}
+h2{font-size:62px;line-height:1.08;font-weight:800;letter-spacing:-.015em;margin-bottom:40px}
+.sub{font-size:34px;color:var(--ink2);line-height:1.35;margin-top:32px}
+.ts{color:var(--ts)} .jev{color:var(--jev)} .bad{color:var(--bad)} .acc{color:var(--accent)}
+.chip{display:inline-block;font-size:40px;font-weight:600;padding:22px 34px;border-radius:18px;background:var(--surface);border:2px solid var(--line);margin:0 0 22px;opacity:0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.card{background:var(--surface);border:2px solid var(--line);border-radius:24px;padding:40px 36px;opacity:0}
+.card h3{font-size:44px;font-weight:800;margin-bottom:22px}
+.card li{font-size:30px;color:var(--ink2);list-style:none;margin:14px 0;line-height:1.3}
+.card.t{border-color:#2d5c4a}.card.j{border-color:#6a4428}
+.shot{border-radius:20px;overflow:hidden;border:2px solid var(--line);height:640px;position:relative;background:#fff}
+.shot img{position:absolute;left:0;width:100%}
+.q{font-size:44px;font-weight:600;margin-bottom:30px}
+.q .w{display:inline-block;min-width:150px;color:var(--warn);border-bottom:4px solid var(--warn)}
+.row{display:flex;align-items:center;gap:22px;margin:16px 0;font-size:32px}
+.row .lab{width:250px;font-weight:600}
+.bar{height:48px;border-radius:10px;position:relative}
+.val{font-weight:800;font-size:34px;min-width:120px}
+.big{font-size:150px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.pipe{display:flex;gap:14px;align-items:center;margin:10px 0 44px;position:relative}
+.stage{flex:1;background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:22px 14px;text-align:center;font-size:27px;font-weight:600;line-height:1.25}
+.stage small{display:block;font-weight:400;color:var(--ink3);font-size:22px;margin-top:6px}
+.dot{position:absolute;top:-26px;width:22px;height:22px;border-radius:50%;background:var(--warn);box-shadow:0 0 18px var(--warn)}
+.lim{font-size:36px;line-height:1.35;margin:18px 0;padding-left:40px;position:relative;opacity:0}
+.lim:before{content:"";position:absolute;left:0;top:18px;width:18px;height:18px;border-radius:4px;background:var(--warn)}
+.cta a{color:var(--ink);text-decoration:none}
+.link{font-size:28px;white-space:nowrap;font-weight:600;margin:12px 0;color:var(--accent)}
+#cap{position:absolute;left:60px;right:60px;bottom:56px;min-height:100px;display:flex;align-items:center;justify-content:center;text-align:center}
+#cap span{background:rgba(0,0,0,.72);color:#fff;font-size:34px;font-weight:600;line-height:1.3;padding:14px 26px;border-radius:14px;opacity:0}
+#brand{position:absolute;left:88px;top:44px;font-size:22px;color:var(--ink3);font-weight:600;letter-spacing:.04em}
+#prog{position:absolute;left:0;top:0;height:6px;background:var(--accent)}
+</style></head><body>
+<div id="prog"></div>
+<div id="brand">TYPED DECISION LAB · MONDWEEP CHAKRAVORTY</div>
+
+<section class="scene" id="s1">
+  <div class="kicker">An open, reproducible test</div>
+  <h1>Local or hosted AI for <span class="acc">typed decisions?</span></h1>
+  <div class="sub"><span class="ts">@ruvector/typesafe</span> vs <span class="jev">Jev</span></div>
+</section>
+
+<section class="scene" id="s2">
+  <h2>Millions of small decisions a day</h2>
+  <div><span class="chip">Which team should get this email?</span></div>
+  <div><span class="chip">How serious is this safety report?</span></div>
+  <div><span class="chip">Does this message hold a deadline?</span></div>
+</section>
+
+<section class="scene" id="s3">
+  <h2>Two ways to answer</h2>
+  <div class="cards">
+    <div class="card t"><h3 class="ts">typesafe</h3><ul><li>Runs locally, open source</li><li>4–26 ms per decision</li><li>Matches message to options</li></ul></div>
+    <div class="card j"><h3 class="jev">Jev</h3><ul><li>Hosted model, via API</li><li>~110–160 ms</li><li>Reads the question itself</li></ul></div>
+  </div>
+</section>
+
+<section class="scene" id="s4">
+  <div class="kicker">Step 1 · build a lab</div>
+  <div class="shot"><img id="img03" src="../shots/03-ticket-explorer.png"></div>
+</section>
+
+<section class="scene" id="s5">
+  <div class="kicker">Does it read the question?</div>
+  <div class="q">"Which team should <span class="w" id="word">own</span> this message?"</div>
+  <div class="row"><span class="lab jev">Jev</span><span id="jevAns" style="font-weight:800">Billing</span></div>
+  <div class="row"><span class="lab ts">typesafe</span><span id="tsAns" style="font-weight:800">Shipping</span></div>
+  <div style="height:40px"></div>
+  <div class="q" style="font-size:36px">"…needs a response" vs "…does <b>NOT</b> need one"</div>
+  <div class="row"><span class="lab jev">Jev</span><span class="val jev" id="n1">0.97 → 0.04</span></div>
+  <div class="row"><span class="lab ts">typesafe</span><span class="val ts" id="n2">0.84 → 0.81</span></div>
+</section>
+
+<section class="scene" id="s6">
+  <div class="kicker">Step 2 · fresh data, 150 test items</div>
+  <div id="bars"></div>
+  <div class="sub" id="hi" style="opacity:0">High-danger safety reports caught:<br><span class="ts" style="font-weight:800">typesafe 6 of 15</span> · <span class="jev" style="font-weight:800">Jev 15 of 15</span></div>
+</section>
+
+<section class="scene" id="s7">
+  <div class="kicker">Step 3 · get the best of both</div>
+  <div class="pipe" id="pipe">
+    <div class="stage">typesafe<small>~5 ms</small></div>
+    <div class="stage">Re-reader<small>~50 ms</small></div>
+    <div class="stage">Local LLM<small>~0.6 s</small></div>
+    <div class="stage jev">Jev<small>hard cases</small></div>
+    <div class="dot" id="dot"></div>
+  </div>
+  <div style="display:flex;gap:60px;align-items:flex-end">
+    <div><div class="big" id="acc">80.7%</div><div class="sub" style="margin-top:10px">accuracy</div></div>
+    <div><div class="big jev" id="share">0%</div><div class="sub" style="margin-top:10px">sent to Jev</div></div>
+  </div>
+</section>
+
+<section class="scene" id="s8">
+  <h2>Honest limits</h2>
+  <div class="lim">Cascade thresholds were tuned on the test set: an upper bound</div>
+  <div class="lim">The benchmark was written by an AI, one annotator</div>
+  <div class="lim">A confidently wrong stage never escalates</div>
+</section>
+
+<section class="scene cta" id="s9">
+  <h1 style="font-size:76px">Review it. Break it.<br><span class="acc">Bring a use case.</span></h1>
+  <div style="height:44px"></div>
+  <div class="link">Lab · typesafe-lab-276367410975.europe-west2.run.app</div>
+  <div class="link">Code · github.com/mondweep/typesafe-lab</div>
+  <div class="sub" style="font-size:30px">Investigated &amp; orchestrated by <b style="color:var(--ink)">Mondweep Chakravorty</b>, with Claude</div>
+</section>
+
+<div id="cap"><span id="capt"></span></div>
+
+<script>
+const S=[['s1',0,6],['s2',6,12.5],['s3',12.5,20],['s4',20,28],['s5',28,38],['s6',38,48],['s7',48,60],['s8',60,67],['s9',67,77]];
+const TOTAL=77;
+const CAP=[[0.6,6,'I tested two ways to make fast, typed AI decisions'],
+[6.3,12.4,'Routing, triage, risk: each answer is a label, not an essay'],
+[12.8,20,'One runs on your machine. One is a hosted model.'],
+[20.3,28,'We built a live lab so anyone can compare them side by side'],
+[28.3,33,'Change one word in the question…'],
+[33,38,'Jev follows the meaning. typesafe barely notices "not".'],
+[38.3,43,'Then a fresh benchmark, with train and test kept apart'],
+[43,48,'Jev is far more accurate, especially on safety'],
+[48.3,53,'So we chained them: cheap local stages first'],
+[53,60,'Jev-level accuracy while Jev sees only 41% of messages'],
+[60.3,67,'Early, exploratory results: we want them challenged'],
+[67.3,76.6,'Try the lab. Read the code. Tell me where it breaks.']];
+const BARS=[['typesafe, no training',61.3,'ts'],['typesafe, trained',74.7,'ts'],['Jev, no examples',93.3,'jev'],['Jev, with examples',98.0,'jev']];
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const ease=x=>{x=clamp(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const ramp=(t,a,b)=>ease((t-a)/(b-a));
+$('bars').innerHTML=BARS.map((b,i)=>`<div class="row"><span class="lab" style="width:330px;font-size:28px">${b[0]}</span><div style="flex:1"><div class="bar" id="b${i}" style="background:var(--${b[2]});width:0"></div></div><span class="val ${b[2]}" id="v${i}">0%</span></div>`).join('');
+window.render=function(t){
+  $('prog').style.width=(t/TOTAL*100)+'%';
+  for(const [id,a,b] of S){const el=$(id);const o=Math.min(ramp(t,a,a+.6),1-ramp(t,b-.6,b));el.style.opacity=o;el.style.transform=`translateY(${(1-ramp(t,a,a+.8))*24}px)`;}
+  // s2 chips
+  document.querySelectorAll('#s2 .chip').forEach((c,i)=>{const s=7.2+i*1.2;c.style.opacity=ramp(t,s,s+.5);c.style.transform=`translateX(${(1-ramp(t,s,s+.6))*-40}px)`});
+  document.querySelectorAll('#s3 .card').forEach((c,i)=>{const s=13.4+i*1.4;c.style.opacity=ramp(t,s,s+.6)});
+  // s4 pan
+  const p=ramp(t,20.5,27.5);$('img03').style.top=(-p*(1588/1588*904*2062/1588-640)*0.9)+'px';
+  // s5
+  const sw=t>=31;$('word').textContent=sw?'avoid':'own';
+  $('jevAns').textContent=sw?'Shipping':'Billing';$('jevAns').className=sw?'jev':'';
+  $('tsAns').className=sw?'bad':'';
+  $('tsAns').textContent=sw?'Shipping (unchanged)':'Shipping';
+  const n=ramp(t,33.5,34.3);$('n1').style.opacity=n;$('n2').style.opacity=ramp(t,34.5,35.3);
+  // s6 bars
+  BARS.forEach((b,i)=>{const s=39.2+i*.7;const k=ramp(t,s,s+1.4);$('b'+i).style.width=(b[1]*k)+'%';$('v'+i).textContent=(b[1]*k).toFixed(1)+'%'});
+  $('hi').style.opacity=ramp(t,43.4,44.2);
+  // s7 cascade
+  const pipe=$('pipe').getBoundingClientRect();const cyc=((t-48.8)%2.2+2.2)%2.2/2.2;
+  $('dot').style.left=(cyc*(pipe.width-22))+'px';$('dot').style.opacity=t>48.8?1:0;
+  const pts=[[0,80.7],[9,84.7],[16,88.0],[22,90.7],[31,92.7],[41,93.3]];
+  const k=ramp(t,51,57)*(pts.length-1);const i=Math.min(Math.floor(k),pts.length-2),f=k-i;
+  const sh=pts[i][0]+(pts[i+1][0]-pts[i][0])*f,ac=pts[i][1]+(pts[i+1][1]-pts[i][1])*f;
+  $('share').textContent=Math.round(sh)+'%';$('acc').textContent=ac.toFixed(1)+'%';
+  // s8
+  document.querySelectorAll('.lim').forEach((c,i)=>{const s=61+i*1.3;c.style.opacity=ramp(t,s,s+.5)});
+  // captions
+  const c=CAP.find(x=>t>=x[0]&&t<x[1]);const cap=$('capt');
+  if(c){cap.textContent=c[2];cap.style.opacity=Math.min(ramp(t,c[0],c[0]+.3),1-ramp(t,c[1]-.3,c[1]))}else cap.style.opacity=0;
+};
+window.TOTAL=TOTAL;render(0);
+</script></body></html>

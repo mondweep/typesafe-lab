@@ -1,0 +1,45 @@
+{
+ "jev_urgent": {
+  "val_threshold": 0.91,
+  "val_acc": 0.9466666666666667,
+  "test_acc_at_val_threshold": 0.9133333333333333,
+  "test_acc_at_0_5": 0.5866666666666667,
+  "test_auroc": 0.9406650728102587
+ },
+ "ts_zero_plain": {
+  "auroc_1_minus_conf": 0.7049056603773585,
+  "auroc_abstain": 0.9721698113207548,
+  "oos_to_other": 0,
+  "in_to_other": 0,
+  "mean_conf_oos": 0.1274903273679245,
+  "mean_conf_in": 0.13083666354000006,
+  "head": "nearest-prototype"
+ },
+ "ts_zero_other": {
+  "auroc_1_minus_conf": 0.7020754716981132,
+  "auroc_abstain": 0.9780188679245283,
+  "oos_to_other": 0.16981132075471697,
+  "in_to_other": 0.24,
+  "mean_conf_oos": 0.114168393,
+  "mean_conf_in": 0.11688831137,
+  "head": "nearest-prototype"
+ },
+ "ts_trained_plain": {
+  "auroc_1_minus_conf": 0.7530188679245283,
+  "auroc_abstain": 0.9712264150943396,
+  "oos_to_other": 0,
+  "in_to_other": 0,
+  "mean_conf_oos": 0.6269079333018868,
+  "mean_conf_in": 0.8076013853,
+  "head": "linear-probe"
+ },
+ "ts_trained_other_noexamples": {
+  "auroc_1_minus_conf": 0.569433962264151,
+  "auroc_abstain": 0.9758490566037736,
+  "oos_to_other": 0.16981132075471697,
+  "in_to_other": 0.24,
+  "mean_conf_oos": 0.21274389820754733,
+  "mean_conf_in": 0.23111834350000005,
+  "head": "nearest-prototype"
+ }
+}

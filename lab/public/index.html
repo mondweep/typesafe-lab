@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typed Decisions Lab</title>
+<meta name="description" content="Hands-on, independent comparison of @ruvector/typesafe (local typed decisions) and Jev, typesafe.ai's System One model.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232f5bd3'/><path d='M9 16l5 5 9-10' stroke='white' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">Typed Decisions Lab<small>@ruvector/typesafe × Jev</small></div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-page="start" aria-selected="true">Start<span class="long"> here</span></button>
+      <button role="tab" data-page="tickets"><span class="long">Ticket explorer</span><span class="short">Tickets</span></button>
+      <button role="tab" data-page="playground">Playground</button>
+      <button role="tab" data-page="experiments">Experiments</button>
+      <button role="tab" data-page="bench"><span class="long">Fresh benchmark</span><span class="short">Benchmark</span></button>
+      <button role="tab" data-page="cascade">Cascade</button>
+      <button role="tab" data-page="evidence">Evidence</button>
+      <button role="tab" data-page="ruvector">RuVector<span class="long"> fit</span></button>
+      <button role="tab" data-page="verdict">Verdict</button>
+    </nav>
+    <button class="theme-btn" id="themeBtn" title="Toggle theme">◐</button>
+  </div>
+</header>
+
+<main>
+<!-- ============================ START ============================ -->
+<section class="page active" id="page-start">
+  <div class="byline small"><span class="avatar" aria-hidden="true">MC</span><span>Investigated and orchestrated by <a href="https://www.linkedin.com/in/mondweepchakravorty/" target="_blank" rel="noopener"><b>Mondweep Chakravorty</b></a> · DxSure / Agentics Consulting · built with Claude · <a href="/story">Read the story →</a></span></div>
+  <h1>Two ways to make software decide</h1>
+  <p class="lede">This lab compares <strong>Jev</strong>, typesafe.ai's hosted "System One" model, with <strong>@ruvector/typesafe</strong>, an open-source local engine that copies Jev's API. Both run live from this server: typesafe in-process, and Jev through its API (<code>jev-1.13.0</code>). Every number is labelled with where it came from.</p>
+
+  <div class="grid g2">
+    <div class="card jev">
+      <span class="pill jev">Jev · typesafe.ai</span>
+      <h3 style="margin-top:8px">A foundation model that returns typed values</h3>
+      <p class="small">Jev is a new model class trained for "fast, structured decisions that software can use directly". It uses parallel sampling and a method typesafe.ai calls RLCD (reinforcement learning for calibrated decisions). It gives up free-text generation. You send a <code>state</code> and a set of questions. It returns typed answers with probabilities.</p>
+      <dl class="kv"><dt>Runs</dt><dd>Hosted API, early access</dd><dt>Learns from</dt><dd>Criteria text you write (zero-shot)</dd><dt>Measured here</dt><dd>111 ms p50 / 160 ms p95 from London</dd><dt>Price</dt><dd>$0.042 / M input tokens; output free</dd><dt>Scope claimed</dt><dd>Workflows, guardrails, game state (Doom), Wikipedia racing</dd></dl>
+    </div>
+    <div class="card ts">
+      <span class="pill ts">@ruvector/typesafe 0.1.0</span>
+      <h3 style="margin-top:8px">A local classifier that uses Jev's request and response format</h3>
+      <p class="small">A Rust core (napi-rs native, with a WASM fallback) embeds the text with a small sentence model (bge-small, 384 dimensions). It then answers with a decision head: nearest-prototype with no labels, then a linear probe or logistic head once you add examples. Temperature scaling calibrates the confidence. A governed optimisation loop writes a receipt for every change.</p>
+      <dl class="kv"><dt>Runs</dt><dd>In-process, offline, MIT licence</dd><dt>Learns from</dt><dd>Criteria text + your labelled examples</dd><dt>Measured here</dt><dd>13–26 ms p95 on 2 vCPU</dd><dt>Price</dt><dd>Your CPU; no per-token cost</dd><dt>Scope</dt><dd>Bounded classification over embeddings</dd></dl>
+    </div>
+  </div>
+
+  <h2>The shared contract</h2>
+  <p class="muted small">Both take the same request body. Three question types cover most in-app decisions.</p>
+  <div class="grid g3">
+    <div class="card"><span class="pill">choice</span><h3 style="margin-top:6px">Pick one of N (≤255)</h3><p class="small">Options are described in words. The answer is the chosen key, a probability per key, and a confidence.</p><pre class="json">"department": { "type": "choice",
+  "criteria": {
+    "billing": "Funds already collected…",
+    "shipping": "Physical parcels not yet…"
+  } }</pre></div>
+    <div class="card"><span class="pill">score</span><h3 style="margin-top:6px">Place on an ordinal scale</h3><p class="small">A legend of buckets. Jev returns a continuous score. typesafe returns the expected bucket plus a probability per bucket.</p><pre class="json">"frustration": { "type": "score",
+  "criteria": ["Neutral or calm",
+    "Irritated but polite",
+    "Openly angry"] }</pre></div>
+    <div class="card"><span class="pill">noul</span><h3 style="margin-top:6px">A 0–1 predicate</h3><p class="small">"Is this true of the state?" typesafe marks an untrained noul <code>calibrated:false</code>, because it is a raw similarity, not a probability.</p><pre class="json">"urgent": { "type": "noul",
+  "instructions":
+    "The sender needs a response very soon" }</pre></div>
+  </div>
+
+  <h2>Headline findings <span class="pill">independent run, 25 Sep 2026</span></h2>
+  <div class="grid g4" id="headline"></div>
+
+  <h2>How to use this lab</h2>
+  <div class="grid g2">
+    <div class="step"><div class="n">1</div><div><strong>Ticket explorer.</strong> Open any frozen test ticket. See the ground truth, Jev's recorded answer, and two live typesafe engines (zero-shot and trained) side by side. Filter for disagreements.</div></div>
+    <div class="step"><div class="n">2</div><div><strong>Playground.</strong> Write your own state and questions in Jev's JSON format. The local engine answers in Jev's exact shape, or with typesafe's extra fields.</div></div>
+    <div class="step"><div class="n">3</div><div><strong>Experiments.</strong> Five guided exercises: zero-shot gap, out-of-scope inputs, teaching with examples, calibration, and the governed loop.</div></div>
+    <div class="step"><div class="n">4</div><div><strong>Evidence → Verdict.</strong> Every number with its provenance, how it fits the wider RuVector stack, and when to use which.</div></div>
+  </div>
+</section>
+
+<!-- ============================ TICKETS ============================ -->
+<section class="page" id="page-tickets">
+  <h1>Ticket explorer</h1>
+  <p class="lede">These are 150 synthetic support tickets from the frozen test split (seed 1337). When you pick a ticket you see four answers: Jev's recorded response from 21 Sep, Jev live, and two live typesafe engines (zero-shot and trained). Jev and typesafe zero-shot see only the criteria text.</p>
+  <div class="row" style="margin-bottom:10px">
+    <select id="tFilter" style="max-width:320px">
+      <option value="all">All 150 tickets</option>
+      <option value="jevwrong">Jev wrong on department</option>
+      <option value="ambiguous">Ambiguous (two plausible teams)</option>
+      <option value="urgent">Truly urgent</option>
+      <option value="angry">Openly angry</option>
+    </select>
+    <input type="text" id="tSearch" placeholder="Search text…" style="max-width:260px">
+    <span class="muted small" id="tCount"></span>
+  </div>
+  <div class="grid" style="grid-template-columns: minmax(260px, 340px) 1fr; align-items:start" id="tGrid">
+    <div class="ticket-list" id="tList"></div>
+    <div id="tDetail"><div class="card muted">Pick a ticket on the left.</div></div>
+  </div>
+</section>
+
+<!-- ============================ PLAYGROUND ============================ -->
+<section class="page" id="page-playground">
+  <h1>Playground</h1>
+  <p class="lede">The request body is Jev's <code>POST /v1/systemone</code>. The server exposes the same endpoint, so an existing Jev client can point here unchanged. Question IDs <code>department</code>, <code>urgent</code> and <code>frustration</code> hit the heads trained at boot. Any other ID is answered zero-shot.</p>
+  <div class="grid g2">
+    <div class="card">
+      <label class="small muted">state</label>
+      <textarea id="pgState" rows="3">Hi, I was charged twice for the same order and I need this refunded today — this is the third time I've written.</textarea>
+      <div class="chip-row" id="pgPresets"></div>
+      <label class="small muted">questions (Jev format)</label>
+      <textarea id="pgQuestions" class="code"></textarea>
+      <div class="row" style="margin-top:10px">
+        <button class="btn primary" id="pgRun">Decide</button>
+        <label class="small"><input type="checkbox" id="pgJevOnly"> Jev shape only</label>
+        <button class="btn" id="pgReset">Reset questions</button>
+      </div>
+    </div>
+    <div>
+      <div class="grid g2" id="pgOut"><div class="card muted small">Run a decision to see the zero-shot and trained engines side by side.</div></div>
+      <details><summary>Call it yourself</summary>
+        <p class="small">Jev (needs an early-access key):</p>
+        <pre class="json" id="curlJev"></pre>
+        <p class="small">This lab (same body, same response shape):</p>
+        <pre class="json" id="curlLocal"></pre>
+        <p class="small">In your own Node app:</p>
+        <pre class="json">npm i @ruvector/typesafe
+node node_modules/@ruvector/typesafe/scripts/fetch-models.mjs
+
+import { createTypesafe, choice, noul } from '@ruvector/typesafe';
+const ts = createTypesafe({ embedder: { kind: 'onnx',
+  modelDir: 'node_modules/@ruvector/typesafe/models',
+  manifest: 'node_modules/@ruvector/typesafe/models/manifest.json',
+  model: 'bge-small-en-v1.5-int8' } });
+// ⚠ createTypesafe() with no options uses the "hash" test double:
+//    word-overlap only, answers are near-meaningless.
+await ts.train('dept', [{ text: '…', label: 'billing' }, …]);
+const r = await ts.decide(state, { dept: choice({ billing: '…', fraud: '…' }) });
+r.dept.choice; // typed "billing" | "fraud"</pre>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ EXPERIMENTS ============================ -->
+<section class="page" id="page-experiments">
+  <h1>Experiments</h1>
+  <p class="lede">Five hands-on exercises. Each one tests a specific claim. Results are computed live on this server.</p>
+
+  <div class="card" style="margin-bottom:14px">
+    <span class="pill">E1</span> <h3 style="display:inline">Is the comparison like-for-like?</h3>
+    <p class="small">Jev scores ~85% from criteria text alone. The README's local numbers use about 119–137 labelled examples. Draw a random sample of test tickets and score every arm on the same items. The Jev live arm calls the real API.</p>
+    <div class="row"><select id="e1n" style="width:auto"><option>20</option><option selected>40</option><option>80</option><option>150</option></select><button class="btn primary" id="e1run">Run sample</button><span class="small muted" id="e1status"></span></div>
+    <div id="e1out"></div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <span class="pill">E2</span> <h3 style="display:inline">Does it know when it doesn't know?</h3>
+    <p class="small">Real traffic includes things no option fits. ADR-003 says typesafe should answer those with <em>low confidence and high abstain</em>. Jev's own guidance says to add an explicit <code>other</code> option. This runs both systems with and without an <code>other</code> option on the states below. Edit them freely.</p>
+    <textarea id="e2states" rows="5">What is the capital of Australia?
+Write me a haiku about autumn leaves.
+Can you recommend a good lasagne recipe?
+Who won the football last night?
+Please cancel my subscription and refund the last invoice.</textarea>
+    <div class="row" style="margin-top:8px"><button class="btn primary" id="e2run">Run comparison</button><span class="small muted">about 4 Jev calls per state</span></div>
+    <div id="e2out"></div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <span class="pill">E3</span> <h3 style="display:inline">Teach it something new</h3>
+    <p class="small">A fresh engine is built for your request. It trains on your examples (one <code>text → label</code> per line) and answers your test states. Watch which head answers and whether it reports <code>calibrated</code>. The engine needs about 5 examples per option before a trained head answers, and at least 20 held back (the default is 20% of examples) before it reports <code>calibrated:true</code>.</p>
+    <div class="grid g2">
+      <div><label class="small muted">options (key: description)</label><textarea id="e3opts" rows="4">bug: something in the product is broken
+feature: a request for new functionality
+praise: a compliment with nothing to fix</textarea>
+      <label class="small muted">examples (text → label)</label><textarea id="e3ex" rows="9"></textarea></div>
+      <div><label class="small muted">test states</label><textarea id="e3states" rows="5">The export button crashes the app on Safari
+Could you add dark mode to the dashboard?
+Your team did an amazing job with the redesign
+It would be great if invoices supported multiple currencies</textarea>
+      <div class="row" style="margin-top:8px"><button class="btn primary" id="e3run">Train &amp; decide</button><button class="btn" id="e3zero">Same, zero examples</button><span class="small muted" id="e3status"></span></div>
+      <div id="e3out"></div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <span class="pill">E4</span> <h3 style="display:inline">Calibration: does 90% confident mean 90% right?</h3>
+    <p class="small">Reliability diagrams on the 150 test tickets. The diagonal is perfect calibration. Bar height shows accuracy within each confidence bin, and the label shows how many tickets fell in it.</p>
+    <div class="grid g2" id="e4out"></div>
+  </div>
+
+  <div class="card">
+    <span class="pill">E5</span> <h3 style="display:inline">The governed optimisation loop, receipt by receipt</h3>
+    <p class="small">This campaign was re-run here with bge-small INT8. Each proposal is a configuration change. It is promoted only if a paired, anytime-valid sequential test on the frozen validation split rejects "no improvement" (wealth ≥ 20). One test is on accuracy and one on per-item log-loss (calibration). Receipts are hash-chained.</p>
+    <div id="e5out"></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <span class="pill">E6</span> <h3 style="display:inline">Does it read the question?</h3>
+    <p class="small">Change one word of the instruction and see who notices. typesafe never reads the <code>instructions</code> of a <code>choice</code> question; it matches the message against the option descriptions. For <code>noul</code> it embeds the instruction, and embeddings largely ignore negation. Jev reads the whole request.</p>
+    <div class="row"><button class="btn primary" id="e6a">Run "own" vs "avoid"</button><button class="btn" id="e6b">Run "needs" vs "does NOT need"</button></div>
+    <div id="e6out"></div>
+  </div>
+</section>
+
+<!-- ============================ BENCH ============================ -->
+<section class="page" id="page-bench">
+  <h1>Fresh benchmark</h1>
+  <p class="lede">These are 150 test messages neither system has seen, across three unrelated tasks, with a separate training set. It was written for this lab to avoid the package author's synthetic tickets. Four setups are compared: typesafe with criteria only, typesafe trained on the training split, Jev with criteria only, and Jev with the whole training split passed <em>in the state</em>.</p>
+  <div class="grid g3" id="bDatasets"></div>
+  <div class="row small" style="margin:10px 0 0">
+    <span class="muted">Download:</span>
+    <a href="/downloads/bench-v1.json" download>dataset (JSON)</a> ·
+    <a href="#" id="dlTrainCsv">train.csv</a> · <a href="#" id="dlTestCsv">test.csv</a> ·
+    <a href="/downloads/bench-v1-results.json" download>reference results</a> ·
+    <a href="/downloads/run-bench.mjs" download>runner</a> + <a href="/downloads/bench-core.mjs" download>shared logic</a>
+  </div>
+  <div class="callout small"><b>How it was built.</b> The evaluator (Claude) hand-wrote the messages and labels, so there is one annotator. No sentence appears in both train and test, and the closest train/test pair share only 36% of their words. Each test item carries a tag for the kind of difficulty it tests: <code>plain</code>, <code>slang</code>, <code>negation</code>, <code>misleading</code> (a keyword points to the wrong answer), <code>implicit</code> (the intent is never named) or <code>sarcasm</code>. For the deadline (noul) task, each setup's decision threshold is tuned on the <em>training</em> split, never on test. The "Jev + data in state" setup sends <code>{message, labelled_examples}</code> as the state; when scoring a training item it leaves that item out of the examples.</div>
+
+  <h2>Reference run <span class="pill" id="bRunDate"></span></h2>
+  <div class="table-wrap"><table id="bTable"></table></div>
+  <h2>Where each setup breaks: accuracy by difficulty tag</h2>
+  <div id="bTags"></div>
+
+  <h2>Reproduce it live</h2>
+  <div class="card">
+    <p class="small">This runs the same four setups on this server, item by item: two local typesafe engines and two live Jev calls per item. Deadline thresholds come from the reference run's training split. Live results should match the reference to within a point or two. Jev is not guaranteed to be deterministic.</p>
+    <div class="row">
+      <select id="bTask" style="width:auto"><option value="all">All three tasks</option><option value="council">Council routing</option><option value="severity">Safety severity</option><option value="deadline">Deadline detection</option></select>
+      <select id="bN" style="width:auto"><option value="10">10 per task</option><option value="25" selected>25 per task</option><option value="1000">All items</option></select>
+      <button class="btn primary" id="bRun">Run live</button><span class="small muted" id="bStatus"></span>
+    </div>
+    <div id="bLive"></div>
+  </div>
+
+  <h2>Browse the items</h2>
+  <div class="row" style="margin-bottom:10px">
+    <select id="bfTask" style="width:auto"><option value="council">Council routing</option><option value="severity">Safety severity</option><option value="deadline">Deadline detection</option></select>
+    <select id="bfTag" style="width:auto"><option value="">All tags</option><option>plain</option><option>slang</option><option>negation</option><option>misleading</option><option>implicit</option><option>sarcasm</option></select>
+    <select id="bfShow" style="width:auto"><option value="all">All items</option><option value="disagree">Setups disagree</option><option value="jevwin">Jev right, typesafe trained wrong</option><option value="tswin">typesafe trained right, Jev wrong</option></select>
+    <span class="small muted" id="bfCount"></span>
+  </div>
+  <div class="table-wrap"><table id="bItems"></table></div>
+  <details><summary>Show the training split</summary><div id="bTrain" class="small"></div></details>
+</section>
+
+<!-- ============================ CASCADE ============================ -->
+<section class="page" id="page-cascade">
+  <h1>Cascade: local first, Jev last</h1>
+  <p class="lede">Each message goes through a chain of stages, cheapest first. A stage answers only when its confidence clears the threshold you set. Otherwise the message moves to the next, more capable stage. All three local stages run on our own servers, so nothing leaves them until the final Jev step.</p>
+  <div class="card" style="margin-bottom:14px"><svg viewBox="0 0 960 150" width="100%" role="img" aria-label="Cascade stages">
+    <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink-3)"/></marker></defs>
+    <g font-size="13">
+      <rect x="4" y="30" width="200" height="80" rx="10" fill="var(--ts-soft)" stroke="var(--ts)"/><text x="104" y="58" text-anchor="middle" font-weight="600">1 · typesafe</text><text x="104" y="78" text-anchor="middle" font-size="11">bge-small embeddings + trained head</text><text x="104" y="95" text-anchor="middle" font-size="11">~5 ms · local</text>
+      <rect x="252" y="30" width="200" height="80" rx="10" fill="var(--ts-soft)" stroke="var(--ts)"/><text x="352" y="58" text-anchor="middle" font-weight="600">2 · re-reader</text><text x="352" y="78" text-anchor="middle" font-size="11">cross-encoder, reads message + option</text><text x="352" y="95" text-anchor="middle" font-size="11">~30–70 ms · local</text>
+      <rect x="500" y="30" width="200" height="80" rx="10" fill="var(--ts-soft)" stroke="var(--ts)"/><text x="600" y="58" text-anchor="middle" font-weight="600">3 · local LLM</text><text x="600" y="78" text-anchor="middle" font-size="11">Qwen2.5-1.5B + training examples</text><text x="600" y="95" text-anchor="middle" font-size="11">~0.3–0.6 s compute · own server</text>
+      <rect x="748" y="30" width="200" height="80" rx="10" fill="var(--jev-soft)" stroke="var(--jev)"/><text x="848" y="58" text-anchor="middle" font-weight="600">4 · Jev</text><text x="848" y="78" text-anchor="middle" font-size="11">hosted System One model</text><text x="848" y="95" text-anchor="middle" font-size="11">~150 ms · leaves your boundary</text>
+      <path d="M204 70 H250" stroke="var(--ink-3)" marker-end="url(#ar2)"/><path d="M452 70 H498" stroke="var(--ink-3)" marker-end="url(#ar2)"/><path d="M700 70 H746" stroke="var(--ink-3)" marker-end="url(#ar2)"/>
+      <text x="227" y="62" text-anchor="middle" font-size="10">unsure</text><text x="475" y="62" text-anchor="middle" font-size="10">unsure</text><text x="723" y="62" text-anchor="middle" font-size="10">unsure</text>
+      <text x="104" y="132" text-anchor="middle" font-size="11">confident → answer</text><text x="352" y="132" text-anchor="middle" font-size="11">confident → answer</text><text x="600" y="132" text-anchor="middle" font-size="11">confident → answer</text><text x="848" y="132" text-anchor="middle" font-size="11">always answers</text>
+    </g></svg></div>
+
+  <h2>Each stage on its own <span class="pill" id="cRunInfo"></span></h2>
+  <div class="table-wrap"><table id="cSingle"></table></div>
+
+  <h2>Tune the cascade</h2>
+  <div class="grid" style="grid-template-columns:minmax(260px,340px) 1fr;align-items:start" id="cGrid">
+    <div class="card">
+      <div class="small muted" style="margin-bottom:8px">Stages switched on</div>
+      <label class="row small"><input type="checkbox" checked disabled> 1 · typesafe</label>
+      <label class="row small"><input type="checkbox" id="cUseRr" checked> 2 · re-reader</label>
+      <label class="row small"><input type="checkbox" id="cUseLlm" checked> 3 · local LLM</label>
+      <label class="row small"><input type="checkbox" id="cUseJev" checked> 4 · Jev</label>
+      <div class="small muted" style="margin:14px 0 4px">Confidence needed to answer</div>
+      <div class="small">typesafe <b id="vTs"></b></div><input type="range" id="tTs" min="0" max="1.01" step="0.05" value="0.6" style="width:100%">
+      <div class="small">re-reader <b id="vRr"></b></div><input type="range" id="tRr" min="0" max="1.01" step="0.05" value="0.9" style="width:100%">
+      <div class="small">local LLM <b id="vLlm"></b></div><input type="range" id="tLlm" min="0" max="1.01" step="0.05" value="0.9" style="width:100%">
+      <div class="chip-row" id="cPresets"></div>
+    </div>
+    <div>
+      <div class="grid g3" id="cStats"></div>
+      <div class="card" style="margin-top:12px"><div class="small muted">Where each message was answered</div><div id="cShare" style="margin-top:8px"></div></div>
+      <div class="table-wrap" style="margin-top:12px"><table id="cByTask"></table></div>
+    </div>
+  </div>
+
+  <h2>How little Jev do you need?</h2>
+  <p class="small muted">For each cap on the share sent to Jev, this is the best mix of thresholds found on the 150 test items. The thresholds were chosen on the test data itself, so treat these figures as an upper bound. Real traffic needs thresholds picked on held-out data.</p>
+  <div class="table-wrap"><table id="cFrontier"></table></div>
+
+  <h2>Try a message</h2>
+  <div class="card">
+    <div class="row"><select id="cTask" style="width:auto"><option value="council">Council routing</option><option value="severity">Safety severity</option><option value="deadline">Deadline detection</option></select><span class="small muted">This runs every stage live, then applies your thresholds above.</span></div>
+    <textarea id="cText" rows="2" style="margin-top:8px">I've got a parking fine. No council tax question here, I just want to know how to pay the PCN online.</textarea>
+    <div class="row" style="margin-top:8px"><button class="btn primary" id="cRun">Run all stages</button><span class="small muted" id="cRunStatus"></span></div>
+    <div id="cOut"></div>
+  </div>
+  <div class="callout small"><b>About ruvllm.</b> Stage 3 was meant to run on RuVector's own LLM runtime.
+  <ul style="margin:6px 0 0 18px;padding:0">
+    <li>The npm package (2.6.2) returns random characters.</li>
+    <li>The Rust server loads only Llama/Mistral-style models. For anything else, including Qwen, Phi and Gemma, it silently switches to a canned-reply "mock mode".</li>
+    <li>With SmolLM2-1.7B it gave real answers, but took 8–13 s per call on 2 CPUs.</li>
+  </ul>
+  Stage 3 therefore runs llama.cpp (MIT licence) with Qwen2.5-1.5B-Instruct (Apache-2.0), hosted in us-central1, Cloud Run's cheapest region. It uses the same model format and could switch back to ruvllm once those issues are fixed. The re-reader is DeBERTa-v3-xsmall (MIT), fine-tuned in 6 minutes on CPU on the 124 training examples only.</div>
+</section>
+
+<!-- ============================ EVIDENCE ============================ -->
+<section class="page" id="page-evidence">
+  <h1>Evidence</h1>
+  <p class="lede">All runs use the package's own frozen fixtures and harness (commit 5356a84), plus a few new experiments. Provenance tags: <span class="pill good">reproduced</span> = re-run here and matches the README, <span class="pill ts">new</span> = experiment added for this lab, <span class="pill warn">recorded</span> = the author's capture and not re-runnable here.</p>
+  <h2>Tickets (8 departments, 150 test items)</h2>
+  <div class="table-wrap"><table id="evTable"></table></div>
+  <div class="callout warn small"><strong>Read this before quoting the headline.</strong> The like-for-like comparison is criteria text with no examples. On that basis Jev scores <strong>84.7%</strong> live and typesafe <strong>44.0%</strong>. The README's "close to Jev" rows use about 119–137 labelled tickets from the same synthetic generator as the test set. Given just 3 examples per option in its criteria, Jev reaches <strong>89.3%</strong>.</div>
+  <h2>Out-of-scope detection (CLINC150)</h2>
+  <div class="grid g4" id="evClinc"></div>
+  <p class="small muted">This is the package's own release gate (OOS AUROC ≥ 0.85). It fails because the abstain mass collapses to ~0. The likely cause is structural: with 150 intents, one abstain logit is diluted across 151 softmax slots, and bge-small's cosine similarities between unrelated sentences stay well above the 0.35 abstain threshold.</p>
+  <h2>Speed and cost</h2>
+  <div class="grid g3" id="evCost"></div>
+  <h2>Code-level observations</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Area</th><th>Observation</th><th>Impact</th></tr>
+    <tr><td>Default embedder</td><td><code>createTypesafe()</code> defaults to <code>hash</code>, a word-overlap test double. The README quick-start answers every example with 50/50 probabilities.</td><td><span class="pill bad">high</span> First-run experience is misleading</td></tr>
+    <tr><td>Abstention</td><td>On the 8-option ticket question, <code>abstain</code> ranks off-topic states well (AUROC 0.97), but its values are tiny: about 1% off-topic vs 0.1% on-topic, not the "high abstain" the ADR describes. The signal collapses at 150 options (CLINC150 AUROC 0.50, mean abstain ~5e-8).</td><td><span class="pill bad">high</span> Needs an empirically set threshold, and does not scale</td></tr>
+    <tr><td>README claim about Jev</td><td>"Jev's noul urgency sits below a constant not-urgent baseline" comes from thresholding at 0.5. Live, Jev's urgency scores reach AUROC 0.94, and 91.3% accuracy with a threshold tuned on the val split. The author's harness recorded booleans, so it could not see this.</td><td><span class="pill warn">medium</span> Understates Jev</td></tr>
+    <tr><td>Untrained noul/score</td><td>Zero-shot urgent 28.7% (AUROC 0.51, chance level). Frustration 36.7%. These rows are missing from the README.</td><td><span class="pill warn">medium</span> Needs labels for these question types</td></tr>
+    <tr><td>Train report</td><td><code>train()</code> infers the head from label strings. A <code>choice</code> whose option keys look boolean (<code>pos</code>/<code>neg</code>, <code>yes</code>/<code>no</code>) is reported as <code>logistic</code>, but a prototype or probe head actually answers.</td><td><span class="pill warn">low</span> Cosmetic edge case</td></tr>
+    <tr><td>Receipts</td><td>The hash chain uses 128-bit FNV-1a. It catches accidental corruption, but it is not cryptographic tamper-evidence.</td><td><span class="pill warn">low</span> RVF witness signing would close the gap</td></tr>
+    <tr><td>Dependencies</td><td><code>ruvector-router-core</code> is declared but never imported. Cargo comments say ONNX is "TODO", yet the code path is wired and works.</td><td><span class="pill">info</span> Stale docs</td></tr>
+    <tr><td>Distribution</td><td>npm 0.1.0 (published 21 Sep) ships a linux-x64 native binary with ONNX, plus a 16.5 MB WASM. macOS and Windows fall back to WASM. Model weights come from a hash-pinned fetch script.</td><td><span class="pill">info</span> Young release, one author</td></tr>
+    <tr><td>Tests</td><td>295 JS tests here: 294 pass, 1 skipped, 0 failing, and a security test forbids <code>child_process</code>, network clients and state logging.</td><td><span class="pill good">good</span> Disciplined engineering</td></tr>
+  </table></div>
+</section>
+
+<!-- ============================ RUVECTOR ============================ -->
+<section class="page" id="page-ruvector">
+  <h1>Where it sits in RuVector</h1>
+  <p class="lede">RuVector describes itself as a Rust substrate for "high speed decisions and persistent memory for AI agents". typesafe is its decision layer. These are the integrations that already exist and the ones that look realistic, tagged by maturity.</p>
+  <div class="grid g3" id="rvCards"></div>
+  <h2>A reference architecture worth prototyping</h2>
+  <div class="card"><svg viewBox="0 0 900 250" width="100%" role="img" aria-label="Cascade architecture">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor" style="color:var(--ink-3)"/></marker></defs>
+    <g font-size="13">
+      <rect x="10" y="95" width="120" height="56" rx="8" fill="var(--surface-2)" stroke="var(--line)"/><text x="70" y="120" text-anchor="middle">state + questions</text><text x="70" y="138" text-anchor="middle" font-size="11">(Jev JSON)</text>
+      <rect x="180" y="85" width="170" height="76" rx="8" fill="var(--ts-soft)" stroke="var(--ts)"/><text x="265" y="112" text-anchor="middle" font-weight="600">@ruvector/typesafe</text><text x="265" y="130" text-anchor="middle" font-size="11">trained heads · ~10 ms</text><text x="265" y="146" text-anchor="middle" font-size="11">confidence + abstain</text>
+      <rect x="420" y="20" width="200" height="56" rx="8" fill="var(--surface-2)" stroke="var(--line)"/><text x="520" y="44" text-anchor="middle">act (high confidence)</text><text x="520" y="62" text-anchor="middle" font-size="11">receipt → graph / RVF</text>
+      <rect x="420" y="170" width="200" height="56" rx="8" fill="var(--jev-soft)" stroke="var(--jev)"/><text x="520" y="194" text-anchor="middle">escalate (low confidence)</text><text x="520" y="212" text-anchor="middle" font-size="11">Jev / ruvllm / human</text>
+      <rect x="690" y="170" width="200" height="56" rx="8" fill="var(--surface-2)" stroke="var(--line)"/><text x="790" y="194" text-anchor="middle">label → bank (tier A/B)</text><text x="790" y="212" text-anchor="middle" font-size="11">governed loop promotes</text>
+      <path d="M130 123 H178" stroke="var(--ink-3)" marker-end="url(#ar)"/>
+      <path d="M350 110 C385 110 385 48 418 48" stroke="var(--ink-3)" fill="none" marker-end="url(#ar)"/>
+      <path d="M350 138 C385 138 385 198 418 198" stroke="var(--ink-3)" fill="none" marker-end="url(#ar)"/>
+      <path d="M620 198 H688" stroke="var(--ink-3)" marker-end="url(#ar)"/>
+      <path d="M790 170 C790 110 520 110 352 128" stroke="var(--ink-3)" fill="none" stroke-dasharray="4 4" marker-end="url(#ar)"/>
+      <text x="600" y="128" font-size="11">retrain</text>
+    </g></svg>
+    <p class="small">The live results favour Jev on accuracy, including off-topic handling with an <code>other</code> option. typesafe is 10–15× faster, runs locally, and is better calibrated once trained. So combine them. Use Jev (or a local LLM) to label and adjudicate. Serve the high-volume, known-distribution decisions locally from trained typesafe heads. Escalate low-confidence or low-abstain-margin cases to Jev. Keep a cheap out-of-scope guard in front, such as Jev with an <code>other</code> option on a sample, a Cognitum coherence gate, or a tuned abstain threshold.</p>
+  </div>
+</section>
+
+<!-- ============================ VERDICT ============================ -->
+<section class="page" id="page-verdict">
+  <h1>Verdict</h1>
+  <p class="lede">These are not substitutes. Jev is a foundation model that makes typed decisions from a description, and on accuracy it wins almost everywhere we measured, live. @ruvector/typesafe is a well-engineered, API-compatible toolkit for training small, fast, calibrated classifiers on your own labels. Its case rests on latency, locality and calibration, not accuracy.</p>
+  <div class="table-wrap"><table class="verdict">
+    <tr><th>Dimension</th><th>Jev</th><th>@ruvector/typesafe</th></tr>
+    <tr><td>Zero-shot (criteria only)</td><td><span class="pill good">strong</span> 84.7% live (85.3% recorded); urgency AUROC 0.94</td><td><span class="pill bad">weak</span> 44.0%; urgency ≈ chance</td></tr>
+    <tr><td>With labelled examples</td><td><span class="pill good">strong</span> 89.3% with 3 examples per option in criteria; urgency 91.3% with a val-tuned threshold</td><td>79–84% department with ~120–320 labels; urgency 83–85%; frustration 71–72% (Jev 67%)</td></tr>
+    <tr><td>Calibration (ECE, dept.)</td><td>0.066 live (0.056 with examples)</td><td><span class="pill good">better</span> 0.035–0.039 when all heads are trained; 0.31 untrained</td></tr>
+    <tr><td>Out-of-scope inputs</td><td>Forces an answer without an escape option. With <code>other</code>: 77% caught, 1% false alarms</td><td>With <code>other</code>: 17% caught, 24% false alarms. <code>abstain</code> ranks well at 8 options but is tiny, and collapses at 150</td></tr>
+    <tr><td>Latency</td><td>111 ms p50 / 160 ms p95 live from London (185 / 231 ms recorded)</td><td><span class="pill good">10–15× faster</span> 13–26 ms p95 on 2 vCPU, in-process</td></tr>
+    <tr><td>Cost at 1M decisions</td><td>≈ $23 (≈546 input tokens each; ≈$52 with 3 examples per option)</td><td>Compute only: ≈ 3 hours of wall time on 2 vCPU at ~10 ms/decision</td></tr>
+    <tr><td>Data residency</td><td>Text leaves your boundary</td><td>Never leaves the process; no input logging</td></tr>
+    <tr><td>Open-endedness</td><td>Reasons over game state, navigation, guardrails</td><td>Bounded to embedding similarity; no reasoning</td></tr>
+    <tr><td>Fresh 150-item benchmark (3 new tasks)</td><td><span class="pill good">strong</span> 93% criteria only, 98% with training data in state; caught every High-severity hazard</td><td>61% criteria only, 75% trained; missed 9 of 15 High-severity hazards (rated Medium)</td></tr>
+    <tr><td>Maturity / verifiability</td><td>Early access, closed, vendor benchmarks</td><td>v0.1.0 (published to npm 21 Sep), one author, open and reproducible</td></tr>
+  </table></div>
+  <h2>Recommendations</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Use typesafe when…</h3><ul class="small"><li>Latency must be tens of milliseconds, or data must not leave your boundary (regulated data, edge or offline devices)</li><li>You have (or can bootstrap, for example from Jev) 30–200 labels per question</li><li>You need confidence scores you can calibrate and audit, with gated, receipted changes</li><li>The input distribution is known and closed, or guarded upstream</li></ul></div>
+    <div class="card"><h3>Use Jev when…</h3><ul class="small"><li>You only have a description of the decision, or just a handful of examples</li><li>Inputs are open-world: add an <code>other</code> option and it handles off-topic states well</li><li>The decision needs reasoning over structured state, not topic similarity</li><li>A ~100–160 ms network hop and sending text externally are acceptable</li><li>You use noul thresholds tuned on data, not 0.5</li></ul></div>
+  </div>
+  <h2>Before relying on it in production</h2>
+  <ol class="small">
+    <li>Re-run both on your own, non-synthetic data. These tickets are templated and come from the package author's generator.</li>
+    <li>Always give choices an <code>other</code> option, and test against your real off-topic traffic. For typesafe, set an abstain threshold empirically.</li>
+    <li>Always pass an ONNX embedder explicitly. Never ship the default <code>hash</code>.</li>
+    <li>Measure on a non-templated dataset. Banking77 and HWU64 fetchers exist in <code>bench/datasets</code>.</li>
+    <li>Tune noul thresholds on a labelled validation slice. Jev's urgency jumps from 58.7% at 0.5 to 91.3% at 0.91.</li>
+    <li>Pin the package version. It is 0.1.x and the API may still change.</li>
+  </ol>
+</section>
+</main>
+<footer>Independent evaluation investigated and orchestrated by <a href="https://www.linkedin.com/in/mondweepchakravorty/" target="_blank" rel="noopener">Mondweep Chakravorty</a> (DxSure Ltd, trading as Agentics Consulting), 25–26 Sep 2026, built with Claude. Source: <a href="https://github.com/mondweep/typesafe-lab" target="_blank" rel="noopener">github.com/mondweep/typesafe-lab</a>. Engine: @ruvector/typesafe built from source at ruvnet/RuVector 5356a84 (23 Sep 2026; package version 0.1.0, MIT), native build with ONNX Runtime, bge-small-en-v1.5 INT8. Jev: live calls to api.typesafe.ai (jev-1.13.0, re-run 25 Sep 2026) plus the package author's recorded capture (21 Sep 2026). Not affiliated with typesafe.ai or ruvnet. Your text is processed in memory and never logged.</footer>
+<script src="/app.js"></script>
+</body>
+</html>

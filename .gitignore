@@ -1,0 +1,8 @@
+node_modules/
+lab/vendor/
+lab/models/
+llm-service/models/
+*.gguf
+*.onnx
+.env*
+*.key

@@ -140,7 +140,7 @@ Never commit keys.
 
 | Component | Licence |
 |---|---|
-| This repository | MIT (see `LICENSE`) |
+| This repository | Apache 2.0 (see `LICENSE` and `NOTICE`) |
 | @ruvector/typesafe | MIT (rUv) |
 | bge-small-en-v1.5 | MIT |
 | DeBERTa-v3-xsmall zero-shot base (MoritzLaurer) | MIT |

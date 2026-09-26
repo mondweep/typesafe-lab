@@ -45,6 +45,7 @@
     .step .inline-fig { display: block; margin-top: 14px; }
     .steps { padding-bottom: 0; }
   }
+  .credit { font-size: 14px; color: var(--ink-3); border-left: 3px solid var(--accent); padding-left: 10px; }
 </style>
 </head>
 <body>
@@ -84,6 +85,7 @@
       <p>We changed "Which team should <b>own</b> this message" to "<b>avoid</b>". typesafe gave the same answer, because it never reads the instruction of a choice question. Jev noticed the question had become odd, and its confidence dropped from 100% to 31%.</p>
       <p>With a negation, "needs a response soon" vs "does <b>NOT</b> need one", typesafe scored 0.84 vs 0.81. Jev scored 0.97 vs 0.04.</p>
       <p>typesafe needs meaning in <em>labelled examples</em>, not in wording. With 12 examples, the same negated question works.</p>
+      <p class="credit">Thanks to <a href="https://www.linkedin.com/in/chrispoulterai" target="_blank" rel="noopener">Chris Poulter</a> for pointing this out and prompting further testing and evaluation.</p>
       <figure class="inline-fig"><img src="/story/06-negation.webp" alt="Negation experiment"></figure></div>
 
     <div class="step" data-fig="f5"><div class="num">05 · Off-topic messages</div><h2>Neither system knows when to say "none of these"</h2>

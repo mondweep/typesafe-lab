@@ -1,0 +1,9 @@
+Typed Decision Lab
+Copyright 2026 Mondweep Chakravorty
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It evaluates, and its release assets redistribute, third-party components under
+their own licences: @ruvector/typesafe (MIT, rUv), bge-small-en-v1.5 (MIT),
+DeBERTa-v3-xsmall zero-shot base by MoritzLaurer (MIT), Qwen2.5-1.5B-Instruct
+(Apache-2.0, downloaded at build time), Inter font (SIL OFL 1.1).

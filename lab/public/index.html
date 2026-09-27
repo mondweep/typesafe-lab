@@ -344,7 +344,7 @@ It would be great if invoices supported multiple currencies</textarea>
   <div class="card">
     <div class="row"><select id="gCompany" style="width:auto;max-width:100%"></select><span class="small muted" id="gCompanyN"></span></div>
     <div class="grid g2" style="margin-top:10px"><div><div class="small muted">Share of past complaints (counts)</div><div id="gCompCount"></div></div><div><div class="small muted">KGE prior (softmax over link scores)</div><div id="gCompKge"></div></div></div>
-    <p class="small muted" style="margin-top:8px">The graph stores <i>that</i> a company has complaints about a product, not how many. Counts keep the proportions; the KGE link scores for the 11 products sit close together, so its prior is nearly flat and can even rank a product the company has never had above its real one. That difference explains most of the results above.</p>
+    <p class="small muted" style="margin-top:8px">Why the two differ: the graph as built here records <i>that</i> a company has complaints about a product, not how often. Counts keep the proportions; the KGE link scores for the 11 products sit close together, so its prior comes out flatter. Giving the graph a way to express frequency is the natural next step, and the section below tries two ways to do that.</p>
   </div>
   </div>
 
@@ -353,6 +353,16 @@ It would be great if invoices supported multiple currencies</textarea>
     <div class="row"><select id="gItem" style="width:auto;max-width:100%"></select><button class="btn" id="gJevLive">Ask Jev live</button><span class="small muted" id="gJevStatus"></span></div>
     <div id="gItemOut" style="margin-top:10px"></div>
   </div>
+
+  <div id="gV2Box">
+  <h2>Teaching the graph about frequency</h2>
+  <p class="small">We tried two ways to give @ruvector/kge the "how often" information, in the small-history setting (1% of the history) where a graph should have the most to offer.</p>
+  <div class="table-wrap"><table id="gV2"></table></div>
+  <p class="small muted" id="gV2Note"></p>
+  </div>
+
+  <h2>What's next</h2>
+  <div class="card small" id="gNext"></div>
 
   <h2>Method and caveats</h2>
   <div class="card small" id="gMethod"></div>

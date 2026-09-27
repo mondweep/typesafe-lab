@@ -1,0 +1,2 @@
+train report {"question":"intent","accepted":50,"rejected":0,"head":"linear-probe","calibrated":true}
+{"shots":8,"head":"linear-probe","calibrated":true,"temperature":0.1,"in_acc":0.605,"abstain_auroc":0.9019,"median_in":5.746189e-9,"median_oos":1.3180501e-7,"conf_auroc_low_is_oos":0.8561}

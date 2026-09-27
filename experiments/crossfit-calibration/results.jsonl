@@ -1,0 +1,15 @@
+{"per_class":6,"n":66,"seed":0,"crossfit":false,"head":"linear-probe","calibrated":false,"temperature":1,"acc":0.405,"ece":0.23,"mean_conf":0.175,"report_calibrated":false}
+{"per_class":6,"n":66,"seed":0,"crossfit":true,"head":"linear-probe","calibrated":true,"temperature":0.452,"acc":0.405,"ece":0.0878,"mean_conf":0.3231,"report_calibrated":false}
+{"per_class":6,"n":66,"seed":1,"crossfit":false,"head":"linear-probe","calibrated":false,"temperature":1,"acc":0.4133,"ece":0.237,"mean_conf":0.1763,"report_calibrated":false}
+{"per_class":6,"n":66,"seed":1,"crossfit":true,"head":"linear-probe","calibrated":true,"temperature":0.549,"acc":0.4133,"ece":0.1387,"mean_conf":0.276,"report_calibrated":false}
+{"per_class":6,"n":66,"seed":2,"crossfit":false,"head":"linear-probe","calibrated":false,"temperature":1,"acc":0.4,"ece":0.2276,"mean_conf":0.1749,"report_calibrated":false}
+{"per_class":6,"n":66,"seed":2,"crossfit":true,"head":"linear-probe","calibrated":true,"temperature":0.593,"acc":0.4,"ece":0.1658,"mean_conf":0.2575,"report_calibrated":false}
+{"per_class":8,"n":88,"seed":0,"crossfit":false,"head":"linear-probe","calibrated":false,"temperature":1,"acc":0.3317,"ece":0.1527,"mean_conf":0.1857,"report_calibrated":false}
+{"per_class":8,"n":88,"seed":0,"crossfit":false,"head":"linear-probe","calibrated":false,"temperature":1,"acc":0.3317,"ece":0.1527,"mean_conf":0.1857,"report_calibrated":false}
+{"per_class":8,"n":88,"seed":0,"crossfit":true,"head":"linear-probe","calibrated":true,"temperature":0.387,"acc":0.3317,"ece":0.0676,"mean_conf":0.3927,"report_calibrated":false}
+{"per_class":8,"n":88,"seed":1,"crossfit":false,"head":"linear-probe","calibrated":false,"temperature":1,"acc":0.4533,"ece":0.2731,"mean_conf":0.1817,"report_calibrated":false}
+{"per_class":8,"n":88,"seed":1,"crossfit":true,"head":"linear-probe","calibrated":true,"temperature":0.359,"acc":0.4533,"ece":0.0923,"mean_conf":0.4039,"report_calibrated":false}
+{"per_class": 8, "n": 88, "seed": 2, "crossfit": false, "head": "linear-probe", "calibrated": false, "temperature": 1, "acc": 0.4267, "ece": 0.2503, "mean_conf": 0.1767, "report_calibrated": false}
+{"per_class": 8, "n": 88, "seed": 2, "crossfit": true, "head": "linear-probe", "calibrated": true, "temperature": 0.452, "acc": 0.4267, "ece": 0.1038, "mean_conf": 0.3228, "report_calibrated": false}
+{"per_class": 10, "n": 110, "seed": 0, "crossfit": false, "head": "linear-probe", "calibrated": true, "temperature": 0.193, "acc": 0.465, "ece": 0.146, "mean_conf": 0.5965, "report_calibrated": true}
+{"per_class": 10, "n": 110, "seed": 0, "crossfit": true, "head": "linear-probe", "calibrated": true, "temperature": 0.193, "acc": 0.465, "ece": 0.146, "mean_conf": 0.5965, "report_calibrated": true}

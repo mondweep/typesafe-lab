@@ -1,0 +1,4 @@
+{"dir":"data/wn18rr-3000","dims":64,"scorer":"hole","cfg":{"epochs":20},"stats":{"dims":64,"entities":2752,"indexed":false,"relations":10,"scorer":"hole","seed":42,"splits":{"test":139,"train":5413,"transfer":0,"unlabelled":0,"valid":136},"triples":5688}}
+{"epochs":10,"epochMs":50820,"loss":2.028096914291382,"validMrr":0.5375136137008667,"evalMs":453}
+{"epochs":20,"epochMs":52069,"loss":1.9579724073410034,"validMrr":0.5392182469367981,"evalMs":298}
+{"final":true,"epochs":20,"trainMin":17.15,"testMrr":0.5611875057220459,"h1":0.5503597259521484,"h3":0.564748227596283,"h10":0.5719424486160278,"testEvalMs":520}

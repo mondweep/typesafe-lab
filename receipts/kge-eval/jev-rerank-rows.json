@@ -1,0 +1,1114 @@
+[
+ {
+  "s": "position.n.01",
+  "r": "_hypernym",
+  "o": "point.n.02",
+  "kgeTop": "genus.n.02",
+  "jev": "quality.n.01",
+  "inK": false
+ },
+ {
+  "s": "north_atlantic_treaty_organization.n.01",
+  "r": "_member_meronym",
+  "o": "netherlands.n.01",
+  "kgeTop": "netherlands.n.01",
+  "jev": "netherlands.n.01",
+  "inK": true
+ },
+ {
+  "s": "chase.v.01",
+  "r": "_derivationally_related_form",
+  "o": "pursuit.n.01",
+  "kgeTop": "pursuit.n.01",
+  "jev": "pursuit.n.01",
+  "inK": true
+ },
+ {
+  "s": "breakage.n.03",
+  "r": "_hypernym",
+  "o": "change_of_integrity.n.01",
+  "kgeTop": "change.v.01",
+  "jev": "destruction.n.02",
+  "inK": false
+ },
+ {
+  "s": "arrange.v.01",
+  "r": "_derivationally_related_form",
+  "o": "placement.n.01",
+  "kgeTop": "placement.n.01",
+  "jev": "placement.n.01",
+  "inK": true
+ },
+ {
+  "s": "strike.v.01",
+  "r": "_verb_group",
+  "o": "hit.v.02",
+  "kgeTop": "hit.v.02",
+  "jev": "hit.v.02",
+  "inK": true
+ },
+ {
+  "s": "adventurer.n.01",
+  "r": "_hypernym",
+  "o": "person.n.01",
+  "kgeTop": "assemble.v.01",
+  "jev": "dissenter.n.01",
+  "inK": false
+ },
+ {
+  "s": "number.v.03",
+  "r": "_derivationally_related_form",
+  "o": "numeral.n.01",
+  "kgeTop": "numeral.n.01",
+  "jev": "numeral.n.01",
+  "inK": true
+ },
+ {
+  "s": "inventor.n.01",
+  "r": "_derivationally_related_form",
+  "o": "invent.v.01",
+  "kgeTop": "invent.v.01",
+  "jev": "invent.v.01",
+  "inK": true
+ },
+ {
+  "s": "deal.v.06",
+  "r": "_also_see",
+  "o": "distribute.v.01",
+  "kgeTop": "attendant.n.01",
+  "jev": "sell.v.02",
+  "inK": false
+ },
+ {
+  "s": "investigation.n.02",
+  "r": "_derivationally_related_form",
+  "o": "investigate.v.02",
+  "kgeTop": "investigate.v.02",
+  "jev": "investigate.v.02",
+  "inK": true
+ },
+ {
+  "s": "game.n.01",
+  "r": "_hypernym",
+  "o": "activity.n.01",
+  "kgeTop": "dilleniid_dicot_family.n.01",
+  "jev": "activity.n.01",
+  "inK": true
+ },
+ {
+  "s": "agent.n.01",
+  "r": "_hypernym",
+  "o": "causal_agent.n.01",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "leader.n.01",
+  "inK": false
+ },
+ {
+  "s": "categorization.n.03",
+  "r": "_derivationally_related_form",
+  "o": "relegate.v.04",
+  "kgeTop": "relegate.v.04",
+  "jev": "relegate.v.04",
+  "inK": true
+ },
+ {
+  "s": "concept.n.01",
+  "r": "_hypernym",
+  "o": "idea.n.01",
+  "kgeTop": "dicot_family.n.01",
+  "jev": "concept.n.01",
+  "inK": false
+ },
+ {
+  "s": "fold.n.01",
+  "r": "_derivationally_related_form",
+  "o": "flex.v.05",
+  "kgeTop": "flex.v.05",
+  "jev": "change_shape.v.01",
+  "inK": true
+ },
+ {
+  "s": "total.v.01",
+  "r": "_derivationally_related_form",
+  "o": "measure.n.02",
+  "kgeTop": "measure.n.02",
+  "jev": "count.n.02",
+  "inK": true
+ },
+ {
+  "s": "traveler.n.01",
+  "r": "_derivationally_related_form",
+  "o": "travel.v.02",
+  "kgeTop": "travel.v.02",
+  "jev": "travel.v.02",
+  "inK": true
+ },
+ {
+  "s": "categorization.n.03",
+  "r": "_derivationally_related_form",
+  "o": "categorize.v.01",
+  "kgeTop": "categorize.v.01",
+  "jev": "categorize.v.01",
+  "inK": true
+ },
+ {
+  "s": "motion.n.03",
+  "r": "_hypernym",
+  "o": "change.n.03",
+  "kgeTop": "change.v.01",
+  "jev": "change.v.01",
+  "inK": false
+ },
+ {
+  "s": "building_material.n.01",
+  "r": "_hypernym",
+  "o": "artifact.n.01",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "activity.n.01",
+  "inK": false
+ },
+ {
+  "s": "distill.v.02",
+  "r": "_hypernym",
+  "o": "change.v.02",
+  "kgeTop": "artifact.n.01",
+  "jev": "change_state.v.01",
+  "inK": false
+ },
+ {
+  "s": "confuse.v.02",
+  "r": "_derivationally_related_form",
+  "o": "bewilderment.n.01",
+  "kgeTop": "bewilderment.n.01",
+  "jev": "bewilderment.n.01",
+  "inK": true
+ },
+ {
+  "s": "singer.n.01",
+  "r": "_derivationally_related_form",
+  "o": "sing.v.01",
+  "kgeTop": "sing.v.01",
+  "jev": "sing.v.01",
+  "inK": true
+ },
+ {
+  "s": "dance.v.02",
+  "r": "_derivationally_related_form",
+  "o": "dancing.n.01",
+  "kgeTop": "dancing.n.01",
+  "jev": "dancing.n.01",
+  "inK": true
+ },
+ {
+  "s": "burn.v.07",
+  "r": "_hypernym",
+  "o": "change_integrity.v.01",
+  "kgeTop": "change_state.v.01",
+  "jev": "change_state.v.01",
+  "inK": false
+ },
+ {
+  "s": "invitation.n.01",
+  "r": "_hypernym",
+  "o": "request.n.02",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "activity.n.01",
+  "inK": false
+ },
+ {
+  "s": "coleoptera.n.01",
+  "r": "_hypernym",
+  "o": "animal_order.n.01",
+  "kgeTop": "blow.n.01",
+  "jev": "animal_order.n.01",
+  "inK": true
+ },
+ {
+  "s": "beat.v.04",
+  "r": "_hypernym",
+  "o": "move.v.03",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "activity.n.01",
+  "inK": false
+ },
+ {
+  "s": "hit.v.03",
+  "r": "_derivationally_related_form",
+  "o": "hit.n.02",
+  "kgeTop": "hit.n.02",
+  "jev": "hit.n.02",
+  "inK": true
+ },
+ {
+  "s": "note.v.01",
+  "r": "_derivationally_related_form",
+  "o": "remark.n.01",
+  "kgeTop": "remark.n.01",
+  "jev": "remark.n.01",
+  "inK": true
+ },
+ {
+  "s": "feel.v.09",
+  "r": "_derivationally_related_form",
+  "o": "finger.n.01",
+  "kgeTop": "finger.n.01",
+  "jev": "sensation.n.01",
+  "inK": true
+ },
+ {
+  "s": "mastermind.v.01",
+  "r": "_hypernym",
+  "o": "plan.v.02",
+  "kgeTop": "make.v.03",
+  "jev": "think.v.03",
+  "inK": false
+ },
+ {
+  "s": "color.v.04",
+  "r": "_hypernym",
+  "o": "decorate.v.01",
+  "kgeTop": "change.v.02",
+  "jev": "change.v.01",
+  "inK": false
+ },
+ {
+  "s": "change_of_location.n.01",
+  "r": "_derivationally_related_form",
+  "o": "travel.v.01",
+  "kgeTop": "travel.v.01",
+  "jev": "travel.v.01",
+  "inK": true
+ },
+ {
+  "s": "travel.v.01",
+  "r": "_also_see",
+  "o": "advance.v.01",
+  "kgeTop": "initiate.v.02",
+  "jev": "driving.n.02",
+  "inK": false
+ },
+ {
+  "s": "insert.v.01",
+  "r": "_hypernym",
+  "o": "attach.v.01",
+  "kgeTop": "person.n.01",
+  "jev": "fasten.v.01",
+  "inK": false
+ },
+ {
+  "s": "spin.v.01",
+  "r": "_derivationally_related_form",
+  "o": "spin.n.02",
+  "kgeTop": "spin.n.02",
+  "jev": "spin.n.02",
+  "inK": true
+ },
+ {
+  "s": "caryophyllales.n.01",
+  "r": "_member_meronym",
+  "o": "caryophyllaceae.n.01",
+  "kgeTop": "myrtaceae.n.01",
+  "jev": "euphorbiaceae.n.01",
+  "inK": false
+ },
+ {
+  "s": "engineer.n.01",
+  "r": "_derivationally_related_form",
+  "o": "mastermind.v.01",
+  "kgeTop": "mastermind.v.01",
+  "jev": "mastermind.v.01",
+  "inK": true
+ },
+ {
+  "s": "peak.n.04",
+  "r": "_hypernym",
+  "o": "topographic_point.n.01",
+  "kgeTop": "state.n.02",
+  "jev": "quality.n.01",
+  "inK": false
+ },
+ {
+  "s": "african.n.01",
+  "r": "_hypernym",
+  "o": "person.n.01",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "animal_order.n.01",
+  "inK": false
+ },
+ {
+  "s": "mention.v.01",
+  "r": "_derivationally_related_form",
+  "o": "citation.n.03",
+  "kgeTop": "citation.n.03",
+  "jev": "citation.n.03",
+  "inK": true
+ },
+ {
+  "s": "transgress.v.01",
+  "r": "_derivationally_related_form",
+  "o": "wrongdoer.n.01",
+  "kgeTop": "wrongdoer.n.01",
+  "jev": "wrongdoer.n.01",
+  "inK": true
+ },
+ {
+  "s": "force.n.04",
+  "r": "_hypernym",
+  "o": "organization.n.01",
+  "kgeTop": "agency.n.01",
+  "jev": "agency.n.01",
+  "inK": false
+ },
+ {
+  "s": "hinduism.n.02",
+  "r": "_hypernym",
+  "o": "religion.n.01",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "activity.n.01",
+  "inK": false
+ },
+ {
+  "s": "wind.v.03",
+  "r": "_derivationally_related_form",
+  "o": "axial_rotation.n.01",
+  "kgeTop": "verse.v.01",
+  "jev": "placement.n.01",
+  "inK": false
+ },
+ {
+  "s": "naming.n.01",
+  "r": "_hypernym",
+  "o": "speech_act.n.01",
+  "kgeTop": "country.n.02",
+  "jev": "communicate.v.02",
+  "inK": false
+ },
+ {
+  "s": "communism.n.01",
+  "r": "_derivationally_related_form",
+  "o": "communize.v.01",
+  "kgeTop": "communize.v.01",
+  "jev": "communize.v.01",
+  "inK": true
+ },
+ {
+  "s": "argue.v.02",
+  "r": "_derivationally_related_form",
+  "o": "controversy.n.01",
+  "kgeTop": "controversy.n.01",
+  "jev": "controversy.n.01",
+  "inK": true
+ },
+ {
+  "s": "interact.v.01",
+  "r": "_hypernym",
+  "o": "act.v.01",
+  "kgeTop": "fish_family.n.01",
+  "jev": "gather.v.01",
+  "inK": false
+ },
+ {
+  "s": "blend.v.03",
+  "r": "_hypernym",
+  "o": "change_integrity.v.01",
+  "kgeTop": "change.v.01",
+  "jev": "change.v.01",
+  "inK": false
+ },
+ {
+  "s": "sell.v.01",
+  "r": "_synset_domain_topic_of",
+  "o": "commerce.n.01",
+  "kgeTop": "commerce.n.01",
+  "jev": "commerce.n.01",
+  "inK": true
+ },
+ {
+  "s": "protect.v.01",
+  "r": "_derivationally_related_form",
+  "o": "protective_covering.n.01",
+  "kgeTop": "protective_covering.n.01",
+  "jev": "protective_covering.n.01",
+  "inK": true
+ },
+ {
+  "s": "toddle.v.01",
+  "r": "_hypernym",
+  "o": "walk.v.01",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "activity.n.01",
+  "inK": false
+ },
+ {
+  "s": "drive.n.08",
+  "r": "_hypernym",
+  "o": "journey.n.01",
+  "kgeTop": "produce.v.02",
+  "jev": "travel.n.01",
+  "inK": false
+ },
+ {
+  "s": "song.n.01",
+  "r": "_derivationally_related_form",
+  "o": "sing.v.02",
+  "kgeTop": "sing.v.02",
+  "jev": "sing.v.02",
+  "inK": true
+ },
+ {
+  "s": "pregnancy.n.01",
+  "r": "_derivationally_related_form",
+  "o": "have_a_bun_in_the_oven.v.01",
+  "kgeTop": "have_a_bun_in_the_oven.v.01",
+  "jev": "have_a_bun_in_the_oven.v.01",
+  "inK": true
+ },
+ {
+  "s": "quarrel.v.01",
+  "r": "_derivationally_related_form",
+  "o": "fight.n.02",
+  "kgeTop": "fight.n.02",
+  "jev": "fight.n.02",
+  "inK": true
+ },
+ {
+  "s": "astronomy.n.01",
+  "r": "_derivationally_related_form",
+  "o": "astronomer.n.01",
+  "kgeTop": "astronomer.n.01",
+  "jev": "astronomer.n.01",
+  "inK": true
+ },
+ {
+  "s": "traverse.v.01",
+  "r": "_hypernym",
+  "o": "pass.v.01",
+  "kgeTop": "social_group.n.01",
+  "jev": "move.v.02",
+  "inK": false
+ },
+ {
+  "s": "dominate.v.03",
+  "r": "_hypernym",
+  "o": "control.v.01",
+  "kgeTop": "steer.v.01",
+  "jev": "be.v.01",
+  "inK": false
+ },
+ {
+  "s": "beam.n.04",
+  "r": "_hypernym",
+  "o": "light.n.01",
+  "kgeTop": "body_part.n.01",
+  "jev": "concept.n.01",
+  "inK": false
+ },
+ {
+  "s": "scatter.n.01",
+  "r": "_derivationally_related_form",
+  "o": "spread.v.01",
+  "kgeTop": "spread.v.01",
+  "jev": "spread.v.01",
+  "inK": true
+ },
+ {
+  "s": "depart.v.03",
+  "r": "_hypernym",
+  "o": "leave.v.01",
+  "kgeTop": "move.v.03",
+  "jev": "move.v.03",
+  "inK": false
+ },
+ {
+  "s": "play.n.01",
+  "r": "_derivationally_related_form",
+  "o": "dramatize.v.02",
+  "kgeTop": "dramatize.v.02",
+  "jev": "perform.v.03",
+  "inK": true
+ },
+ {
+  "s": "panic.n.01",
+  "r": "_derivationally_related_form",
+  "o": "frighten.v.01",
+  "kgeTop": "frighten.v.01",
+  "jev": "frighten.v.01",
+  "inK": true
+ },
+ {
+  "s": "organize.v.04",
+  "r": "_derivationally_related_form",
+  "o": "organization.n.04",
+  "kgeTop": "organization.n.04",
+  "jev": "organization.n.01",
+  "inK": true
+ },
+ {
+  "s": "exist.v.01",
+  "r": "_derivationally_related_form",
+  "o": "being.n.01",
+  "kgeTop": "being.n.01",
+  "jev": "being.n.01",
+  "inK": true
+ },
+ {
+  "s": "torso.n.01",
+  "r": "_has_part",
+  "o": "abdomen.n.01",
+  "kgeTop": "foot.n.01",
+  "jev": "wing.n.01",
+  "inK": false
+ },
+ {
+  "s": "break.v.05",
+  "r": "_derivationally_related_form",
+  "o": "breakable.a.01",
+  "kgeTop": "breakable.a.01",
+  "jev": "breakable.a.01",
+  "inK": true
+ },
+ {
+  "s": "speculate.v.01",
+  "r": "_derivationally_related_form",
+  "o": "theorist.n.01",
+  "kgeTop": "theorist.n.01",
+  "jev": "theorist.n.01",
+  "inK": true
+ },
+ {
+  "s": "separate.v.08",
+  "r": "_derivationally_related_form",
+  "o": "separation.n.02",
+  "kgeTop": "separation.n.02",
+  "jev": "separation.n.02",
+  "inK": true
+ },
+ {
+  "s": "hazard.n.01",
+  "r": "_derivationally_related_form",
+  "o": "venture.v.03",
+  "kgeTop": "venture.v.03",
+  "jev": "venture.v.03",
+  "inK": true
+ },
+ {
+  "s": "deceive.v.01",
+  "r": "_derivationally_related_form",
+  "o": "deception.n.02",
+  "kgeTop": "deception.n.02",
+  "jev": "deception.n.02",
+  "inK": true
+ },
+ {
+  "s": "drive.v.01",
+  "r": "_hypernym",
+  "o": "operate.v.03",
+  "kgeTop": "drop_the_ball.v.01",
+  "jev": "move.v.02",
+  "inK": false
+ },
+ {
+  "s": "accelerate.v.02",
+  "r": "_derivationally_related_form",
+  "o": "speed.n.02",
+  "kgeTop": "speed.n.02",
+  "jev": "speed.n.02",
+  "inK": true
+ },
+ {
+  "s": "feign.v.01",
+  "r": "_derivationally_related_form",
+  "o": "imposter.n.01",
+  "kgeTop": "imposter.n.01",
+  "jev": "misrepresentation.n.01",
+  "inK": true
+ },
+ {
+  "s": "pacify.v.01",
+  "r": "_hypernym",
+  "o": "calm.v.01",
+  "kgeTop": "gymnosperm_family.n.01",
+  "jev": "activity.n.01",
+  "inK": false
+ },
+ {
+  "s": "abandon.v.05",
+  "r": "_derivationally_related_form",
+  "o": "deserter.n.01",
+  "kgeTop": "deserter.n.01",
+  "jev": "abandonment.n.01",
+  "inK": true
+ },
+ {
+  "s": "imprison.v.01",
+  "r": "_hypernym",
+  "o": "confine.v.05",
+  "kgeTop": "causing.n.01",
+  "jev": "cause.v.01",
+  "inK": false
+ },
+ {
+  "s": "araneae.n.01",
+  "r": "_hypernym",
+  "o": "animal_order.n.01",
+  "kgeTop": "arthropod.n.01",
+  "jev": "arthropod.n.01",
+  "inK": false
+ },
+ {
+  "s": "search.n.01",
+  "r": "_hypernym",
+  "o": "activity.n.01",
+  "kgeTop": "combatant.n.01",
+  "jev": "motion.n.03",
+  "inK": false
+ },
+ {
+  "s": "placement.n.01",
+  "r": "_derivationally_related_form",
+  "o": "locate.v.03",
+  "kgeTop": "locate.v.03",
+  "jev": "locate.v.03",
+  "inK": true
+ },
+ {
+  "s": "effective.a.01",
+  "r": "_derivationally_related_form",
+  "o": "effect.v.01",
+  "kgeTop": "effect.v.01",
+  "jev": "effect.v.01",
+  "inK": true
+ },
+ {
+  "s": "class.n.03",
+  "r": "_derivationally_related_form",
+  "o": "relegate.v.04",
+  "kgeTop": "relegate.v.04",
+  "jev": "categorize.v.01",
+  "inK": true
+ },
+ {
+  "s": "distinguish.v.01",
+  "r": "_derivationally_related_form",
+  "o": "difference.n.01",
+  "kgeTop": "difference.n.01",
+  "jev": "difference.n.01",
+  "inK": true
+ },
+ {
+  "s": "edible_fruit.n.01",
+  "r": "_hypernym",
+  "o": "fruit.n.01",
+  "kgeTop": "computer_science.n.01",
+  "jev": "dicot_genus.n.01",
+  "inK": false
+ },
+ {
+  "s": "develop.v.10",
+  "r": "_derivationally_related_form",
+  "o": "growth.n.01",
+  "kgeTop": "growth.n.01",
+  "jev": "growth.n.01",
+  "inK": true
+ },
+ {
+  "s": "questioning.n.01",
+  "r": "_derivationally_related_form",
+  "o": "interrogate.v.02",
+  "kgeTop": "interrogate.v.02",
+  "jev": "interrogate.v.02",
+  "inK": true
+ },
+ {
+  "s": "investigate.v.02",
+  "r": "_derivationally_related_form",
+  "o": "inquirer.n.01",
+  "kgeTop": "inquirer.n.01",
+  "jev": "inquirer.n.01",
+  "inK": true
+ },
+ {
+  "s": "old_age.n.01",
+  "r": "_hypernym",
+  "o": "time_of_life.n.01",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "activity.n.01",
+  "inK": false
+ },
+ {
+  "s": "expectorate.v.02",
+  "r": "_hypernym",
+  "o": "exhaust.v.05",
+  "kgeTop": "supply.v.01",
+  "jev": "push.v.01",
+  "inK": false
+ },
+ {
+  "s": "draw.v.06",
+  "r": "_synset_domain_topic_of",
+  "o": "art.n.02",
+  "kgeTop": "art.n.02",
+  "jev": "art.n.02",
+  "inK": true
+ },
+ {
+  "s": "suffer.v.06",
+  "r": "_derivationally_related_form",
+  "o": "agony.n.02",
+  "kgeTop": "agony.n.02",
+  "jev": "agony.n.02",
+  "inK": true
+ },
+ {
+  "s": "measurement.n.01",
+  "r": "_derivationally_related_form",
+  "o": "quantify.v.02",
+  "kgeTop": "quantify.v.02",
+  "jev": "measure.n.02",
+  "inK": true
+ },
+ {
+  "s": "river.n.01",
+  "r": "_has_part",
+  "o": "waterfall.n.01",
+  "kgeTop": "statistics.n.01",
+  "jev": "point.n.02",
+  "inK": false
+ },
+ {
+  "s": "crime.n.01",
+  "r": "_hypernym",
+  "o": "transgression.n.01",
+  "kgeTop": "tenant.n.01",
+  "jev": "activity.n.01",
+  "inK": false
+ },
+ {
+  "s": "recompense.n.02",
+  "r": "_derivationally_related_form",
+  "o": "compensate.v.01",
+  "kgeTop": "compensate.v.01",
+  "jev": "compensate.v.01",
+  "inK": true
+ },
+ {
+  "s": "electronic_equipment.n.01",
+  "r": "_has_part",
+  "o": "circuit.n.01",
+  "kgeTop": "assistant.n.01",
+  "jev": "science.n.01",
+  "inK": false
+ },
+ {
+  "s": "papilionoideae.n.01",
+  "r": "_hypernym",
+  "o": "rosid_dicot_family.n.01",
+  "kgeTop": "rosid_dicot_family.n.01",
+  "jev": "family.n.06",
+  "inK": true
+ },
+ {
+  "s": "spectator.n.01",
+  "r": "_derivationally_related_form",
+  "o": "look.v.01",
+  "kgeTop": "look.v.01",
+  "jev": "watch.v.02",
+  "inK": true
+ },
+ {
+  "s": "thief.n.01",
+  "r": "_hypernym",
+  "o": "criminal.n.01",
+  "kgeTop": "dicot_genus.n.01",
+  "jev": "genus.n.02",
+  "inK": false
+ },
+ {
+  "s": "japan.n.02",
+  "r": "_instance_hypernym",
+  "o": "asian_country.n.01",
+  "kgeTop": "asian_country.n.01",
+  "jev": "country.n.02",
+  "inK": true
+ },
+ {
+  "s": "apostle.n.03",
+  "r": "_synset_domain_topic_of",
+  "o": "new_testament.n.01",
+  "kgeTop": "military.n.01",
+  "jev": "law.n.01",
+  "inK": false
+ },
+ {
+  "s": "look.v.01",
+  "r": "_also_see",
+  "o": "check.v.01",
+  "kgeTop": "contest.v.01",
+  "jev": "look.n.02",
+  "inK": false
+ },
+ {
+  "s": "typify.v.02",
+  "r": "_derivationally_related_form",
+  "o": "symbol.n.01",
+  "kgeTop": "symbol.n.01",
+  "jev": "symbol.n.01",
+  "inK": true
+ },
+ {
+  "s": "dirty.v.01",
+  "r": "_hypernym",
+  "o": "change.v.01",
+  "kgeTop": "device.n.01",
+  "jev": "cause.v.01",
+  "inK": false
+ },
+ {
+  "s": "deserter.n.01",
+  "r": "_derivationally_related_form",
+  "o": "denounce.v.04",
+  "kgeTop": "denounce.v.04",
+  "jev": "abandonment.n.01",
+  "inK": true
+ },
+ {
+  "s": "rush.v.01",
+  "r": "_derivationally_related_form",
+  "o": "speed.n.02",
+  "kgeTop": "speed.n.02",
+  "jev": "speed.n.02",
+  "inK": true
+ },
+ {
+  "s": "tug.v.02",
+  "r": "_derivationally_related_form",
+  "o": "undertaking.n.01",
+  "kgeTop": "undertaking.n.01",
+  "jev": "effort.n.02",
+  "inK": true
+ },
+ {
+  "s": "adventurer.n.01",
+  "r": "_derivationally_related_form",
+  "o": "venture.v.03",
+  "kgeTop": "venture.v.03",
+  "jev": "venture.v.03",
+  "inK": true
+ },
+ {
+  "s": "suffer.v.06",
+  "r": "_derivationally_related_form",
+  "o": "pain.n.01",
+  "kgeTop": "pain.n.01",
+  "jev": "pain.n.01",
+  "inK": true
+ },
+ {
+  "s": "paint.n.01",
+  "r": "_hypernym",
+  "o": "coloring_material.n.01",
+  "kgeTop": "change.v.01",
+  "jev": "change.v.01",
+  "inK": false
+ },
+ {
+  "s": "pull.v.01",
+  "r": "_derivationally_related_form",
+  "o": "puller.n.02",
+  "kgeTop": "puller.n.02",
+  "jev": "puller.n.02",
+  "inK": true
+ },
+ {
+  "s": "entrust.v.01",
+  "r": "_derivationally_related_form",
+  "o": "committee.n.01",
+  "kgeTop": "committee.n.01",
+  "jev": "entrust.v.01",
+  "inK": true
+ },
+ {
+  "s": "rock.v.01",
+  "r": "_derivationally_related_form",
+  "o": "rock.n.07",
+  "kgeTop": "rock.n.07",
+  "jev": "rock.n.07",
+  "inK": true
+ },
+ {
+  "s": "originate.v.02",
+  "r": "_derivationally_related_form",
+  "o": "initiation.n.02",
+  "kgeTop": "initiation.n.02",
+  "jev": "initiation.n.02",
+  "inK": true
+ },
+ {
+  "s": "arouse.v.01",
+  "r": "_derivationally_related_form",
+  "o": "incitement.n.03",
+  "kgeTop": "incitement.n.03",
+  "jev": "incitement.n.03",
+  "inK": true
+ },
+ {
+  "s": "steal.v.01",
+  "r": "_derivationally_related_form",
+  "o": "thief.n.01",
+  "kgeTop": "thief.n.01",
+  "jev": "thief.n.01",
+  "inK": true
+ },
+ {
+  "s": "deck.v.01",
+  "r": "_derivationally_related_form",
+  "o": "decoration.n.01",
+  "kgeTop": "decoration.n.01",
+  "jev": "decoration.n.01",
+  "inK": true
+ },
+ {
+  "s": "mark.n.04",
+  "r": "_derivationally_related_form",
+  "o": "score.v.02",
+  "kgeTop": "score.v.02",
+  "jev": "score.v.02",
+  "inK": true
+ },
+ {
+  "s": "hagiographa.n.01",
+  "r": "_instance_hypernym",
+  "o": "sacred_text.n.01",
+  "kgeTop": "african_country.n.01",
+  "jev": "country.n.02",
+  "inK": false
+ },
+ {
+  "s": "travel.v.01",
+  "r": "_also_see",
+  "o": "withdraw.v.01",
+  "kgeTop": "initiate.v.02",
+  "jev": "driving.n.02",
+  "inK": false
+ },
+ {
+  "s": "constellation.n.02",
+  "r": "_derivationally_related_form",
+  "o": "cluster.v.01",
+  "kgeTop": "cluster.v.01",
+  "jev": "constellation.n.02",
+  "inK": true
+ },
+ {
+  "s": "dig.v.01",
+  "r": "_also_see",
+  "o": "excavate.v.02",
+  "kgeTop": "cut.v.01",
+  "jev": "cut.v.01",
+  "inK": false
+ },
+ {
+  "s": "oleaceae.n.01",
+  "r": "_hypernym",
+  "o": "dicot_family.n.01",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "asterid_dicot_family.n.01",
+  "inK": false
+ },
+ {
+  "s": "greeting.n.01",
+  "r": "_derivationally_related_form",
+  "o": "greet.v.01",
+  "kgeTop": "greet.v.01",
+  "jev": "greet.v.01",
+  "inK": true
+ },
+ {
+  "s": "picture.n.01",
+  "r": "_hypernym",
+  "o": "representation.n.02",
+  "kgeTop": "arouse.v.01",
+  "jev": "collection.n.01",
+  "inK": false
+ },
+ {
+  "s": "bomb.n.01",
+  "r": "_derivationally_related_form",
+  "o": "bombard.v.02",
+  "kgeTop": "bombard.v.02",
+  "jev": "bombard.v.02",
+  "inK": true
+ },
+ {
+  "s": "discover.v.03",
+  "r": "_derivationally_related_form",
+  "o": "discovery.n.01",
+  "kgeTop": "discovery.n.01",
+  "jev": "discovery.n.01",
+  "inK": true
+ },
+ {
+  "s": "adapt.v.01",
+  "r": "_hypernym",
+  "o": "change.v.03",
+  "kgeTop": "change.v.02",
+  "jev": "change.v.01",
+  "inK": false
+ },
+ {
+  "s": "increase.n.05",
+  "r": "_derivationally_related_form",
+  "o": "increase.v.01",
+  "kgeTop": "increase.v.01",
+  "jev": "increase.v.01",
+  "inK": true
+ },
+ {
+  "s": "axial_rotation.n.01",
+  "r": "_derivationally_related_form",
+  "o": "wind.v.03",
+  "kgeTop": "bellow.n.01",
+  "jev": "spin.v.01",
+  "inK": false
+ },
+ {
+  "s": "club.n.02",
+  "r": "_hypernym",
+  "o": "association.n.01",
+  "kgeTop": "mammal_family.n.01",
+  "jev": "activity.n.01",
+  "inK": false
+ },
+ {
+  "s": "connect.v.03",
+  "r": "_derivationally_related_form",
+  "o": "connection.n.02",
+  "kgeTop": "connection.n.02",
+  "jev": "connection.n.02",
+  "inK": true
+ },
+ {
+  "s": "separate.v.05",
+  "r": "_hypernym",
+  "o": "change_integrity.v.01",
+  "kgeTop": "class.n.07",
+  "jev": "change_state.v.01",
+  "inK": false
+ },
+ {
+  "s": "eliminate.v.03",
+  "r": "_hypernym",
+  "o": "kill.v.01",
+  "kgeTop": "destroy.v.01",
+  "jev": "destroy.v.01",
+  "inK": false
+ },
+ {
+  "s": "concentrate.v.02",
+  "r": "_hypernym",
+  "o": "think.v.03",
+  "kgeTop": "change.v.01",
+  "jev": "change.v.01",
+  "inK": false
+ }
+]

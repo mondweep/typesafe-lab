@@ -1,0 +1,53 @@
+{
+ "counts": {
+  "val": null,
+  "test": 0.675
+ },
+ "KGE, original (binary facts)": {
+  "val": 0.7,
+  "test": 0.6483,
+  "hp": [
+   0.25,
+   0.25
+  ],
+  "with_counts_test": 0.675,
+  "with_counts_w": [
+   0.5,
+   0
+  ],
+  "vs_counts_fixes": 0,
+  "vs_counts_breaks": 0
+ },
+ "KGE, A: facts repeated by count": {
+  "val": 0.7125,
+  "test": 0.6533,
+  "hp": [
+   0.1,
+   0.25
+  ],
+  "with_counts_test": 0.6483,
+  "with_counts_w": [
+   0.25,
+   0.25
+  ],
+  "vs_counts_fixes": 9,
+  "vs_counts_breaks": 25
+ },
+ "KGE, B: frequency bands": {
+  "val": 0.73,
+  "test": 0.6683,
+  "hp": [
+   0.5,
+   0.5,
+   0,
+   0.25
+  ],
+  "with_counts_test": 0.6783,
+  "with_counts_w": [
+   0.25,
+   0.1
+  ],
+  "vs_counts_fixes": 10,
+  "vs_counts_breaks": 8
+ }
+}

@@ -1,0 +1,6 @@
+{"dir":"data/fb15k237-1000","dims":128,"scorer":"hole","cfg":{"epochs":20},"stats":{"dims":128,"entities":998,"indexed":false,"relations":186,"scorer":"hole","seed":42,"splits":{"test":1530,"train":26734,"transfer":0,"unlabelled":0,"valid":1261},"triples":29525}}
+{"epochs":5,"epochMs":167640,"loss":6.139394760131836,"validMrr":0.44126561284065247,"evalMs":2144}
+{"epochs":10,"epochMs":230087,"loss":5.9239630699157715,"validMrr":0.45347344875335693,"evalMs":2047}
+{"epochs":15,"epochMs":162602,"loss":5.86223030090332,"validMrr":0.4604053795337677,"evalMs":2140}
+{"epochs":20,"epochMs":158961,"loss":5.836015701293945,"validMrr":0.45836564898490906,"evalMs":2030}
+{"final":true,"epochs":20,"trainMin":59.94,"testMrr":0.4461219608783722,"h1":0.31111112236976624,"h3":0.5101307034492493,"h10":0.7441176176071167,"testEvalMs":2583}

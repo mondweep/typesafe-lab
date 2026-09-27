@@ -21,6 +21,7 @@
       <button role="tab" data-page="experiments">Experiments</button>
       <button role="tab" data-page="bench"><span class="long">Fresh benchmark</span><span class="short">Benchmark</span></button>
       <button role="tab" data-page="cascade">Cascade</button>
+      <button role="tab" data-page="graph"><span class="long">Graph + cascade</span><span class="short">Graph</span></button>
       <button role="tab" data-page="evidence">Evidence</button>
       <button role="tab" data-page="ruvector">RuVector<span class="long"> fit</span></button>
       <button role="tab" data-page="verdict">Verdict</button>
@@ -304,6 +305,58 @@ It would be great if invoices supported multiple currencies</textarea>
     <li>With SmolLM2-1.7B it gave real answers, but took 8–13 s per call on 2 CPUs.</li>
   </ul>
   Stage 3 therefore runs llama.cpp (MIT licence) with Qwen2.5-1.5B-Instruct (Apache-2.0), hosted in us-central1, Cloud Run's cheapest region. It uses the same model format and could switch back to ruvllm once those issues are fixed. The re-reader is DeBERTa-v3-xsmall (MIT), fine-tuned in 6 minutes on CPU on the 124 training examples only.</div>
+</section>
+
+<!-- ============================ GRAPH + CASCADE ============================ -->
+<section class="page" id="page-graph">
+  <h1>Graph + cascade: does a knowledge graph help?</h1>
+  <p class="lede">Real routing traffic usually comes with history: which company a complaint is about, which council a report goes to, and how past cases were routed. We added that history to the cascade as an extra signal, in two ways. One is plain counts ("how often did this company's past complaints fall under each product?"). The other is <b>@ruvector/kge</b>, which learns embeddings from the same history as a knowledge graph. Both were tested on real public data.</p>
+  <div class="chip-row" id="gDs"></div>
+  <div class="callout" id="gVerdict"></div>
+
+  <div class="card" style="margin:14px 0"><svg viewBox="0 0 960 150" width="100%" role="img" aria-label="Graph-assisted cascade">
+    <defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--ink-3)"/></marker></defs>
+    <g font-size="13">
+      <rect x="4" y="12" width="210" height="58" rx="10" fill="var(--ts-soft)" stroke="var(--ts)"/><text x="109" y="37" text-anchor="middle" font-weight="600">typesafe reads the text</text><text x="109" y="56" text-anchor="middle" font-size="11">probability for each option · local</text>
+      <rect x="4" y="82" width="210" height="58" rx="10" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="109" y="107" text-anchor="middle" font-weight="600">history prior</text><text x="109" y="126" text-anchor="middle" font-size="11">counts or KGE, from past cases · local</text>
+      <rect x="300" y="45" width="220" height="62" rx="10" fill="var(--ts-soft)" stroke="var(--ts)"/><text x="410" y="71" text-anchor="middle" font-weight="600">combine</text><text x="410" y="90" text-anchor="middle" font-size="11">text × prior^weight (weight tuned on val)</text>
+      <rect x="740" y="45" width="210" height="62" rx="10" fill="var(--jev-soft)" stroke="var(--jev)"/><text x="845" y="71" text-anchor="middle" font-weight="600">Jev</text><text x="845" y="90" text-anchor="middle" font-size="11">only the least confident share</text>
+      <path d="M214 41 L298 70" stroke="var(--ink-3)" marker-end="url(#ar3)"/><path d="M214 111 L298 84" stroke="var(--ink-3)" marker-end="url(#ar3)"/><path d="M520 76 H738" stroke="var(--ink-3)" marker-end="url(#ar3)"/>
+      <text x="629" y="68" text-anchor="middle" font-size="11">unsure</text><text x="629" y="98" text-anchor="middle" font-size="11">confident → answer</text>
+    </g></svg></div>
+
+  <h2>Each signal on its own</h2>
+  <div class="table-wrap"><table id="gArms"></table></div>
+
+  <h2>How little Jev do you need?</h2>
+  <div class="grid" style="grid-template-columns:minmax(260px,340px) 1fr;align-items:start">
+    <div class="card">
+      <div class="small muted">Target share sent to Jev <b id="gShareV"></b></div>
+      <input type="range" id="gShare" min="0" max="12" step="1" value="5" style="width:100%">
+      <p class="small muted" style="margin-top:8px">The confidence threshold for each target is picked on the validation month, then applied to the test month. So the share actually sent can differ a little from the target.</p>
+    </div>
+    <div class="table-wrap"><table id="gAtShare"></table></div>
+  </div>
+  <details style="margin-top:10px"><summary class="small">Full frontier table</summary><div class="table-wrap"><table id="gFrontier"></table></div></details>
+
+  <div id="gCompanyBox">
+  <h2>What did the graph learn about a company?</h2>
+  <div class="card">
+    <div class="row"><select id="gCompany" style="width:auto;max-width:100%"></select><span class="small muted" id="gCompanyN"></span></div>
+    <div class="grid g2" style="margin-top:10px"><div><div class="small muted">Share of past complaints (counts)</div><div id="gCompCount"></div></div><div><div class="small muted">KGE prior (softmax over link scores)</div><div id="gCompKge"></div></div></div>
+    <p class="small muted" style="margin-top:8px">The graph stores <i>that</i> a company has complaints about a product, not how many. Counts keep the proportions; the KGE link scores for the 11 products sit close together, so its prior is nearly flat and can even rank a product the company has never had above its real one. That difference explains most of the results above.</p>
+  </div>
+  </div>
+
+  <h2>Walk through real cases</h2>
+  <div class="card">
+    <div class="row"><select id="gItem" style="width:auto;max-width:100%"></select><button class="btn" id="gJevLive">Ask Jev live</button><span class="small muted" id="gJevStatus"></span></div>
+    <div id="gItemOut" style="margin-top:10px"></div>
+  </div>
+
+  <h2>Method and caveats</h2>
+  <div class="card small" id="gMethod"></div>
+  <p class="small"><a href="/downloads/graph-cascade-v1.json">Download the results file</a> (all arms, frontiers, sample items).</p>
 </section>
 
 <!-- ============================ EVIDENCE ============================ -->

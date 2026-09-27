@@ -28,6 +28,7 @@ const zero = createTypesafe({ embedder });
 const trained = createTypesafe({ embedder });
 const benchTrained = createTypesafe({ embedder });
 const reranker = await createRerankerStage(join(HERE, 'models/rr-xsmall'));
+const graphRef = existsSync(join(HERE, 'data/graph-cascade-v1.json')) ? JSON.parse(readFileSync(join(HERE, 'data/graph-cascade-v1.json'), 'utf8')) : null;
 const cascadeRef = existsSync(join(HERE, 'data/cascade-v1.json')) ? JSON.parse(readFileSync(join(HERE, 'data/cascade-v1.json'), 'utf8')) : null;
 const LLM_URL = process.env.LLM_URL || '';
 const LLM_TOKEN = (process.env.LAB_TOKEN || '').trim();
@@ -212,8 +213,9 @@ const server = http.createServer(async (req, res) => {
       }
       return send(res, 200, out);
     }
-    const DL = { '/downloads/bench-v1.json': 'data/bench-v1.json', '/downloads/bench-v1-results.json': 'data/bench-v1-results.json', '/downloads/run-bench.mjs': 'run-bench.mjs', '/downloads/bench-core.mjs': 'bench-core.mjs' };
+    const DL = { '/downloads/bench-v1.json': 'data/bench-v1.json', '/downloads/bench-v1-results.json': 'data/bench-v1-results.json', '/downloads/run-bench.mjs': 'run-bench.mjs', '/downloads/bench-core.mjs': 'bench-core.mjs', '/downloads/graph-cascade-v1.json': 'data/graph-cascade-v1.json' };
     if (req.method === 'GET' && DL[url.pathname] && existsSync(join(HERE, DL[url.pathname]))) { res.writeHead(200, { 'content-type': url.pathname.endsWith('.json') ? 'application/json' : 'text/javascript; charset=utf-8', 'content-disposition': `attachment; filename="${url.pathname.split('/').pop()}"` }); return res.end(readFileSync(join(HERE, DL[url.pathname]))); }
+    if (req.method === 'GET' && url.pathname === '/api/graph') return send(res, 200, graphRef || { error: 'no graph study' });
     if (req.method === 'GET' && url.pathname === '/api/cascade') return send(res, 200, cascadeRef || { error: 'no reference run' });
     if (req.method === 'POST' && (url.pathname === '/api/cascade/item' || url.pathname === '/api/cascade/message')) {
       const b = await readJson(req);

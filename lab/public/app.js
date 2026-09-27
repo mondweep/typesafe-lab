@@ -447,3 +447,61 @@ async function initCascade() { try { C.sim = await import('/cascade-core.mjs'); 
   const firstWrong = S.tickets.find((t) => t.jev && t.jev.pred.department !== t.label.department);
   if (firstWrong) openTicket(firstWrong.id);
 })();
+
+// ---------- GRAPH + CASCADE ----------
+const G = { d: null, ds: 'cfpb' };
+const ARM = { text: 'typesafe text only', count: 'text × count prior', kge: 'text × KGE prior', both: 'text × counts × KGE' };
+function gLab(k) { return G.ds === 'cfpb' ? (G.d.cfpb.labels[k] || k) : k; }
+function gTop3(list, gold) { return list.map(([k, v]) => `<div class="small">${k === gold ? '<b>' : ''}${esc(gLab(k))}${k === gold ? ' ✓</b>' : ''} <span class="muted">${pct(v, 0)}</span></div>`).join(''); }
+function renderGraph() {
+  const D = G.d[G.ds]; const isC = G.ds === 'cfpb';
+  $('#gDs').innerHTML = [['cfpb', 'CFPB complaints (US)'], ['fms', 'FixMyStreet reports (UK)']].map(([k, n]) => `<button class="chip" data-k="${k}" style="${k === G.ds ? 'border-color:var(--accent);color:var(--ink);font-weight:600' : ''}">${n}</button>`).join('');
+  $$('#gDs .chip').forEach((b) => (b.onclick = () => { G.ds = b.dataset.k; renderGraph(); }));
+  const A = D.arms;
+  $('#gVerdict').innerHTML = isC
+    ? `<b>Verdict: history helps a lot; the knowledge graph adds nothing on top.</b> Adding each company's complaint counts lifts the local stage from ${pct(A.text.local_acc)} to ${pct(A.count.local_acc)}. Using @ruvector/kge instead gives ${pct(A.kge.local_acc)}, and adding it to counts gives ${pct(A.both.local_acc)} (+0.5 points, not significant: p = 0.58, 95% CI −0.7 to +1.7). Counts also help Jev itself (${pct(D.jev.text)} → ${pct(D.jev.text_x_count)}), matching Jev told the company name (${pct(D.jev.company)}).`
+    : `<b>Verdict: same story on UK data, and KGE does worse than nothing.</b> Counts of each council's past categories lift typesafe from ${pct(A.text.local_acc)} to ${pct(A.count.local_acc)}. The KGE prior drops it to ${pct(A.kge.local_acc)}, and adding it to counts gives ${pct(A.both.local_acc)}. Counts also lift Jev from ${pct(D.jev.text)} to ${pct(D.jev.text_x_count)}.`;
+  const jevRows = isC ? [['Jev, text only', D.jev.text, 'hosted'], ['Jev, told the company name', D.jev.company, 'hosted'], ['Jev × count prior', D.jev.text_x_count, 'hosted + local']] : [['Jev, text only', D.jev.text, 'hosted'], ['Jev × count prior', D.jev.text_x_count, 'hosted + local']];
+  $('#gArms').innerHTML = `<tr><th>Setup</th><th>Accuracy (test)</th><th>Where it runs</th></tr>` + Object.entries(ARM).map(([k, n]) => `<tr><td>${n}</td><td><b>${pct(A[k].local_acc)}</b></td><td class="small muted">local</td></tr>`).join('') + jevRows.map(([n, v, w]) => `<tr><td><span class="pill jev">Jev</span> ${n}</td><td><b>${pct(v)}</b></td><td class="small muted">${w}</td></tr>`).join('');
+  const s = +$('#gShare').value; $('#gShareV').textContent = pct(G.d.shares[s], 0);
+  $('#gAtShare').innerHTML = `<tr><th>Local stage</th><th>Sent to Jev</th><th>Cascade accuracy</th></tr>` + Object.entries(ARM).map(([k, n]) => { const f = A[k].frontier[s]; return `<tr><td>${n}</td><td>${pct(f.sent, 0)}</td><td><b>${pct(f.acc)}</b></td></tr>`; }).join('') + `<tr><td class="muted">Jev on everything</td><td>100%</td><td>${pct(D.jev.text)}</td></tr>`;
+  $('#gFrontier').innerHTML = `<tr><th>Target share</th>${Object.values(ARM).map((n) => `<th>${n}</th>`).join('')}</tr>` + G.d.shares.map((sh, i) => `<tr><td>${pct(sh, 0)}</td>${Object.keys(ARM).map((k) => `<td>${pct(A[k].frontier[i].acc)} <span class="muted small">(${pct(A[k].frontier[i].sent, 0)})</span></td>`).join('')}</tr>`).join('');
+  $('#gCompanyBox').style.display = isC ? '' : 'none';
+  if (isC) {
+    const cs = Object.entries(D.companies).sort((a, b) => b[1].n - a[1].n);
+    if (!$('#gCompany').options.length) { $('#gCompany').innerHTML = cs.map(([c, v]) => `<option value="${esc(c)}">${esc(c)} (${v.n.toLocaleString()})</option>`).join(''); $('#gCompany').onchange = renderGraphCompany; }
+    renderGraphCompany();
+  }
+  $('#gItem').innerHTML = D.items.map((it, i) => `<option value="${i}">${esc((isC ? it.company : it.council).slice(0, 38))} · ${esc(it.text.slice(0, 60))}…</option>`).join('');
+  $('#gItem').onchange = renderGraphItem; renderGraphItem();
+  $('#gMethod').innerHTML = isC
+    ? `<ul style="margin:0 0 0 18px;padding:0"><li><b>Data:</b> ${esc(D.dataset)}. Training text: 3,300 March–May complaints (up to 300 per product). Validation: 400 random June complaints. Test: 600 random July complaints. Task: route to one of 11 products.</li><li><b>History:</b> ${D.history_rows.toLocaleString()} complaints from March–June 2026, most without text. Counts use company → product frequencies. KGE (@ruvector/kge 0.1.0, HolE, 128 dims, N3 = 0.05, 20 epochs) was trained on ${D.cost.kge_triples_full.toLocaleString()} company–product, company–issue, company–sub-product and company–response links between ${D.cost.kge_entities_full.toLocaleString()} entities. Training took ${D.cost.kge_train_min_full} minutes on 2 vCPU; counts take milliseconds.</li><li><b>Tuning:</b> prior weights, smoothing and temperature were chosen on validation accuracy. Escalation thresholds were chosen as validation quantiles. Everything reported is on test.</li><li><b>Small-history check:</b> with only 1% of the history (24,740 rows), counts still beat KGE (67.5% vs 64.8%), including for companies with only 1–5 past complaints.</li><li><b>Caveats:</b> labels are the product the consumer picked, so they are noisy; the val→test drop (about 80% → 68% for counts) suggests July differs from June. Jev saw text truncated to 4,000 characters (~${D.jev.mean_tokens} tokens per call). The CFPB stopped publishing narratives on 14 August 2026; this uses the archived exports.</li></ul>`
+    : `<ul style="margin:0 0 0 18px;padding:0"><li><b>Data:</b> ${esc(D.dataset)}; ${D.history_rows.toLocaleString()} reports before 10 September form the history. Validation: 200 reports from 10–16 September. Test: 300 reports from 17–25 September. Task: pick the council's own category (median 69 options per council, capped at the 80 most common).</li><li><b>Local stage:</b> typesafe zero-shot over the council's category names (no trained head, because every council has its own labels).</li><li><b>KGE:</b> ${D.cost.kge_triples.toLocaleString()} council → category and category → keyword links, ${D.cost.kge_entities.toLocaleString()} entities, ${D.cost.kge_epochs} epochs, ${D.cost.kge_train_min} minutes.</li><li><b>Caveats:</b> the API returns at most 1,000 reports per request, so some busy 4-hour windows are incomplete. Categories differ by council, so text alone is ambiguous. About 1% of test categories never appeared in the council's history.</li></ul>`;
+}
+function renderGraphCompany() {
+  const c = G.d.cfpb.companies[$('#gCompany').value]; if (!c) return;
+  const lab = (o) => Object.fromEntries(Object.entries(o).filter(([, v]) => v >= 0.005).map(([k, v]) => [G.d.cfpb.labels[k], v]));
+  $('#gCompanyN').textContent = `${c.n.toLocaleString()} past complaints`;
+  $('#gCompCount').innerHTML = bars(lab(c.count)); $('#gCompKge').innerHTML = bars(lab(c.kge));
+}
+function renderGraphItem() {
+  const D = G.d[G.ds]; const it = D.items[+$('#gItem').value || 0]; if (!it) return; const isC = G.ds === 'cfpb';
+  const cell = (n, list) => `<div class="card" style="padding:10px"><div class="small muted" style="margin-bottom:4px">${n}</div>${gTop3(list, it.gold)}</div>`;
+  const jevPick = (n, k) => `<div class="card" style="padding:10px"><div class="small muted" style="margin-bottom:4px">${n}</div><div class="small">${k === it.gold ? '<b>' : ''}${esc(gLab(k))}${k === it.gold ? ' ✓</b>' : ''}</div></div>`;
+  $('#gItemOut').innerHTML = `<div class="small muted">${isC ? 'Company' : 'Council'}: <b>${esc(isC ? it.company : it.council)}</b> · correct answer: <b>${esc(gLab(it.gold))}</b>${isC ? '' : ` · ${it.n_options} options`}</div><blockquote class="small" style="margin:8px 0;white-space:pre-wrap">${esc(it.text)}${it.text.length >= 590 ? '…' : ''}</blockquote><div class="grid g3">${cell('typesafe, text only', it.typesafe)}${cell('Count prior alone', it.count_prior)}${isC ? cell('KGE prior alone', it.kge_prior) : cell('text × KGE prior', it.with_kge)}${cell('text × count prior', it.with_count)}${isC ? cell('text × counts × KGE', it.with_both) : ''}${jevPick('Jev, text only (recorded)', it.jev_text)}${isC ? jevPick('Jev, told the company (recorded)', it.jev_company) : ''}</div><div id="gJevOut"></div>`;
+  $('#gJevStatus').textContent = '';
+}
+$('#gShare').oninput = () => G.d && renderGraph();
+$('#gJevLive').onclick = async () => {
+  const D = G.d[G.ds]; const it = D.items[+$('#gItem').value || 0]; const isC = G.ds === 'cfpb';
+  $('#gJevStatus').textContent = 'asking Jev…';
+  try {
+    const criteria = isC ? Object.fromEntries(Object.entries(D.labels).map(([k, v]) => [k, v])) : Object.fromEntries(it.typesafe.concat(it.count_prior).map(([k]) => [k, k]));
+    const state = isC ? `Company complained about: ${it.company}\n\nComplaint: ${it.text}` : it.text;
+    const o = await api('/api/jev', { state, questions: { answer: { type: 'choice', instructions: isC ? 'Which financial product is this consumer complaint about' : `Which ${it.council} service category does this street report belong to`, criteria } } });
+    const a = o.response.answers.answer;
+    $('#gJevStatus').textContent = `${Math.round(o.ms)} ms · ${o.response.usage?.input_tokens} tokens`;
+    $('#gJevOut').innerHTML = `<div class="card" style="margin-top:10px"><span class="pill jev">Jev · live${isC ? ', told the company' : ', top candidates only'}</span><div style="margin-top:6px">${bars(Object.fromEntries(Object.entries(a.probabilities).map(([k, v]) => [gLab(k), v])), { truth: gLab(it.gold), top: gLab(a.choice) })}</div></div>`;
+  } catch (e) { $('#gJevStatus').textContent = e.message; }
+};
+api('/api/graph').then((d) => { if (d && d.cfpb) { G.d = d; renderGraph(); } }).catch((e) => console.error(e));

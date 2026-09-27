@@ -1,0 +1,1 @@
+{"mode":"batched","entities":14541,"train":272115,"epochs":1,"dims":128,"train_s":532.18,"s_per_epoch":532.18,"test":MetricSet { count: 40932, mr: 426.0266, mrr: 0.2502565, hits1: 0.17560832, hits3: 0.27296492, hits10: 0.3979527 }}

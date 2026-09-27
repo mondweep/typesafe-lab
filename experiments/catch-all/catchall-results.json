@@ -1,0 +1,44 @@
+{
+ "clinc_ordinary": {
+  "tag": "CLINC150, \"other\" as an ordinary option",
+  "oos_caught": 0.015,
+  "false_alarms": 0.001,
+  "in_scope_acc": 0.695
+ },
+ "threshold": 0.3364,
+ "clinc_catch_all": {
+  "tag": "CLINC150, catch-all at 0.3364",
+  "oos_caught": 0.778,
+  "false_alarms": 0.144,
+  "in_scope_acc": 0.639
+ },
+ "tickets_ordinary": {
+  "tag": "tickets, \"other\" as an ordinary option",
+  "oos_caught": 0.255,
+  "false_alarms": 0,
+  "in_scope_acc": 0.46
+ },
+ "tickets_catch_all": {
+  "tag": "tickets, catch-all at 0.3364 (threshold from CLINC150)",
+  "oos_caught": 0.981,
+  "false_alarms": 0.61,
+  "in_scope_acc": 0.22
+ },
+ "tickets_split_tuned": {
+  "auroc": 0.964,
+  "tuneA_testB": {
+   "thr": 0.3577,
+   "oos_caught": 0.962,
+   "false_alarms": 0.06,
+   "in_scope_acc": 0.5
+  },
+  "tuneB_testA": {
+   "thr": 0.3613,
+   "oos_caught": 0.849,
+   "false_alarms": 0.08,
+   "in_scope_acc": 0.36
+  },
+  "median_p_in": 0.34084746,
+  "median_p_oos": 0.40049756
+ }
+}
